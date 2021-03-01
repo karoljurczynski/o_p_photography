@@ -21,11 +21,7 @@ const menuItemTransition = () => {
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    this.handleExit = this.handleExit.bind(this);
     this.state = {};
-  }
-  handleExit() {
-
   }
   componentDidMount() {
     menuItemTransition();
@@ -55,7 +51,6 @@ class Menu extends React.Component {
             <a className="menu__list__item__content" href="#">CONTACT</a>
           </li>
         </ul>
-        <a className="menu__exit" href="#" onClick={this.handleExit}>ddddddddd</a>
       </nav>
     );
   }

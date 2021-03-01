@@ -17,8 +17,8 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Header />
-        <Menu />
         <Main />
+        <Menu />
         <Footer />
       </div>
     );

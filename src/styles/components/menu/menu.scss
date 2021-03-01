@@ -5,8 +5,9 @@
   @include flexSetup();
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  background: #000000BB;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
 
   &__list {
     @include flexSetup();
@@ -26,5 +27,14 @@
         margin-right: 0;
       }
     }
+  }
+}
+
+@keyframes openingAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

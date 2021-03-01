@@ -9,22 +9,94 @@ const PhotosArray = [
   {id: "", src: "", alt: "", title: ""}
 ];
 
-const menuIconTransition = () => {
+const menuIconTransformingToX = () => {
   const menuIcon = document.querySelector('.main__menu-icon');
   const menuIconBars = menuIcon.children;
 
-  menuIcon.addEventListener("mouseover", () => {
-    menuIconBars[0].style.width = "40%";
-    menuIconBars[1].style.width = "100%";
-    menuIconBars[2].style.width = "55%";
-  });
+  menuIcon.style.cssText = 
+   `height: 37px
+    top: 45%;`;
 
-  menuIcon.addEventListener("mouseout", () => {
-    menuIconBars[0].style.width = "100%";
-    menuIconBars[1].style.width = "60%";
-    menuIconBars[2].style.width = "25%";
-  });
-};
+  menuIconBars[0].style.cssText =
+   `width: 100%;
+    top: 50%;
+    transform: rotate(-45deg);
+    background: #828282`;
+
+  menuIconBars[1].style.cssText =
+   `opacity: 0`;
+
+  menuIconBars[2].style.cssText =
+   `width: 100%;
+    top: 50%;
+    transform: rotate(45deg);
+    background: #828282`;
+}
+
+const menuIconTransformingToDefault = () => {
+  const menuIcon = document.querySelector('.main__menu-icon');
+  const menuIconBars = menuIcon.children;
+
+  menuIcon.style.cssText = 
+   `height: 23px
+    top: 50%;`;
+
+  menuIconBars[0].style.cssText =
+   `width: 100%;
+    top: 0;
+    transform: rotate(0deg);
+    background: #FFFFFF`;
+
+  menuIconBars[1].style.cssText =
+   `opacity: 1`;
+
+  menuIconBars[2].style.cssText =
+   `width: 25%;
+    top: 20px;
+    transform: rotate(0deg);
+    background: #FFFFFF`;
+}
+
+const menuIconTransition = (disabled = false) => {
+  const menuIcon = document.querySelector('.main__menu-icon');
+  const menuIconBars = menuIcon.children;
+
+  const handleMouseOver = () => {
+    menuIconBars[0].style.cssText =
+    `width: 40%`;
+    menuIconBars[1].style.cssText =
+    `width: 100%`;
+    menuIconBars[2].style.cssText =
+    `width: 55%`;
+  }
+  const handleMouseOut = () => {
+    menuIconBars[0].style.cssText =
+    `width: 100%`;
+    menuIconBars[1].style.cssText =
+    `width: 60%`;
+    menuIconBars[2].style.cssText =
+    `width: 25%`;
+  }
+
+  menuIcon.addEventListener("mouseover", handleMouseOver);
+  menuIcon.addEventListener("mouseout", handleMouseOut);
+
+  if (disabled) {
+    menuIcon.removeEventListener("mouseover", handleMouseOver);
+    menuIcon.removeEventListener("mouseout", handleMouseOut);
+  }
+}
+
+const menuOpeningTransition = () => {
+  const container = document.querySelector(".menu");
+  const menuList = document.querySelector(".menu__list");
+
+  container.style.cssText =
+   `animation-name: openingAnimation;
+    animation-duration: 1s
+    animation-timing-function: ease`;
+}
+
 
 class Main extends React.Component {
   constructor(props) {
@@ -35,27 +107,26 @@ class Main extends React.Component {
     };
   }
   menuOpen() {
-    document.querySelector("body").style.overflowY = "hidden";
+    document.querySelector("body").style.overflowY = "scroll";
     document.querySelector(".menu").style.display = "flex";
+    menuIconTransformingToX();
   }
   menuClose() {
     document.querySelector("body").style.overflowY = "scroll";
     document.querySelector(".menu").style.display = "none";
+    menuIconTransformingToDefault();
   }
   handleMenu() {
+    this.setState({isMenuOpened: !this.state.isMenuOpened});
     if (this.state.isMenuOpened === true) {
       this.menuClose();
-      this.setState({isMenuOpened: false});
-      document.querySelector('.main__menu-icon').style.display = "flex";
     }
     else {
       this.menuOpen();
-      this.setState({isMenuOpened: true});
-      document.querySelector('.main__menu-icon').style.display = "flex";
     }
   }
   componentDidMount() {
-    menuIconTransition();
+    menuIconTransformingToDefault();
   }
 
   render() {
