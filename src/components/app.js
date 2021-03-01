@@ -6,9 +6,6 @@ import Menu from './menu';
 import Main from './main/main';
 import Footer from './footer';
 
-const PhotosArray = [
-  {id: "", src: "", alt: "", title: ""}
-];
 
 class App extends React.Component {
   constructor(props) {

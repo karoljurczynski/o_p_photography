@@ -7,13 +7,14 @@
 // STYLES
 
 body {
-  width: 100vw;
   font-size: 16px;
   background: $black-color;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 #root {
   margin: 0 auto;
-  background: red;
   width: 80%;
 }

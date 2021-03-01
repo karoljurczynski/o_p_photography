@@ -6,6 +6,7 @@
 // STYLES
 
 .wrapper {
+  width: 100%;
   @include flexSetup(column, center, flex-start);
   & > * {
     width: 100%;

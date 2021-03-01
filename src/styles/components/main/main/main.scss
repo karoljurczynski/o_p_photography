@@ -2,6 +2,7 @@
 @use '../../../config/config' as *;
 
 .main {
+  @include flexSetup(row, flex-start, flex-start);
 
   &__menu-icon {
     position: fixed;
@@ -29,7 +30,9 @@
   }
 
   &__grid-column {
-
+    width: calc(100% / 3);
+    @include flexSetup(column, center, center);
+    
     &__picture {
 
     }

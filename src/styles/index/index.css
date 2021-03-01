@@ -12,14 +12,15 @@
 }
 
 body {
-  width: 100vw;
   font-size: 16px;
   background: #000000;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 #root {
   margin: 0 auto;
-  background: red;
   width: 80%;
 }
 /*# sourceMappingURL=index.css.map */

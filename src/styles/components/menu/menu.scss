@@ -1,2 +1,30 @@
 @forward '../../config/config';
 @use '../../config/config' as *;
+
+.menu {
+  @include flexSetup();
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: #000000BB;
+
+  &__list {
+    @include flexSetup();
+    width: 100%;
+
+    &__item {
+      margin-right: 100px;
+      list-style-type: none;
+
+      &__content {
+        font-size: 2.1rem;
+        color: $white-color;
+        transition: 0.3s ease-in-out;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

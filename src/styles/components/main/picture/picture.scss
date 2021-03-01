@@ -1,2 +1,7 @@
 @forward '../../../config/config';
 @use '../../../config/config' as *;
+
+.picture {
+  width: auto;
+  height: 100%;
+}
