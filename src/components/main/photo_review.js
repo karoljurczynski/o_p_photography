@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../styles/components/main/photo_review/photo_review';
-import './picture';
+import '../../styles/components/main/photo_review/photo_review.css';
+import Picture from './picture';
 
 class PhotoReview extends React.Component {
   constructor(props) {

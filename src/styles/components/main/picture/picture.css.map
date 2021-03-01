@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"picture.css"}
+{"version":3,"sources":["../../../config/config.scss","picture.css"],"names":[],"mappings":"AAEA;EACE,SAAA;EACA,UAAA;EACA,8BAAA;UAAA,sBAAA;EACA,YAAA;EACA,wBAAA;UAAA,gBAAA;EACA,qBAAA;ACDF","file":"picture.css"}

@@ -1,0 +1,2 @@
+@media(max-width: 1200px){.header{height:100px}}@media(max-width: 1000px){.header{height:80px}}@media(max-width: 800px){.header{height:60px}.header__logo{height:calc(100% - 20px);width:90%;background:url("../../../img/short_logo_white.png") no-repeat center;background-size:contain}}
+/*# sourceMappingURL=media.min.css.map */

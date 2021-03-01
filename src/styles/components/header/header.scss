@@ -1,0 +1,24 @@
+// IMPORTS
+
+@forward '../../config/config';
+@use '../../config/config' as *;
+
+// STYLES
+
+.header {
+  @include flexSetup();
+  background: $black-color;
+  padding: 5px 0;
+  height: 120px;
+
+  &__logo {
+    height: calc(100% - 10px);
+    width: 90%;
+    background: url('../../../img/long_logo_white.png') no-repeat center;
+    background-size: contain;
+  }
+}
+
+// MEDIA QUERIES
+
+@import './media_queries/media.css';

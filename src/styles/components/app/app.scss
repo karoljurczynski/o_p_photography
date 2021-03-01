@@ -1,0 +1,13 @@
+// IMPORTS
+
+@forward '../../config/config';
+@use '../../config/config' as *;
+
+// STYLES
+
+.wrapper {
+  @include flexSetup(column, center, flex-start);
+  & > * {
+    width: 100%;
+  }
+}

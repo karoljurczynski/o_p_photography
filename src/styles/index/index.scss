@@ -1,0 +1,18 @@
+// IMPORTS
+
+@forward '../config/config';
+@use '../config/config' as *;
+
+
+// STYLES
+
+body {
+  width: 100vw;
+  font-size: 16px;
+}
+
+#root {
+  margin: 0 auto;
+  background: red;
+  width: 80%;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/footer/footer';
+import '../styles/components/footer/footer.css';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -52,10 +52,11 @@ class Footer extends React.Component {
 
             <input className="footer__email__form__email-input" type="email"/>
             <textarea className="footer__email__form__message-input" rows="" cols=""></textarea>
-            <input className="footer__email__form__submit-button" type="submit">Send</input>
+            <input className="footer__email__form__submit-button" type="submit" value="Send" />
 
           </form>
         </section>
+
       </footer>
     );
   }

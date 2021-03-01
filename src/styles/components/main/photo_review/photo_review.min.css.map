@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"photo_review.min.css"}
+{"version":3,"sources":["../../../config/config.scss"],"names":[],"mappings":"AAEQ,sEAAA,CAKR,EACE,QAAA,CACA,SAAA,CACA,6BAAA,CAAA,qBAAA,CACA,WAAA,CACA,uBAAA,CAAA,eAAA,CACA,oBAAA,CAGF,KACE,WAAA,CACA,cAAA,CACA,gCAAA","file":"photo_review.min.css"}

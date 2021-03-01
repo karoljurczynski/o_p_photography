@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"menu.css"}
+{"version":3,"sources":["../../config/config.scss","menu.css"],"names":[],"mappings":"AAEQ,4EAAA;AAKR;EACE,SAAA;EACA,UAAA;EACA,8BAAA;UAAA,sBAAA;EACA,YAAA;EACA,wBAAA;UAAA,gBAAA;EACA,qBAAA;EACA,kCAAA;ACLF","file":"menu.css"}

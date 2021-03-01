@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/components/app/app';
+import '../styles/components/app/app.css';
 
-import './header';
-import './menu';
-import './main/main';
-import './footer';
+import Header from './header';
+import Menu from './menu';
+import Main from './main/main';
+import Footer from './footer';
 
 const PhotosArray = [
   {id: "", src: "", alt: "", title: ""}
