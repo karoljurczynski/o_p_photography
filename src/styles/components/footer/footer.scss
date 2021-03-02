@@ -1,2 +1,156 @@
 @forward '../../config/config';
 @use '../../config/config' as *;
+
+.footer {
+  width: 100%;
+  @include flexSetup(row, flex-start, space-between);
+
+  &__about {
+    width: 45%;
+    @include flexSetup(column, flex-start, space-around);
+
+    &__title {
+      display: block;
+      height: 120px;
+      margin-bottom: 60px;
+    }
+
+    &__content {
+      @include flexSetup(row, center, flex-start);
+      width: 100%;
+      margin-bottom: 20px;
+
+      &__icon {
+        @include flexSetup(row, center, space-between);
+        font-size: 1.3rem;
+        width: 10%;
+        color: $white-color;
+      }
+
+      &__text {
+        color: $gray-color;
+        font-size: 1.1rem;
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+
+    &__social-media {
+      @include flexSetup(row, center, space-around);
+      margin-top: 60px;
+      margin-bottom: 20px;
+
+      &__link {
+        display: block;
+        position: relative;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: white;
+        margin-right: 0.5rem;
+
+        &:hover {
+          top: -3px;
+        }
+
+        &__icon {
+          @include flexSetup();
+          font-size: 1rem;
+          height: 100%;
+          width: 100%;
+          color: $black-color;
+        }
+      }
+    }
+    
+    &__copyright {
+      margin-bottom: 10px;
+
+      &__text {
+        color: $gray-color;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  &__categories {
+    width: 30%;
+    @include flexSetup(column, flex-start, flex-start);
+    margin-top: 103px;
+    
+    &__title {
+      font-size: 1.2rem;
+      color: $white-color;
+      margin-bottom: 60px;
+    }
+
+    &__list {
+      list-style-type: none;
+
+      @include flexSetup(column, flex-start, flex-start);
+
+      &__item {
+        margin-bottom: 27px;
+
+        &__content {
+          font-size: 1.1rem;
+          color: $gray-color;
+          &:hover {
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__email {
+    width: 25%;
+    margin-top: 103px;
+    @include flexSetup(column, flex-start, flex-start);
+
+    &__title {
+      color: $white-color;
+      font-size: 1.2rem;
+      margin-bottom: 60px;
+    }
+
+    &__form {
+      @include flexSetup(column, flex-start, flex-start);
+      width: 100%;
+      &__email-input {
+        font-size: 1.1rem;
+        padding: 2px;
+        width: 100%;
+        margin-bottom: 10px;
+        color: white;
+        background: none;
+      }
+
+      &__message-input {
+        padding: 2px;
+        font-size: 1.1rem;
+        width: 100%;
+        height: 85px;
+        resize: none;
+        margin-bottom: 30px;
+        background: none;
+        color: white;
+        border: 1px solid white;
+      }
+
+      &__submit-button {
+        font-size: 1.1rem;
+        width: 40%;
+        padding: 4px;
+        background: none;
+        color: $gray-color;
+        border: 1px solid white;
+        cursor: pointer;
+        &:hover {
+          color: $white-color
+        }
+      }
+    }
+  }
+}
