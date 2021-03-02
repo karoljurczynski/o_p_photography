@@ -9,6 +9,36 @@ const PhotosArray = [
   {id: "", src: "", alt: "", title: ""}
 ];
 
+let scrollY = 0;
+
+const menuDisplayChanger = (isOpened = false) => {
+  if (isOpened) {
+    scrollY = document.documentElement.scrollTop;
+
+    // BODY FREEZING
+    document.querySelector("body").style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: fixed`;
+
+    document.querySelector(".menu").style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      display: flex`;
+  }
+  else {
+
+    // BODY POSITION CORRECTING
+    document.querySelector("body").style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: static`;
+
+    document.querySelector(".menu").style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      display: none`;
+
+    window.scroll(0, scrollY);
+  }
+}
+
 const menuIconTransformingToX = () => {
   const menuIcon = document.querySelector('.main__menu-icon');
   const menuIconBars = menuIcon.children;
@@ -57,7 +87,7 @@ const menuIconTransformingToDefault = () => {
     background: #FFFFFF`;
 }
 
-const menuIconTransition = (disabled = false) => {
+const menuIconTransition = (isMenuOpened = false) => {
   const menuIcon = document.querySelector('.main__menu-icon');
   const menuIconBars = menuIcon.children;
 
@@ -81,7 +111,7 @@ const menuIconTransition = (disabled = false) => {
   menuIcon.addEventListener("mouseover", handleMouseOver);
   menuIcon.addEventListener("mouseout", handleMouseOut);
 
-  if (disabled) {
+  if (isMenuOpened) {
     menuIcon.removeEventListener("mouseover", handleMouseOver);
     menuIcon.removeEventListener("mouseout", handleMouseOut);
   }
@@ -107,13 +137,12 @@ class Main extends React.Component {
     };
   }
   menuOpen() {
-    document.querySelector("body").style.overflowY = "scroll";
-    document.querySelector(".menu").style.display = "flex";
+    menuDisplayChanger(true);
     menuIconTransformingToX();
   }
+
   menuClose() {
-    document.querySelector("body").style.overflowY = "scroll";
-    document.querySelector(".menu").style.display = "none";
+    menuDisplayChanger();
     menuIconTransformingToDefault();
   }
   handleMenu() {
@@ -132,11 +161,11 @@ class Main extends React.Component {
   render() {
     return (
       <main className="main">
-        <a className="main__menu-icon" href="#" onClick={this.handleMenu}>
+        <button className="main__menu-icon" onClick={this.handleMenu}>
           <span className="main__menu-icon__top-bar"></span>
           <span className="main__menu-icon__middle-bar"></span>
           <span className="main__menu-icon__bottom-bar"></span>
-        </a>
+        </button>
         <section className="main__grid-column">
           <Picture src={picture} alt="Picture" smallSrc="" largeSrc="" />
           <Picture src={picture} alt="Picture" smallSrc="" largeSrc="" />

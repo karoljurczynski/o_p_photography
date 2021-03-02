@@ -28,6 +28,7 @@
 }
 .main__menu-icon {
   position: fixed;
+  background: transparent;
   z-index: 3;
   left: calc(94%);
   top: 50%;
@@ -35,6 +36,7 @@
           transform: translate(-50%, -50%);
   width: 37px;
   height: 23px;
+  outline: none;
 }
 .main__menu-icon__top-bar, .main__menu-icon__middle-bar, .main__menu-icon__bottom-bar {
   display: block;

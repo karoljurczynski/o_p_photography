@@ -6,12 +6,14 @@
 
   &__menu-icon {
     position: fixed;
+    background: transparent;
     z-index: 3;
     left: calc(94%);
     top: 50%;
     transform: translate(-50%, -50%);
     width: 37px;  // 37px
     height: 23px; // 23px
+    outline: none;
 
     &__top-bar, &__middle-bar, &__bottom-bar {
       display: block;

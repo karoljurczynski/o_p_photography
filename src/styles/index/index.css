@@ -12,6 +12,7 @@
 }
 
 body {
+  position: static;
   font-size: 16px;
   background: #000000;
   width: 100vw;

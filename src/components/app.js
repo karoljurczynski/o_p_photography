@@ -18,8 +18,8 @@ class App extends React.Component {
       <div className="wrapper">
         <Header />
         <Main />
-        <Menu />
         <Footer />
+        <Menu />
       </div>
     );
   }
