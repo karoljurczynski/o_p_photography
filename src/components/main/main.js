@@ -173,9 +173,19 @@ class Main extends React.Component {
         </button>
 
         <section className="main__grid-container">
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid-container__content">
+            <Picture width="100%" height="50%" top="0" color="blue"/>
+            <Picture width="100%" height="50%" bottom="0" color="green" />
+          </div>
+          <div className="main__grid-container__content">
+            <Picture width="49%" height="100%" left="0" color="violet" />
+            <Picture width="49%" height="100%" right="0" color="red" />
+          </div>
+          <div className="main__grid-container__content">
+            <Picture width="50%" height="50%" top="0" color="yellow" />
+            <Picture width="50%" height="50%" right="0" color="pink" />
+            <Picture width="100%" height="25%" top="50%" color="aqua" />
+          </div>
 
           <div className="main__grid-container__content"></div>
           <div className="main__grid-container__content"></div>

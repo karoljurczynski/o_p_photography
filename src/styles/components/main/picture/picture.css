@@ -12,14 +12,13 @@
 }
 
 .picture {
-  width: 100%;
-  height: AUTO;
-  background: url("../../../../img/stock1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 14px;
+  display: block;
+  position: absolute;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 .picture:last-of-type {
   margin-bottom: 0;
+  margin-right: 0;
 }
 /*# sourceMappingURL=picture.css.map */
