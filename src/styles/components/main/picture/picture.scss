@@ -2,6 +2,14 @@
 @use '../../../config/config' as *;
 
 .picture {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: AUTO;
+  background: url('../../../../img/stock1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 14px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }

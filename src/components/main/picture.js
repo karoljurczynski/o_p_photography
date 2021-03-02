@@ -10,9 +10,7 @@ class Picture extends React.Component {
   render() {
     return (
       <picture className="picture">
-        <source media="(min-width:768px)" srcset={this.props.smallSrc} />
-        <source media="(min-width:1200px)" srcset={this.props.largeSrc} />
-        <img src={this.props.src} alt={this.props.alt} />
+
       </picture>
     );
   }
