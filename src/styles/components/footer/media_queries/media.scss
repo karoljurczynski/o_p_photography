@@ -63,8 +63,7 @@
     &__about {
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      width: 90%;
+      justify-content: flex-start;
 
       &__social-media {
         margin: 20px 0 0 0;
