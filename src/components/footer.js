@@ -16,6 +16,7 @@ class Footer extends React.Component {
 
   render() {
     return (
+      <>
       <footer className="footer">
 
 
@@ -37,36 +38,32 @@ class Footer extends React.Component {
             <p className="footer__about__content__text">Wrocław / Częstochowa</p>
           </span>
 
-          <span className="footer__about__social-media">
+          <section className="footer__about__social-media">
 
-            <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
-              <span className="footer__about__social-media__link__icon">
-                <FaFacebookF />
-              </span>
-            </a>
+              <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
+                <span className="footer__about__social-media__link__icon">
+                  <FaFacebookF />
+                </span>
+              </a>
 
-            <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
-              <span className="footer__about__social-media__link__icon">
-                <FaInstagram />
-              </span>
-            </a>
+              <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
+                <span className="footer__about__social-media__link__icon">
+                  <FaInstagram />
+                </span>
+              </a>
 
-            <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
-              <span className="footer__about__social-media__link__icon">
-                <FaLinkedin />
-              </span>
-            </a>
-            
-            <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
-              <span className="footer__about__social-media__link__icon">
-                <FaLinkedin />
-              </span>
-            </a>
-          </span>
-
-          <span className="footer__about__copyright">
-            <a className="footer__about__copyright__text" href="https://github.com/karoljurczynski" target="blank">© 2021 Karol Jurczyński</a>
-          </span>
+              <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
+                <span className="footer__about__social-media__link__icon">
+                  <FaLinkedin />
+                </span>
+              </a>
+              
+              <a className="footer__about__social-media__link" href="https://github.com/karoljurczynski" target="blank">
+                <span className="footer__about__social-media__link__icon">
+                  <FaLinkedin />
+                </span>
+              </a>
+            </section>
 
         </section>
 
@@ -96,17 +93,23 @@ class Footer extends React.Component {
 
 
         <section className="footer__email">
+
           <h4 className="footer__email__title">CONTACT ME</h4>
           <form className="footer__email__form">
-
             <input className="footer__email__form__email-input" type="email" placeholder="E-mail"/>
             <textarea className="footer__email__form__message-input" placeholder="Message"></textarea>
             <input className="footer__email__form__submit-button" type="submit" value="Send" />
-
           </form>
         </section>
 
       </footer>
+
+      <span className="footer__copyright">
+        <a className="footer__copyright__text" href="https://github.com/karoljurczynski" target="blank">© 2021 Karol Jurczyński</a>
+      </span>
+
+      </>
+
     );
   }
 }

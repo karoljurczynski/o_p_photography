@@ -2,16 +2,16 @@
 @use '../../config/config' as *;
 
 .footer {
-  width: 100%;
+  margin-top: 20px;
   @include flexSetup(row, flex-start, space-between);
+  width: 90%;
 
   &__about {
-    width: 45%;
     @include flexSetup(column, flex-start, space-around);
 
     &__title {
       display: block;
-      height: 120px;
+      height: 90px;
       margin-bottom: 60px;
     }
 
@@ -25,11 +25,13 @@
         font-size: 1.3rem;
         width: 10%;
         color: $white-color;
+        margin-right: 15px;
       }
 
       &__text {
         color: $gray-color;
         font-size: 1.1rem;
+
         &:hover {
           color: $white-color;
         }
@@ -38,8 +40,8 @@
 
     &__social-media {
       @include flexSetup(row, center, space-around);
-      margin-top: 60px;
       margin-bottom: 20px;
+      margin-top: 40px;
 
       &__link {
         display: block;
@@ -49,11 +51,11 @@
         border-radius: 50%;
         background: white;
         margin-right: 0.5rem;
-
+  
         &:hover {
-          top: -3px;
+          top: -1px;
         }
-
+  
         &__icon {
           @include flexSetup();
           font-size: 1rem;
@@ -63,31 +65,21 @@
         }
       }
     }
-    
-    &__copyright {
-      margin-bottom: 10px;
-
-      &__text {
-        color: $gray-color;
-        font-size: 0.7rem;
-      }
-    }
   }
 
   &__categories {
-    width: 30%;
-    @include flexSetup(column, flex-start, flex-start);
-    margin-top: 103px;
+    
+    @include flexSetup(column, flex-start, space-between);
+    margin-top: 73px;
     
     &__title {
       font-size: 1.2rem;
       color: $white-color;
-      margin-bottom: 60px;
+      margin-bottom: 55px;
     }
 
     &__list {
       list-style-type: none;
-
       @include flexSetup(column, flex-start, flex-start);
 
       &__item {
@@ -96,32 +88,38 @@
         &__content {
           font-size: 1.1rem;
           color: $gray-color;
+
           &:hover {
             color: $white-color;
           }
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
         }
       }
     }
   }
 
   &__email {
-    width: 25%;
-    margin-top: 103px;
-    @include flexSetup(column, flex-start, flex-start);
+    margin-top: 73px;
+    
+    @include flexSetup(column, flex-start, space-between);
 
     &__title {
       color: $white-color;
       font-size: 1.2rem;
-      margin-bottom: 60px;
+      margin-bottom: 55px;
     }
 
     &__form {
       @include flexSetup(column, flex-start, flex-start);
       width: 100%;
+      
       &__email-input {
         font-size: 1.1rem;
         padding: 2px;
-        width: 100%;
+        width: 250px;
         margin-bottom: 10px;
         color: white;
         background: none;
@@ -130,10 +128,10 @@
       &__message-input {
         padding: 2px;
         font-size: 1.1rem;
-        width: 100%;
-        height: 85px;
+        width: 250px;
+        height: 82px;
         resize: none;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         background: none;
         color: white;
         border: 1px solid white;
@@ -141,7 +139,7 @@
 
       &__submit-button {
         font-size: 1.1rem;
-        width: 40%;
+        width: 100px;
         padding: 4px;
         background: none;
         color: $gray-color;
@@ -153,4 +151,86 @@
       }
     }
   }
+
+  &__copyright {
+    width: 90%;
+    margin-bottom: 10px;
+
+    &__text {
+      color: $gray-color;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    &__about {
+      flex-direction: column;
+      align-items: center;
+
+      &__social-media {
+        margin: 20px 0 0 0;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+      }
+    }
+
+    &__categories {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      width: 90%;
+      padding-top: 20px;
+      border-top: 1px solid white;
+
+      &__list {
+        align-items: center;
+      }
+    }
+
+    &__email {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 50px;
+      width: 90%;
+      padding-top: 20px;
+      border-top: 1px solid white;
+
+      &__form {
+        align-items: center;
+
+        &__email-input {
+          text-align: center;
+          width: 90%;
+        }
+
+        &__message-input {
+          text-align: center;
+          width: 90%
+        }
+
+        &__submit-button {
+          width: 90%;
+        }
+      }
+    }
+
+    &__copyright {
+      width: 100%;
+      text-align: center;
+      padding-top: 5px;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  
 }

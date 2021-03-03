@@ -19,3 +19,9 @@ body {
   margin: 0 auto;
   width: 70%;
 }
+
+@media (max-width: 768px) {
+  #root {
+    width: 90%;
+  }
+}
