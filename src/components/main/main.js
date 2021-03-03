@@ -137,7 +137,7 @@ class Main extends React.Component {
       isMenuOpened: false
     };
   }
-
+  
   menuOpen() {
     menuDisplayChanger(true);
     menuIconTransformer(true);
@@ -174,8 +174,8 @@ class Main extends React.Component {
 
         <section className="main__grid-container">
           <div className="main__grid-container__content">
-            <Picture width="100%" height="50%" top="0" color="blue"/>
-            <Picture width="100%" height="50%" bottom="0" color="green" />
+            <Picture id="0" width="100%" height="50%" top="0" color="blue" />
+            <Picture id="1" width="100%" height="50%" bottom="0" color="green" />
           </div>
           <div className="main__grid-container__content">
             <Picture width="49%" height="100%" left="0" color="violet" />

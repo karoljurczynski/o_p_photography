@@ -4,7 +4,7 @@
 .footer {
   margin-top: 20px;
   @include flexSetup(row, flex-start, space-between);
-  width: 90%;
+  width: 80%;
 
   &__about {
     @include flexSetup(column, flex-start, flex-start);
@@ -146,14 +146,14 @@
         border: 1px solid white;
         cursor: pointer;
         &:hover {
-          color: $white-color
+          color: $white-color;
         }
       }
     }
   }
 
   &__copyright {
-    width: 90%;
+    width: 80%;
     margin-bottom: 10px;
 
     &__text {
@@ -164,69 +164,3 @@
 }
 
 @import './media_queries/media';
-
-@media (max-width: 768px) {
-  .footer {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    &__about {
-      width: 70%;
-      flex-direction: column;
-      align-items: center;
-
-      &__social-media {
-        margin: 20px 0 0 0;
-        width: 100%;
-      }
-    }
-
-    &__categories {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 60px;
-      width: 100%;
-      padding-top: 20px;
-      border-top: 1px solid white;
-
-      &__list {
-        align-items: center;
-      }
-    }
-
-    &__email {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 60px;
-      margin-bottom: 50px;
-      width: 100%;
-      padding-top: 20px;
-      border-top: 1px solid white;
-
-      &__form {
-        align-items: center;
-
-        &__email-input {
-          text-align: center;
-          width: 90%;
-        }
-
-        &__message-input {
-          text-align: center;
-          width: 90%
-        }
-
-        &__submit-button {
-          width: 90%;
-        }
-      }
-    }
-
-    &__copyright {
-      width: 100%;
-      text-align: center;
-      padding-top: 5px;
-      align-items: center;
-    }
-  }
-}

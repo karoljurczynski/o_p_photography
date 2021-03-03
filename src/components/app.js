@@ -5,6 +5,7 @@ import Header from './header';
 import Menu from './menu';
 import Main from './main/main';
 import Footer from './footer';
+import PhotoReview from './main/photo_review';
 
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
         <Main />
         <Footer />
         <Menu />
+        <PhotoReview />
       </div>
     );
   }

@@ -6,15 +6,32 @@ class PhotoReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleExit = this.handleExit.bind(this);
+  }
+  handleExit() {
+    document.querySelector(".photo-review").style.display = "none";
+
   }
 
   render() {
     return (
-      <div className="photo_review">
-        <span className="photo_review__previous"> </span>
-        <h3 className="photo_review__title"></h3>
-        <Picture />
-        <span className="photo_review__next"> </span>
+      <div className="photo-review">
+
+        <span className="photo-review__previous">
+          <span className="photo-review__previous__top-bar"></span>
+          <span className="photo-review__previous__bottom-bar"></span>
+        </span>
+
+        <section className="photo-review__center">
+          <div className="photo-review__center__picture"></div>
+          <h3 className="photo-review__center__title" onClick={this.handleExit}>sdsad sadsad asd</h3>
+        </section>
+
+        <span className="photo-review__next">
+          <span className="photo-review__next__top-bar"></span>
+          <span className="photo-review__next__bottom-bar"></span>
+        </span>
+
       </div>
     );
   }
