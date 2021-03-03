@@ -1,29 +1,21 @@
 // MEDIA QUERIES
 
-@media (max-width: 1200px) {
-
+@media (max-width: 1024px) {
   .header {
     height: 100px;
-  }
-}
-
-@media (max-width: 1024px) {
-
-  .header {
-    height: 80px;
+    &__logo {
+      height: calc(100% - 30px);
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: 768px) {
-
   .header {
-    height: 60px;
-    
+    height: 80px;
     &__logo {
       height: calc(100% - 20px);
-      width: 90%;
-      background: url('../../../../img/short_logo_white.png') no-repeat center;
-      background-size: contain;
+      width: 100%;
     }
   }
 }

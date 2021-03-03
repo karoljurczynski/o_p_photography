@@ -61,7 +61,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  width: 100%;
+  width: 80%;
   margin-bottom: 20px;
 }
 .footer__about__content__icon {
@@ -345,6 +345,10 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 90%;
   }
   .footer__about__social-media {
     margin: 20px 0 0 0;
@@ -352,8 +356,9 @@
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .footer__categories {
     -webkit-box-orient: vertical;

@@ -30,7 +30,7 @@
   position: fixed;
   background: transparent;
   z-index: 3;
-  left: calc(94%);
+  right: 15px;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -126,6 +126,18 @@
   }
   .main__grid-container__content {
     height: 700px;
+  }
+}
+@media (max-width: 1024px) {
+  .main__menu-icon {
+    right: 3.4%;
+    top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .main__menu-icon {
+    right: 0;
+    top: 40px;
   }
 }
 /*# sourceMappingURL=main.css.map */

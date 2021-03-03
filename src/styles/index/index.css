@@ -22,12 +22,17 @@ body {
 
 #root {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
 }
 
+@media (max-width: 1024px) {
+  #root {
+    width: 86%;
+  }
+}
 @media (max-width: 768px) {
   #root {
-    width: 90%;
+    width: 94%;
   }
 }
 /*# sourceMappingURL=index.css.map */

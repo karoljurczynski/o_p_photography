@@ -4,21 +4,21 @@
 .menu {
   @include flexSetup();
   width: 100vw;
+  min-height: 500px;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.85);
   display: none;
 
   &__list {
-    @include flexSetup();
-    width: 100%;
+    @include flexSetup(row, center, space-around);
+    width: 70%;
 
     &__item {
-      margin-right: 100px;
       list-style-type: none;
 
       &__content {
-        font-size: 2.1rem;
+        font-size: 2rem;
         color: $white-color;
         transition: 0.3s ease-in-out;
       }
@@ -38,3 +38,5 @@
     opacity: 1;
   }
 }
+
+@import './media_queries/media';
