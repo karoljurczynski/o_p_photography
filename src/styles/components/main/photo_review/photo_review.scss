@@ -11,12 +11,15 @@
   background: rgba(0, 0, 0, 0.85);
 
   &__previous, &__next {
+    display: block;
     z-index: 5;
     position: absolute;
     top: 120px;
     width: 45%;
     height: 100%;
     max-height: calc(94% - 1.4rem - 120px);
+    outline: none;
+    background: none;
     cursor: pointer;
   }
 
@@ -33,7 +36,7 @@
 
   &__previous {
     left: 5%;
-    
+
     &__top-bar {
       top: 50%;
       left: 0;

@@ -22,12 +22,15 @@
   background: rgba(0, 0, 0, 0.85);
 }
 .photo-review__previous, .photo-review__next {
+  display: block;
   z-index: 5;
   position: absolute;
   top: 120px;
   width: 45%;
   height: 100%;
   max-height: calc(94% - 1.4rem - 120px);
+  outline: none;
+  background: none;
   cursor: pointer;
 }
 .photo-review__previous__top-bar, .photo-review__previous__bottom-bar, .photo-review__next__top-bar, .photo-review__next__bottom-bar {

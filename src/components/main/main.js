@@ -5,11 +5,9 @@ import Picture from './picture';
 import PhotoReview from './photo_review';
 import picture from '../../img/stock1.jpg';
 
-
 let scrollY = 0;
-const PhotosArray = [
-  {id: "", src: "", alt: "", title: ""}
-];
+const photosArray = [0,0,0,0,0,0,0];
+  //{id: "", src: "", alt: "", title: ""}
 
 
 const menuDisplayChanger = (isMenuOpened) => {
@@ -175,7 +173,7 @@ class Main extends React.Component {
         <section className="main__grid-container">
           <div className="main__grid-container__content">
             <Picture 
-              id="0" 
+              id="0"
               width="100%" 
               height="50%" 
               top="0" 
@@ -183,7 +181,7 @@ class Main extends React.Component {
               title="First blue picture"
               />
             <Picture 
-              id="1"
+              id="6" 
               width="100%" 
               height="50%" 
               bottom="0" 
@@ -234,3 +232,4 @@ class Main extends React.Component {
   }
 }
 export default Main;
+export {photosArray};
