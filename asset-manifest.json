@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/o_p_photography/static/css/main.ba45475c.chunk.css",
-    "main.js": "/o_p_photography/static/js/main.bccff46c.chunk.js",
-    "main.js.map": "/o_p_photography/static/js/main.bccff46c.chunk.js.map",
+    "main.css": "/o_p_photography/static/css/main.e8aaf5de.chunk.css",
+    "main.js": "/o_p_photography/static/js/main.5bd50f2b.chunk.js",
+    "main.js.map": "/o_p_photography/static/js/main.5bd50f2b.chunk.js.map",
     "runtime-main.js": "/o_p_photography/static/js/runtime-main.f3f7f519.js",
     "runtime-main.js.map": "/o_p_photography/static/js/runtime-main.f3f7f519.js.map",
     "static/js/2.e12c3bce.chunk.js": "/o_p_photography/static/js/2.e12c3bce.chunk.js",
     "static/js/2.e12c3bce.chunk.js.map": "/o_p_photography/static/js/2.e12c3bce.chunk.js.map",
     "index.html": "/o_p_photography/index.html",
-    "static/css/main.ba45475c.chunk.css.map": "/o_p_photography/static/css/main.ba45475c.chunk.css.map",
+    "static/css/main.e8aaf5de.chunk.css.map": "/o_p_photography/static/css/main.e8aaf5de.chunk.css.map",
     "static/js/2.e12c3bce.chunk.js.LICENSE.txt": "/o_p_photography/static/js/2.e12c3bce.chunk.js.LICENSE.txt",
     "static/media/header.css": "/o_p_photography/static/media/long_logo_white.0f3ca065.png",
     "static/media/stock1.ac17b149.jpg": "/o_p_photography/static/media/stock1.ac17b149.jpg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.f3f7f519.js",
     "static/js/2.e12c3bce.chunk.js",
-    "static/css/main.ba45475c.chunk.css",
-    "static/js/main.bccff46c.chunk.js"
+    "static/css/main.e8aaf5de.chunk.css",
+    "static/js/main.5bd50f2b.chunk.js"
   ]
 }
