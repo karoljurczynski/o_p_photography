@@ -1,7 +1,29 @@
 import React from 'react';
-import { FaNutritionix } from 'react-icons/fa';
 import '../../styles/components/main/picture/picture.css';
 import PhotoReview from './photo_review';
+
+let scrollY = 0;
+
+const bodyFreezer = (isReviewOpened = false) => {
+  const body = document.querySelector("body");
+
+  if (isReviewOpened) {
+    scrollY = document.documentElement.scrollTop;
+
+    // BODY FREEZING
+    body.style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: fixed`;
+  }
+  else {
+    // BODY POSITION CORRECTING
+    body.style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: static`;
+
+    window.scroll(0, scrollY);
+  }
+}
 
 class Picture extends React.Component {
   constructor(props) {
@@ -25,6 +47,10 @@ class Picture extends React.Component {
   }
   handleReviewMounting(e) {
     this.setState({isReviewMounted: !this.state.isReviewMounted});
+    if(this.state.isReviewMounted)
+      bodyFreezer();
+    else
+      bodyFreezer(true);
   }
   render() {
     return (

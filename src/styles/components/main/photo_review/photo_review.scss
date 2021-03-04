@@ -2,69 +2,96 @@
 @use '../../../config/config' as *;
 
 .photo-review {
+  z-index: 4;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 4;
   background: rgba(0, 0, 0, 0.85);
-  @include flexSetup(row, flex-start, space-around);
+
+  &__previous, &__next {
+    z-index: 5;
+    position: absolute;
+    top: 120px;
+    width: 45%;
+    height: 100%;
+    max-height: calc(94% - 1.4rem - 120px);
+    cursor: pointer;
+  }
+
+  &__previous__top-bar,
+  &__previous__bottom-bar,
+  &__next__top-bar,
+  &__next__bottom-bar {
+    display: block;
+    position: absolute;
+    height: 35px;
+    background: $gray-color;
+    width: 3px;
+  }
 
   &__previous {
-    position: relative;
-    top: 50%;
-    width: 37px;
-    height: 74px;
-    background: red;
-
-
+    left: 5%;
+    
     &__top-bar {
-
+      top: 50%;
+      left: 0;
+      transform: rotate(135deg) translateY(24%);
     }
 
     &__bottom-bar {
-
+      bottom: 50%;
+      left: 0;
+      transform: rotate(45deg) translateY(24%);
     }
   }
 
-  &__center {
-    margin-top: 120px;
-    width: 600px;
-    height: calc(100% - 120px);
-    background: red;
-
-    &__picture {
-      width: 100%;
-      height: 90%;
-      background: blue;
-
-
-
-    }
+  &__picture {
+    margin: 120px auto 0 auto;
+    height: 100%;
+    max-height: calc(94% - 1.4rem - 120px);
+    max-width: 70%;
+    background: blue;
+  }
     
-    &__title {
-      width: 100%;
-      margin-top: 20px;
-      text-align: center;
-
-    }
+  &__title {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    z-index: 5;
+    color: $white-color;
+    text-align: center;
+    font-size: 1.4rem;
   }
 
   &__next {
-    width: 37px;
-    height: 74px;
-    background: red;
-    position: relative;
-    right: 0;
-    top: 50%;
+   right: 5%;
 
     &__top-bar {
-
+      top: 50%;
+      right: 0;
+      transform: rotate(45deg) translateY(-24%);
     }
     
     &__bottom-bar {
+      bottom: 50%;
+      right: 0;
+      transform: rotate(135deg) translateY(-24%);
+    }
+  }
 
+  &__back {
+    position: absolute;
+    font-size: 1.4rem;
+    z-index: 5;
+    color: $gray-color;
+    bottom: 3%;
+    right: calc(5% - 35px / 2);
+    cursor: pointer;
+
+    &:hover {
+      color: $white-color;
     }
   }
 }

@@ -13,6 +13,7 @@
   box-shadow: none;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
+  font-weight: normal;
 }
 
 @mixin flexSetup($direction: row, $align: center, $justify: center) {

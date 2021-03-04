@@ -1,13 +1,8 @@
 import React from 'react';
 import '../styles/components/footer/footer.css';
-import 
-{ FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logo from '../img/long_logo_white.png';
+
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +13,6 @@ class Footer extends React.Component {
     return (
       <>
       <footer className="footer">
-
 
         <section className="footer__about">
           <img className="footer__about__title" src={logo} alt="Logo"/>
@@ -67,7 +61,6 @@ class Footer extends React.Component {
 
         </section>
 
-
         <section className="footer__categories">
           <h4 className="footer__categories__title">CATEGORIES</h4>
           <ul className="footer__categories__list">
@@ -91,7 +84,6 @@ class Footer extends React.Component {
           </ul>
         </section>
 
-
         <section className="footer__email">
 
           <h4 className="footer__email__title">CONTACT ME</h4>
@@ -109,7 +101,6 @@ class Footer extends React.Component {
       </span>
 
       </>
-
     );
   }
 }
