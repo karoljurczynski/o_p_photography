@@ -31,3 +31,8 @@ body {
     width: 94%;
   }
 }
+@media (max-width: 480px) {
+  #root {
+    width: calc(100% - 6px);
+  }
+}

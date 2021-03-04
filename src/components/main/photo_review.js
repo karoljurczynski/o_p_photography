@@ -21,37 +21,61 @@ const reviewButtonsTransition = () => {
 
   });
 }
+
 class PhotoReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLastPhoto: false
+      id: this.props.id,
+      src: this.props.style.background,
+      title: this.props.title,
+      width: this.props.style.width,
+      height: this.props.style.height
     };
 
     this.handleNextPhoto = this.handleNextPhoto.bind(this);
     this.handlePreviousPhoto = this.handlePreviousPhoto.bind(this);
-
-    this.pictureStyle = {
-      width: this.props.style.width,
-      height: "90%", //this.props.style.height
-      backgroundColor: this.props.style.backgroundColor,
-    }
+    this.calcPhotosSizes = this.calcPhotosSizes.bind(this);
   }
+
+
+  calcPhotosSizes() {
+    if (this.state.width > this.state.height)
+      this.setState({width: "100%", height: "100%"});
+    else if (this.state.width === this.state.height)
+      this.setState({width: "70%", height: "70%"});
+    else
+      this.setState({width: "50%", height: "100%"});
+  }
+
   handleNextPhoto() {
-
-
-
+    this.setState({
+      id: this.state.id + 1,
+      src: photosArray[this.state.id + 1].src,
+      title: photosArray[this.state.id + 1].title,
+      alt: photosArray[this.state.id + 1].alt,
+      width: photosArray[this.state.id + 1].width,
+      height: photosArray[this.state.id + 1].height
+    });
+    this.calcPhotosSizes();
   }
+  
   handlePreviousPhoto() {
-
-    
-
+    this.setState({
+      id: this.state.id - 1,
+      src: photosArray[this.state.id - 1].src,
+      title: photosArray[this.state.id - 1].title,
+      alt: photosArray[this.state.id - 1].alt,
+      width: photosArray[this.state.id - 1].width,
+      height: photosArray[this.state.id - 1].height
+    });
+    this.calcPhotosSizes();
   }
 
   firstPhotoChecker() {
     const previousButton = document.querySelector(".photo-review__previous");
 
-    if(this.props.id == 0)
+    if (this.state.id == 0)
       previousButton.style.display = "none";
     else
       previousButton.style.display = "block";
@@ -60,7 +84,7 @@ class PhotoReview extends React.Component {
   lastPhotoChecker() {
     const nextButton = document.querySelector(".photo-review__next");
 
-    if(this.props.id == photosArray.length-1)
+    if (this.state.id == photosArray.length-1)
       nextButton.style.display = "none";
     else
       nextButton.style.display = "block";
@@ -68,7 +92,11 @@ class PhotoReview extends React.Component {
 
   componentDidMount() {
     reviewButtonsTransition();
-    console.log(photosArray);
+    this.firstPhotoChecker();
+    this.lastPhotoChecker();
+  }
+
+  componentDidUpdate() {
     this.firstPhotoChecker();
     this.lastPhotoChecker();
   }
@@ -83,13 +111,13 @@ class PhotoReview extends React.Component {
 
         <div 
           className="photo-review__picture" 
-          style={this.pictureStyle}
-          id={this.props.id}>
+          style={{width: this.state.width, height: this.state.height, background: this.state.src}}
+          id={this.state.id}>
         </div>
 
         <h3 
           className="photo-review__title" >
-          {this.props.title ? this.props.title : ""}
+          {this.state.title ? this.state.title : ""}
         </h3>
 
         <button className="photo-review__next" onClick={this.handleNextPhoto}>

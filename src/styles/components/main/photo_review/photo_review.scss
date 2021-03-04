@@ -15,7 +15,7 @@
     z-index: 5;
     position: absolute;
     top: 120px;
-    width: 45%;
+    width: 50%;
     height: 100%;
     max-height: calc(94% - 1.4rem - 120px);
     outline: none;
@@ -35,27 +35,25 @@
   }
 
   &__previous {
-    left: 5%;
+    left: 0;
 
     &__top-bar {
       top: 50%;
-      left: 0;
+      left: 10%;
       transform: rotate(135deg) translateY(24%);
     }
 
     &__bottom-bar {
       bottom: 50%;
-      left: 0;
+      left: 10%;
       transform: rotate(45deg) translateY(24%);
     }
   }
 
   &__picture {
     margin: 120px auto 0 auto;
-    height: 100%;
     max-height: calc(94% - 1.4rem - 120px);
     max-width: 70%;
-    background: blue;
   }
     
   &__title {
@@ -69,17 +67,17 @@
   }
 
   &__next {
-   right: 5%;
+   right: 0;
 
     &__top-bar {
       top: 50%;
-      right: 0;
+      right: 10%;
       transform: rotate(45deg) translateY(-24%);
     }
     
     &__bottom-bar {
       bottom: 50%;
-      right: 0;
+      right: 10%;
       transform: rotate(135deg) translateY(-24%);
     }
   }
@@ -98,3 +96,5 @@
     }
   }
 }
+
+@import './media_queries/media';

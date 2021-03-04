@@ -6,10 +6,15 @@ import PhotoReview from './photo_review';
 import picture from '../../img/stock1.jpg';
 
 let scrollY = 0;
-const photosArray = [0,0,0,0,0,0,0];
-  //{id: "", src: "", alt: "", title: ""}
-
-
+const photosArray = [
+  {src: "blue", alt: "blue", title: "First blue picture", width: "50%", height: "100%"},
+  {src: "green", alt: "green", title: "Second green picture", width: "70%", height: "52%"},
+  {src: "red", alt: "red", title: "Third red picture", width: "100%", height: "100%"},
+  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "10%", height: "22%"},
+  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "30%", height: "100%"},
+  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "30%", height: "21%"},
+  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "50%", height: "55%"}
+];
 const menuDisplayChanger = (isMenuOpened) => {
   const body = document.querySelector("body");
   const menuContainer = document.querySelector(".menu");
@@ -173,33 +178,55 @@ class Main extends React.Component {
         <section className="main__grid-container">
           <div className="main__grid-container__content">
             <Picture 
-              id="0"
               width="100%" 
               height="50%" 
-              top="0" 
-              color="blue" 
-              title="First blue picture"
+              top="0"
+              data={0}
               />
             <Picture 
-              id="6" 
+              width="100%" 
+              height="20%" 
+              bottom="0"
+              data={1}
+              />
+          </div>
+          <div className="main__grid-container__content">
+          <Picture 
+              width="50%" 
+              height="50%" 
+              top="0" 
+              data={2} 
+              />
+            <Picture 
               width="100%" 
               height="50%" 
               bottom="0" 
-              color="green" 
-              title="Second green picture"
+              data={3}  
               />
           </div>
           <div className="main__grid-container__content">
-            <Picture width="49%" height="100%" left="0" color="violet" />
-            <Picture width="49%" height="100%" right="0" color="red" />
-          </div>
-          <div className="main__grid-container__content">
-            <Picture width="50%" height="50%" top="0" color="yellow" />
-            <Picture width="50%" height="50%" right="0" color="pink" />
-            <Picture width="100%" height="25%" top="50%" color="aqua" />
+          <Picture 
+              width="100%" 
+              height="50%" 
+              top="0" 
+              data={4}
+              />
+            <Picture 
+              width="100%" 
+              height="50%" 
+              bottom="0" 
+              data={5} 
+              />
           </div>
 
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid-container__content">
+          <Picture 
+              width="100%" 
+              height="50%" 
+              top="0" 
+              data={6}
+              />
+          </div>
           <div className="main__grid-container__content"></div>
           <div className="main__grid-container__content"></div>
 

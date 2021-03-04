@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/components/main/picture/picture.css';
+import { photosArray } from './main';
 import PhotoReview from './photo_review';
 
 let scrollY = 0;
@@ -35,13 +36,13 @@ class Picture extends React.Component {
 
     this.handleReviewMounting = this.handleReviewMounting.bind(this);
     this.pictureStyle = {
-      width: this.props.width,
-      height: this.props.height,
+      width: photosArray[this.props.data].width,
+      height: photosArray[this.props.data].height,
       top: this.props.top,
       left: this.props.left,
       right: this.props.right,
       bottom: this.props.bottom,
-      backgroundColor: this.props.color,
+      background: photosArray[this.props.data].src,
       margin: this.props.margin
     }
   }
@@ -56,17 +57,18 @@ class Picture extends React.Component {
     return (
       <>
         <picture 
-          id={this.props.id} 
+          id={this.props.data} 
           className="picture" 
-          title={this.props.title}
+          title={photosArray[this.props.data].title}
+          alt={photosArray[this.props.data].alt}
           style={this.pictureStyle} 
           onClick={this.handleReviewMounting}>
         </picture>
 
         {this.state.isReviewMounted
           ? <PhotoReview
-              id={this.props.id}
-              title={this.props.title}
+              id={this.props.data}
+              title={photosArray[this.props.data].title}
               style={this.pictureStyle}
               onClosed={this.handleReviewMounting} />
           : null}
