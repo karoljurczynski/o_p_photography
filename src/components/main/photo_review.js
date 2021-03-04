@@ -6,13 +6,13 @@ class PhotoReview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleExit = this.handleExit.bind(this);
+    this.pictureStyle = {
+      width: this.props.style.width * 2,
+      height: this.props.style.height * 2,
+      backgroundColor: this.props.style.backgroundColor,
+    }
   }
-  handleExit() {
-    document.querySelector(".photo-review").style.display = "none";
-
-  }
-
+  
   render() {
     return (
       <div className="photo-review">
@@ -23,8 +23,14 @@ class PhotoReview extends React.Component {
         </span>
 
         <section className="photo-review__center">
-          <div className="photo-review__center__picture"></div>
-          <h3 className="photo-review__center__title" onClick={this.handleExit}>sdsad sadsad asd</h3>
+          <div 
+            className="photo-review__center__picture" 
+            style={this.pictureStyle}></div>
+          <h3 
+            className="photo-review__center__title" 
+            onClick={this.props.onClosed}>
+            {this.props.title ? this.props.title : "Back"}
+          </h3>
         </section>
 
         <span className="photo-review__next">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaNutritionix } from 'react-icons/fa';
 import '../../styles/components/main/picture/picture.css';
 import PhotoReview from './photo_review';
 
@@ -6,9 +7,11 @@ class Picture extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isClicked: false
+      isClicked: false,
+      isReviewMounted: false
     };
-    this.handlePicture = this.handlePicture.bind(this);
+
+    this.handleReviewMounting = this.handleReviewMounting.bind(this);
     this.pictureStyle = {
       width: this.props.width,
       height: this.props.height,
@@ -20,36 +23,29 @@ class Picture extends React.Component {
       margin: this.props.margin
     }
   }
-  handlePicture(e) {
-    this.setState({isClicked: true});
-    console.log(this.state.isClicked);
-    document.querySelector(".photo-review").style.display = "flex";
-    
+  handleReviewMounting(e) {
+    this.setState({isReviewMounted: !this.state.isReviewMounted});
   }
-
   render() {
-    if (this.state.isClicked) {
-      return (
-        <>
+    return (
+      <>
         <picture 
           id={this.props.id} 
           className="picture" 
+          title={this.props.title}
           style={this.pictureStyle} 
-          onClick={this.handlePicture}>
+          onClick={this.handleReviewMounting}>
         </picture>
-        </>
-      );
-    }
-    else {
-      return (
-        <picture 
-          id={this.props.id} 
-          className="picture" 
-          style={this.pictureStyle} 
-          onClick={this.handlePicture}>
-        </picture>
-      );
-    }
-  }
+
+        {this.state.isReviewMounted
+          ? <PhotoReview
+              id={this.props.id}
+              title={this.props.title}
+              style={this.pictureStyle}
+              onClosed={this.handleReviewMounting} />
+          : null}
+      </>
+    );
+  }  
 }
 export default Picture;

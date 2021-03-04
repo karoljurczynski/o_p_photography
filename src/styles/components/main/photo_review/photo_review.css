@@ -31,7 +31,6 @@
           align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  display: none;
 }
 .photo-review__previous {
   position: relative;

@@ -10,7 +10,6 @@
   z-index: 4;
   background: rgba(0, 0, 0, 0.85);
   @include flexSetup(row, flex-start, space-around);
-  display: none;
 
   &__previous {
     position: relative;
