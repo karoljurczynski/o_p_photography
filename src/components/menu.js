@@ -32,7 +32,7 @@ class Menu extends React.Component {
       <nav className="menu">
         <ul className="menu__list">
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#">FEATURED</a>
+            <a className="menu__list__item__content" href="#featured">FEATURED</a>
           </li>
 
           <li className="menu__list__item">

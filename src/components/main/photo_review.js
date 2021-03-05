@@ -39,13 +39,21 @@ class PhotoReview extends React.Component {
   }
 
 
+
   calcPhotosSizes() {
-    if (this.state.width > this.state.height)
-      this.setState({width: "100%", height: "100%"});
-    else if (this.state.width === this.state.height)
-      this.setState({width: "70%", height: "70%"});
-    else
-      this.setState({width: "50%", height: "100%"});
+    if (window.innerWidth < 480) {
+      if (this.state.width > this.state.height) {
+        this.setState({width: "100%", height: "50%"});
+      }
+      if (this.state.width === this.state.height) {
+        this.setState({width: "100%", height: "100vw"});
+        document.querySelector('.photo-review').style.alignItems = "flex-start"; 
+      }
+      else {
+        this.setState({width: "100%", height: "100%"});
+        document.querySelector('.photo-review').style.alignItems = "flex-start";
+      }
+    }
   }
 
   handleNextPhoto() {
@@ -58,6 +66,7 @@ class PhotoReview extends React.Component {
       height: photosArray[this.state.id + 1].height
     });
     this.calcPhotosSizes();
+    
   }
   
   handlePreviousPhoto() {
@@ -94,9 +103,11 @@ class PhotoReview extends React.Component {
     reviewButtonsTransition();
     this.firstPhotoChecker();
     this.lastPhotoChecker();
+    this.calcPhotosSizes();
   }
 
   componentDidUpdate() {
+    console.log(this.state.width, this.state.height);
     this.firstPhotoChecker();
     this.lastPhotoChecker();
   }

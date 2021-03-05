@@ -7,13 +7,13 @@ import picture from '../../img/stock1.jpg';
 
 let scrollY = 0;
 const photosArray = [
-  {src: "blue", alt: "blue", title: "First blue picture", width: "50%", height: "100%"},
-  {src: "green", alt: "green", title: "Second green picture", width: "70%", height: "52%"},
+  {src: "blue", alt: "blue", title: "First blue picture", width: "100%", height: "100%"},
+  {src: "green", alt: "green", title: "Second green picture", width: "100%", height: "100%"},
   {src: "red", alt: "red", title: "Third red picture", width: "100%", height: "100%"},
-  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "10%", height: "22%"},
-  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "30%", height: "100%"},
-  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "30%", height: "21%"},
-  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "50%", height: "55%"}
+  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "100%", height: "100%"},
+  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "100%", height: "100%"},
+  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "100%", height: "100%"},
+  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "100%", height: "100%"}
 ];
 const menuDisplayChanger = (isMenuOpened) => {
   const body = document.querySelector("body");
@@ -169,90 +169,157 @@ class Main extends React.Component {
     return (
       <main className="main">
 
-        <button className="main__menu-icon" onClick={this.handleMenu}>
+        <button className="main__menu-icon" onClick={this.handleMenu} href="#featured">
           <span className="main__menu-icon__top-bar"></span>
           <span className="main__menu-icon__middle-bar"></span>
           <span className="main__menu-icon__bottom-bar"></span>
         </button>
 
-        <section className="main__grid-container">
-          <div className="main__grid-container__content">
-            <Picture 
-              width="100%" 
-              height="50%" 
-              top="0"
-              data={0}
-              />
-            <Picture 
-              width="100%" 
-              height="20%" 
-              bottom="0"
-              data={1}
-              />
+        <section className="main__grid">
+
+          <div className="main__grid__item">
+            <Picture data={0} />
           </div>
-          <div className="main__grid-container__content">
-          <Picture 
-              width="50%" 
-              height="50%" 
-              top="0" 
-              data={2} 
-              />
-            <Picture 
-              width="100%" 
-              height="50%" 
-              bottom="0" 
-              data={3}  
-              />
-          </div>
-          <div className="main__grid-container__content">
-          <Picture 
-              width="100%" 
-              height="50%" 
-              top="0" 
-              data={4}
-              />
-            <Picture 
-              width="100%" 
-              height="50%" 
-              bottom="0" 
-              data={5} 
-              />
+          
+          <div className="main__grid__item">
+            <Picture data={1} />
           </div>
 
-          <div className="main__grid-container__content">
-          <Picture 
-              width="100%" 
-              height="50%" 
-              top="0" 
-              data={6}
-              />
+          <div className="main__grid__item">
+            <Picture data={2} />
           </div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <h2 className="main__grid__item__title" id="featured">FEATURED</h2>
+          </div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <Picture data={5} />
+          </div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <Picture data={6} />
+          </div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
 
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
-          <div className="main__grid-container__content"></div>
+          <div className="main__grid__item">
+            <Picture data={5} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={6} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={0} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={1} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={2} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={3} />
+          </div>
+
+          <div className="main__grid__item">
+            <h2 className="main__grid__item__title" id="people">PEOPLE</h2>
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={5} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={6} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={5} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={6} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={0} />
+          </div>
+
+          <div className="main__grid__item">
+            <h2 className="main__grid__item__title" id="nature">NATURE</h2>
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={2} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={3} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={2} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={3} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={4} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={5} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={6} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={0} />
+          </div>
+
+          <div className="main__grid__item">
+          <h2 className="main__grid__item__title" id="ACTS">ACTS</h2>
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={1} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={2} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={3} />
+          </div>
         </section>
       </main>
     );
@@ -260,3 +327,4 @@ class Main extends React.Component {
 }
 export default Main;
 export {photosArray};
+
