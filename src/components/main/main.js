@@ -3,19 +3,30 @@ import '../../styles/components/main/main/main.css';
 
 import Picture from './picture';
 import PhotoReview from './photo_review';
-import pic1 from '../../img/2.jpg';
-import pic2 from '../../img/5.jpg';
-import pic3 from '../../img/9.jpg';
+
+import pic1 from '../../img/1.jpg';
+import pic2 from '../../img/2.jpg';
+import pic3 from '../../img/3.jpg';
+import pic4 from '../../img/4.jpg';
+import pic5 from '../../img/5.jpg';
+import pic9 from '../../img/9.jpg';
+import pic10 from '../../img/10.jpg';
+import pic11 from '../../img/11.jpg';
+import pic12 from '../../img/12.jpg';
+import pic13 from '../../img/13.jpg';
 
 let scrollY = 0;
 const photosArray = [
-  {src: {pic1}, alt: "First photo", title: "First photo", width: "100%", height: "100%"},
-  {src: {pic2}, alt: "green", title: "Second green picture", width: "100%", height: "100%"},
-  {src: {pic3}, alt: "red", title: "Third red picture", width: "100%", height: "100%"},
-  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "100%", height: "100%"},
-  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "100%", height: "100%"},
-  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "100%", height: "100%"},
-  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "100%", height: "100%"}
+  {src: {pic1}, alt: "First photo", title: "First photo"},
+  {src: {pic2}, alt: "green", title: "Second green picture"},
+  {src: {pic3}, alt: "red", title: "Third red picture",},
+  {src: {pic4}, alt: "orange", title: "Fourth orange picture"},
+  {src: {pic5}, alt: "violet", title: "Fifth violet picture"},
+  {src: {pic9}, alt: "pink", title: "Sixth pink picture"},
+  {src: {pic10}, alt: "lime", title: "Seventh lime picture"},
+  {src: {pic11}, alt: "lime", title: "Seventh lime picture"},
+  {src: {pic12}, alt: "lime", title: "Seventh lime picture"},
+  {src: {pic13}, alt: "lime", title: "Seventh lime picture"}
 ];
 const menuDisplayChanger = (isMenuOpened) => {
   const body = document.querySelector("body");
@@ -196,15 +207,7 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={5} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={6} />
+            <Picture data={3} />
           </div>
 
           <div className="main__grid__item">
@@ -217,6 +220,18 @@ class Main extends React.Component {
 
           <div className="main__grid__item">
             <Picture data={6} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={7} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={8} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={9} />
           </div>
 
           <div className="main__grid__item">
@@ -232,15 +247,11 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={3} />
-          </div>
-
-          <div className="main__grid__item">
             <h2 className="main__grid__item__title" id="people">PEOPLE</h2>
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
+            <Picture data={3} />
           </div>
 
           <div className="main__grid__item">

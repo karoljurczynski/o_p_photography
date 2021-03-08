@@ -28,17 +28,17 @@ body {
 
 @media (max-width: 1024px) {
   #root {
-    width: 86%;
+    width: calc(100% - 10px);
   }
 }
 @media (max-width: 768px) {
   #root {
-    width: 94%;
+    width: calc(100% - 6px);
   }
 }
 @media (max-width: 480px) {
   #root {
-    width: calc(100% - 6px);
+    width: calc(100% - 2px);
   }
 }
 /*# sourceMappingURL=index.css.map */
