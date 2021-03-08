@@ -3,6 +3,7 @@ import '../../styles/components/main/picture/picture.css';
 import { photosArray } from './main';
 import PhotoReview from './photo_review';
 
+
 let scrollY = 0;
 
 const bodyFreezer = (isReviewOpened = false) => {
@@ -26,6 +27,14 @@ const bodyFreezer = (isReviewOpened = false) => {
   }
 }
 
+const srcEditor = (source) => {
+  let newString = "";
+  for (let i = 1; i < source.length; i++) {
+    newString += source[i];
+  }
+  return newString;
+}
+
 class Picture extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +50,7 @@ class Picture extends React.Component {
       left: this.props.left,
       right: this.props.right,
       bottom: this.props.bottom,
-      background: photosArray[this.props.data].src,
+      background: srcEditor(Object.values(photosArray[this.props.data].src)[0]),
       margin: this.props.margin
     }
   }
@@ -60,8 +69,9 @@ class Picture extends React.Component {
           className="picture" 
           title={photosArray[this.props.data].title}
           alt={photosArray[this.props.data].alt}
-          style={this.pictureStyle} 
+          style={this.pictureStyle}
           onClick={this.handleReviewMounting}>
+          <img src={srcEditor(Object.values(photosArray[this.props.data].src)[0])} className="picture__img"/>
         </picture>
 
         {this.state.isReviewMounted

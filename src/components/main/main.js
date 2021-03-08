@@ -3,13 +3,15 @@ import '../../styles/components/main/main/main.css';
 
 import Picture from './picture';
 import PhotoReview from './photo_review';
-import picture from '../../img/stock1.jpg';
+import pic1 from '../../img/2.jpg';
+import pic2 from '../../img/5.jpg';
+import pic3 from '../../img/9.jpg';
 
 let scrollY = 0;
 const photosArray = [
-  {src: "blue", alt: "blue", title: "First blue picture", width: "100%", height: "100%"},
-  {src: "green", alt: "green", title: "Second green picture", width: "100%", height: "100%"},
-  {src: "red", alt: "red", title: "Third red picture", width: "100%", height: "100%"},
+  {src: {pic1}, alt: "First photo", title: "First photo", width: "100%", height: "100%"},
+  {src: {pic2}, alt: "green", title: "Second green picture", width: "100%", height: "100%"},
+  {src: {pic3}, alt: "red", title: "Third red picture", width: "100%", height: "100%"},
   {src: "orange", alt: "orange", title: "Fourth orange picture", width: "100%", height: "100%"},
   {src: "violet", alt: "violet", title: "Fifth violet picture", width: "100%", height: "100%"},
   {src: "pink", alt: "pink", title: "Sixth pink picture", width: "100%", height: "100%"},
@@ -328,3 +330,13 @@ class Main extends React.Component {
 export default Main;
 export {photosArray};
 
+
+/*const photosArray = [
+  {src: "blue", alt: "blue", title: "First blue picture", width: "100%", height: "100%"},
+  {src: "green", alt: "green", title: "Second green picture", width: "100%", height: "100%"},
+  {src: "red", alt: "red", title: "Third red picture", width: "100%", height: "100%"},
+  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "100%", height: "100%"},
+  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "100%", height: "100%"},
+  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "100%", height: "100%"},
+  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "100%", height: "100%"}
+];*/

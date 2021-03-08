@@ -2,13 +2,21 @@
 @use '../../../config/config' as *;
 
 .picture {
-  display: block;
+  @include flexSetup(row, flex-start, center);
   margin-bottom: 5px;
   margin-right: 5px;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   
   &:last-of-type {
     margin-bottom: 0;
     margin-right: 0;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
   }
 }

@@ -3,6 +3,13 @@ import '../../styles/components/main/photo_review/photo_review.css';
 import Picture from './picture';
 import { photosArray } from './main.js';
 
+const srcEditor = (source) => {
+  let newString = "";
+  for (let i = 1; i < source.length; i++) {
+    newString += source[i];
+  }
+  return newString;
+}
 
 const reviewButtonsTransition = () => {
   const buttons = [document.querySelector('.photo-review__previous'), document.querySelector('.photo-review__next')];
@@ -37,9 +44,7 @@ class PhotoReview extends React.Component {
     this.handlePreviousPhoto = this.handlePreviousPhoto.bind(this);
     this.calcPhotosSizes = this.calcPhotosSizes.bind(this);
   }
-
-
-
+  
   calcPhotosSizes() {
     if (window.innerWidth < 480) {
       if (this.state.width > this.state.height) {
@@ -59,20 +64,19 @@ class PhotoReview extends React.Component {
   handleNextPhoto() {
     this.setState({
       id: this.state.id + 1,
-      src: photosArray[this.state.id + 1].src,
+      src: srcEditor(Object.values(photosArray[this.state.id + 1].src)[0]),
       title: photosArray[this.state.id + 1].title,
       alt: photosArray[this.state.id + 1].alt,
       width: photosArray[this.state.id + 1].width,
       height: photosArray[this.state.id + 1].height
     });
     this.calcPhotosSizes();
-    
   }
   
   handlePreviousPhoto() {
     this.setState({
       id: this.state.id - 1,
-      src: photosArray[this.state.id - 1].src,
+      src: srcEditor(Object.values(photosArray[this.state.id - 1].src)[0]),
       title: photosArray[this.state.id - 1].title,
       alt: photosArray[this.state.id - 1].alt,
       width: photosArray[this.state.id - 1].width,
@@ -120,11 +124,11 @@ class PhotoReview extends React.Component {
           <span className="photo-review__previous__bottom-bar"></span>
         </button>
 
-        <div 
+        <img 
           className="photo-review__picture" 
-          style={{width: this.state.width, height: this.state.height, background: this.state.src}}
+          src={this.state.src}
           id={this.state.id}>
-        </div>
+        </img>
 
         <h3 
           className="photo-review__title" >

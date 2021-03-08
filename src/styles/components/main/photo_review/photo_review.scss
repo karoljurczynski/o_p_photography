@@ -9,7 +9,7 @@
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.85);
-  @include flexSetup(row, flex-start, center);
+  @include flexSetup();
 
   &__previous, &__next {
     display: block;
@@ -52,8 +52,8 @@
   }
 
   &__picture {
-    margin: 120px auto 0 auto;
-    max-height: calc(94% - 1.4rem - 120px);
+    margin-bottom: calc(3% + 1.4rem);
+    max-height: calc(94% - 1.4rem);
     max-width: 70%;
   }
     
@@ -106,9 +106,7 @@
     }
 
     &__picture {
-      margin: 100px auto 0 auto;
-      max-height: calc(94% - 1.4rem - 100px);
-      max-width: 70%;
+      max-width: 80%;
     }
 
     &__next {
@@ -141,9 +139,7 @@
     }
 
     &__picture {
-      margin: 80px auto 0 auto;
-      max-height: calc(89% - 1.4rem - 80px);
-      max-width: 80%;
+      max-width: 90%;
     }
 
     &__next {
@@ -169,14 +165,13 @@
 
 @media (max-width: 480px) {
   .photo-review {
-    align-items: center;
 
     &__previous {
       top: 80px;
     }
 
     &__picture {
-      max-height: calc(92% - 80px - 2.8rem);
+      max-height: calc(94% - 1.4rem);
       max-width: 100%;
     }
 
