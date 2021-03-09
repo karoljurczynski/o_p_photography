@@ -30,6 +30,7 @@ class Menu extends React.Component {
   render() {
     return (
       <nav className="menu">
+        <div className="menu__exit" onClick={this.props.exit}></div>
         <ul className="menu__list">
           <li className="menu__list__item">
             <a className="menu__list__item__content" onClick={this.props.linkTo}>FEATURED</a>

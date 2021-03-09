@@ -10,6 +10,14 @@
   left: 0;
   background: rgba(0, 0, 0, 0.85);
   display: none;
+  z-index: 2;
+
+  &__exit {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+  }
 
   &__list {
     @include flexSetup(row, center, space-around);
@@ -22,6 +30,8 @@
         font-size: 2rem;
         color: $white-color;
         transition: 0.3s ease-in-out;
+        position: relative;
+        z-index: 3;
         cursor: pointer;
       }
 

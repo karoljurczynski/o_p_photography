@@ -33,6 +33,13 @@
   left: 0;
   background: rgba(0, 0, 0, 0.85);
   display: none;
+  z-index: 2;
+}
+.menu__exit {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
 }
 .menu__list {
   display: -webkit-box;
@@ -57,6 +64,8 @@
   color: #FFFFFF;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 3;
   cursor: pointer;
 }
 .menu__list__item:last-of-type {

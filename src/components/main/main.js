@@ -203,7 +203,7 @@ class Main extends React.Component {
           <span className="main__menu-icon__bottom-bar"></span>
         </button>
 
-        <Menu linkTo={this.linkToId}/>
+        <Menu exit={this.handleMenu} linkTo={this.linkToId}/>
 
         <section className="main__grid">
 
