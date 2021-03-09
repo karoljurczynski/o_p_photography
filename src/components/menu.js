@@ -32,23 +32,23 @@ class Menu extends React.Component {
       <nav className="menu">
         <ul className="menu__list">
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#featured">FEATURED</a>
+            <a className="menu__list__item__content" onClick={this.props.linkTo}>FEATURED</a>
           </li>
 
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#">PEOPLE</a>
+            <a className="menu__list__item__content" onClick={this.props.linkTo}>PEOPLE</a>
           </li>
 
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#">NATURE</a>
+            <a className="menu__list__item__content" onClick={this.props.linkTo}>NATURE</a>
           </li>
 
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#">ACTS</a>
+            <a className="menu__list__item__content" onClick={this.props.linkTo}>ACTS</a>
           </li>
 
           <li className="menu__list__item">
-            <a className="menu__list__item__content" href="#">CONTACT</a>
+            <a className="menu__list__item__content" onClick={this.props.linkTo}>CONTACT</a>
           </li>
         </ul>
       </nav>

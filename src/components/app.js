@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/components/app/app.css';
 
 import Header from './header';
-import Menu from './menu';
 import Main from './main/main';
 import Footer from './footer';
 
@@ -19,7 +18,6 @@ class App extends React.Component {
         <Header />
         <Main />
         <Footer />
-        <Menu />
       </div>
     );
   }

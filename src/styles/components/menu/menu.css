@@ -9,6 +9,7 @@
           box-shadow: none;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
+  font-weight: normal;
 }
 
 .menu {
@@ -29,6 +30,7 @@
   min-height: 500px;
   height: 100vh;
   position: fixed;
+  left: 0;
   background: rgba(0, 0, 0, 0.85);
   display: none;
 }
@@ -55,6 +57,7 @@
   color: #FFFFFF;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 .menu__list__item:last-of-type {
   margin-right: 0;

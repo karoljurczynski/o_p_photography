@@ -3,6 +3,7 @@ import '../../styles/components/main/main/main.css';
 
 import Picture from './picture';
 import PhotoReview from './photo_review';
+import Menu from '../menu';
 
 import pic1 from '../../img/1.jpg';
 import pic2 from '../../img/2.jpg';
@@ -149,6 +150,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.handleMenu = this.handleMenu.bind(this);
+    this.linkToId = this.linkToId.bind(this);
     this.state = {
       isMenuOpened: false
     };
@@ -178,6 +180,19 @@ class Main extends React.Component {
     menuIconTransformer(false);
   }
 
+  linkToId(e) {
+    let container;
+
+    if (e.target.innerText.toLowerCase() !== "featured")
+      container = document.querySelector("#" + e.target.innerText.toLowerCase());
+    else
+      container = document.querySelector("#top");
+
+    this.menuClose();
+    this.setState({isMenuOpened: !this.state.isMenuOpened});
+    container.scrollIntoView({ behavior: "smooth" });
+  }
+
   render() {
     return (
       <main className="main">
@@ -187,6 +202,8 @@ class Main extends React.Component {
           <span className="main__menu-icon__middle-bar"></span>
           <span className="main__menu-icon__bottom-bar"></span>
         </button>
+
+        <Menu linkTo={this.linkToId}/>
 
         <section className="main__grid">
 
@@ -319,20 +336,13 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-          <h2 className="main__grid__item__title" id="ACTS">ACTS</h2>
+            <h2 className="main__grid__item__title" id="acts">ACTS</h2>
           </div>
 
           <div className="main__grid__item">
             <Picture data={1} />
           </div>
 
-          <div className="main__grid__item">
-            <Picture data={2} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={3} />
-          </div>
         </section>
       </main>
     );

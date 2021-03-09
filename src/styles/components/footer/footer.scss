@@ -2,165 +2,56 @@
 @use '../../config/config' as *;
 
 .footer {
-  margin-top: 20px;
-  @include flexSetup(row, flex-start, space-between);
-  width: 80%;
+  @include flexSetup(column, center, space-between);
 
-  &__about {
-    @include flexSetup(column, flex-start, flex-start);
+  &__title {
+    color: white;
+    font-size: 1.3rem;
+  }
 
-    &__title {
+  &__social-media {
+    @include flexSetup(row, center, space-around);
+    margin-bottom: 25px;
+    margin-top: 30px;
+
+    &__link {
       display: block;
-      height: 90px;
-      margin-bottom: 60px;
-    }
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      margin-right: 1rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
 
-    &__content {
-      @include flexSetup(row, flex-start, flex-start);
-      margin-bottom: 20px;
-      width: 100%;
+      &:hover {
+        box-shadow: 1px 1px 0 $white-color, 1px -1px 0 $white-color, -1px 1px 0 $white-color, -1px -1px 0 $white-color;
+        background-color: black;
+        & > * {
+          color: white;
+        }
+      }
 
       &__icon {
-        @include flexSetup(row, center, space-between);
-        font-size: 1.3rem;
-        width: 10%;
-        color: $white-color;
-        margin-right: 15px;
-      }
+        @include flexSetup();
+        font-size: 1rem;
+        height: 100%;
+        width: 100%;
+        color: $black-color;
 
-      &__text {
-        color: $gray-color;
-        font-size: 1.1rem;
-
-        &:hover {
-          color: $white-color;
-        }
-      }
-    }
-
-    &__social-media {
-      @include flexSetup(row, center, space-around);
-      margin-bottom: 20px;
-      margin-top: 40px;
-
-      &__link {
-        display: block;
-        position: relative;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: white;
-        margin-right: 0.5rem;
-
-
-        &:hover {
-          top: -1px;
-        }
-  
-        &__icon {
-          @include flexSetup();
-          font-size: 1rem;
-          height: 100%;
-          width: 100%;
-          color: $black-color;
-        }
-      }
-    }
-  }
-
-  &__categories {
-    
-    @include flexSetup(column, flex-start, space-between);
-    margin-top: 73px;
-    
-    &__title {
-      font-size: 1.2rem;
-      color: $white-color;
-      margin-bottom: 55px;
-    }
-
-    &__list {
-      list-style-type: none;
-      @include flexSetup(column, flex-start, flex-start);
-
-      &__item {
-        margin-bottom: 27px;
-
-        &__content {
-          font-size: 1.1rem;
-          color: $gray-color;
-
-          &:hover {
-            color: $white-color;
-          }
-        }
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
-  &__email {
-    margin-top: 73px;
-    @include flexSetup(column, flex-start, space-between);
-
-    &__title {
-      color: $white-color;
-      font-size: 1.2rem;
-      margin-bottom: 55px;
-    }
-
-    &__form {
-      @include flexSetup(column, flex-start, flex-start);
-      width: 100%;
-      
-      &__email-input {
-        font-size: 1.1rem;
-        padding: 2px;
-        width: 250px;
-        margin-bottom: 10px;
-        color: white;
-        background: none;
-      }
-
-      &__message-input {
-        padding: 2px;
-        font-size: 1.1rem;
-        width: 250px;
-        height: 82px;
-        resize: none;
-        margin-bottom: 20px;
-        background: none;
-        color: white;
-        border: 1px solid white;
-      }
-
-      &__submit-button {
-        font-size: 1.1rem;
-        width: 100px;
-        padding: 4px;
-        background: none;
-        color: $gray-color;
-        border: 1px solid white;
-        cursor: pointer;
-        &:hover {
-          color: $white-color;
-        }
       }
     }
   }
 
   &__copyright {
-    width: 80%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     &__text {
       color: $gray-color;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
   }
 }
 
-@import './media_queries/media';
