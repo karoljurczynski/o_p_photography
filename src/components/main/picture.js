@@ -73,7 +73,6 @@ class Picture extends React.Component {
           onClick={this.handleReviewMounting}>
           <img src={srcEditor(Object.values(photosArray[this.props.data].src)[0])} className="picture__img"/>
         </picture>
-
         {this.state.isReviewMounted
           ? <PhotoReview
               id={this.props.data}

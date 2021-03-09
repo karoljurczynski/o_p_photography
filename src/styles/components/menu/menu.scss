@@ -1,6 +1,16 @@
 @forward '../../config/config';
 @use '../../config/config' as *;
 
+@keyframes blurAnimation {
+  from {
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    backdrop-filter: blur(10px);
+  }
+}
+
 .menu {
   @include flexSetup();
   width: 100vw;
@@ -11,6 +21,7 @@
   background: rgba(0, 0, 0, 0.85);
   display: none;
   z-index: 2;
+  animation: blurAnimation 2s forwards;
 
   &__exit {
     position: absolute;

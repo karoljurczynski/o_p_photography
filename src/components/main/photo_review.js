@@ -64,7 +64,7 @@ class PhotoReview extends React.Component {
   handleNextPhoto() {
     this.setState({
       id: this.state.id + 1,
-      src: srcEditor(Object.values(photosArray[this.state.id + 1].src)[0]),
+      src: this.getPhotoSource(this.state.id + 1),
       title: photosArray[this.state.id + 1].title,
       alt: photosArray[this.state.id + 1].alt,
       width: photosArray[this.state.id + 1].width,
@@ -72,17 +72,22 @@ class PhotoReview extends React.Component {
     });
     this.calcPhotosSizes();
   }
+
+  getPhotoSource(id) {
+    return srcEditor(Object.values(photosArray[id].src)[0])
+  }
   
   handlePreviousPhoto() {
     this.setState({
       id: this.state.id - 1,
-      src: srcEditor(Object.values(photosArray[this.state.id - 1].src)[0]),
+      src: this.getPhotoSource(this.state.id - 1),
       title: photosArray[this.state.id - 1].title,
       alt: photosArray[this.state.id - 1].alt,
       width: photosArray[this.state.id - 1].width,
       height: photosArray[this.state.id - 1].height
     });
     this.calcPhotosSizes();
+    
   }
 
   firstPhotoChecker() {
@@ -102,18 +107,29 @@ class PhotoReview extends React.Component {
     else
       nextButton.style.display = "block";
   }
+  
+  animatePhotoChange() {
+    const photo = document.querySelector(".photo-review__picture");
+    if (photo.classList.contains("photo-review__picture--animated")) {
+      photo.style.opacity = "0";
+      photo.classList.remove("photo-review__picture--animated");
+    }
+    setTimeout(() => { photo.classList.add("photo-review__picture--animated") }, 10);
+  }
 
   componentDidMount() {
     reviewButtonsTransition();
     this.firstPhotoChecker();
     this.lastPhotoChecker();
     this.calcPhotosSizes();
+    this.animatePhotoChange();
   }
 
   componentDidUpdate() {
-    console.log(this.state.width, this.state.height);
     this.firstPhotoChecker();
     this.lastPhotoChecker();
+    this.animatePhotoChange();
+    
   }
 
   render() {
@@ -126,7 +142,7 @@ class PhotoReview extends React.Component {
 
         <img 
           className="photo-review__picture" 
-          src={this.state.src}
+          src={this.getPhotoSource(this.state.id)}
           id={this.state.id}>
         </img>
 

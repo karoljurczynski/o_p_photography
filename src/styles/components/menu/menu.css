@@ -10,8 +10,33 @@
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
+@-webkit-keyframes blurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes blurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,6 +59,8 @@
   background: rgba(0, 0, 0, 0.85);
   display: none;
   z-index: 2;
+  -webkit-animation: blurAnimation 2s forwards;
+          animation: blurAnimation 2s forwards;
 }
 .menu__exit {
   position: absolute;

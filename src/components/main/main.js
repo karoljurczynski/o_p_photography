@@ -2,7 +2,6 @@ import React from 'react';
 import '../../styles/components/main/main/main.css';
 
 import Picture from './picture';
-import PhotoReview from './photo_review';
 import Menu from '../menu';
 
 import pic1 from '../../img/1.jpg';
@@ -196,15 +195,13 @@ class Main extends React.Component {
   render() {
     return (
       <main className="main">
+      <Menu exit={this.handleMenu} linkTo={this.linkToId}/>
 
         <button className="main__menu-icon" onClick={this.handleMenu} href="#featured">
           <span className="main__menu-icon__top-bar"></span>
           <span className="main__menu-icon__middle-bar"></span>
           <span className="main__menu-icon__bottom-bar"></span>
         </button>
-
-        <Menu exit={this.handleMenu} linkTo={this.linkToId}/>
-
         <section className="main__grid">
 
           <div className="main__grid__item">
