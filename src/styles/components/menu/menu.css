@@ -59,8 +59,8 @@
   background: rgba(0, 0, 0, 0.85);
   display: none;
   z-index: 2;
-  -webkit-animation: blurAnimation 2s forwards;
-          animation: blurAnimation 2s forwards;
+  -webkit-animation: blurAnimation 1s forwards;
+          animation: blurAnimation 1s forwards;
 }
 .menu__exit {
   position: absolute;
