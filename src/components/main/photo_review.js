@@ -110,11 +110,19 @@ class PhotoReview extends React.Component {
   
   animatePhotoChange() {
     const photo = document.querySelector(".photo-review__picture");
+    const title = document.querySelector(".photo-review__title");
+    
     if (photo.classList.contains("photo-review__picture--animated")) {
       photo.style.opacity = "0";
+      title.style.opacity = "0";
       photo.classList.remove("photo-review__picture--animated");
+      title.classList.remove("photo-review__title--animated");
     }
-    setTimeout(() => { photo.classList.add("photo-review__picture--animated") }, 10);
+
+    setTimeout(() => { 
+      photo.classList.add("photo-review__picture--animated");
+      title.classList.add("photo-review__title--animated");
+    }, 100);
   }
 
   componentDidMount() {

@@ -55,11 +55,25 @@ class Picture extends React.Component {
     }
   }
   handleReviewMounting(e) {
-    this.setState({isReviewMounted: !this.state.isReviewMounted});
-    if(this.state.isReviewMounted)
+    if(this.state.isReviewMounted) {
+      const container = document.querySelector(".photo-review");
+      container.classList.contains("photo-review--animate-exit")
+      ? container.classList.remove("photo-review--animate-exit")
+      : container.classList.add("photo-review--animate-exit");
+
+      setTimeout(() => {
+        this.setState({isReviewMounted: !this.state.isReviewMounted});
+      }, 800);
+
       bodyFreezer();
-    else
-      bodyFreezer(true);
+    }
+    else {
+      this.setState({isReviewMounted: !this.state.isReviewMounted});
+        if(this.state.isReviewMounted)
+          bodyFreezer();
+        else
+          bodyFreezer(true);
+    }
   }
   render() {
     return (

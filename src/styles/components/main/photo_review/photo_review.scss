@@ -7,11 +7,23 @@
   }
   
   to {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
   }
 }
 
-@keyframes photoAnimation {
+@keyframes unBlurAnimation {
+  from {
+    backdrop-filter: blur(20px);
+    opacity: 1;
+  }
+  
+  to {
+    backdrop-filter: blur(0px);
+    opacity: 0;
+  }
+}
+
+@keyframes opacityAnimation {
   0% {
     opacity: 0;
   }
@@ -29,8 +41,12 @@
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
   animation: blurAnimation 2s forwards;
   @include flexSetup();
+  &--animate-exit {
+    animation: unBlurAnimation 0.8s forwards;
+  }
 
   &__previous, &__next {
     display: block;
@@ -78,8 +94,9 @@
     max-height: calc(94% - 1.4rem);
     max-width: 70%;
     opacity: 0;
+
     &--animated {
-      animation: photoAnimation 1.5s forwards;
+      animation: opacityAnimation 1.5s forwards;
     }
   }
 
@@ -91,6 +108,11 @@
     color: $white-color;
     text-align: center;
     font-size: 1.4rem;
+    opacity: 0;
+
+    &--animated {
+      animation: opacityAnimation 1.5s forwards;
+    }
   }
 
   &__next {

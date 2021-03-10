@@ -22,8 +22,8 @@
             backdrop-filter: blur(0px);
   }
   to {
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
 }
 
@@ -33,11 +33,35 @@
             backdrop-filter: blur(0px);
   }
   to {
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
 }
-@-webkit-keyframes photoAnimation {
+@-webkit-keyframes unBlurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    opacity: 1;
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    opacity: 0;
+  }
+}
+@keyframes unBlurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    opacity: 1;
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes opacityAnimation {
   0% {
     opacity: 0;
   }
@@ -45,7 +69,7 @@
     opacity: 1;
   }
 }
-@keyframes photoAnimation {
+@keyframes opacityAnimation {
   0% {
     opacity: 0;
   }
@@ -61,6 +85,8 @@
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   -webkit-animation: blurAnimation 2s forwards;
           animation: blurAnimation 2s forwards;
   display: -webkit-box;
@@ -76,6 +102,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.photo-review--animate-exit {
+  -webkit-animation: unBlurAnimation 0.8s forwards;
+          animation: unBlurAnimation 0.8s forwards;
 }
 .photo-review__previous, .photo-review__next {
   display: block;
@@ -119,8 +149,8 @@
   opacity: 0;
 }
 .photo-review__picture--animated {
-  -webkit-animation: photoAnimation 1.5s forwards;
-          animation: photoAnimation 1.5s forwards;
+  -webkit-animation: opacityAnimation 1.5s forwards;
+          animation: opacityAnimation 1.5s forwards;
 }
 .photo-review__title {
   position: absolute;
@@ -130,6 +160,11 @@
   color: #FFFFFF;
   text-align: center;
   font-size: 1.4rem;
+  opacity: 0;
+}
+.photo-review__title--animated {
+  -webkit-animation: opacityAnimation 1.5s forwards;
+          animation: opacityAnimation 1.5s forwards;
 }
 .photo-review__next {
   right: 0;

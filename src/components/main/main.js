@@ -14,19 +14,21 @@ import pic10 from '../../img/10.jpg';
 import pic11 from '../../img/11.jpg';
 import pic12 from '../../img/12.jpg';
 import pic13 from '../../img/13.jpg';
+import pic14 from '../../img/14.jpg';
 
 let scrollY = 0;
 const photosArray = [
   {src: {pic1}, alt: "First photo", title: "First photo"},
-  {src: {pic2}, alt: "green", title: "Second green picture"},
-  {src: {pic3}, alt: "red", title: "Third red picture",},
-  {src: {pic4}, alt: "orange", title: "Fourth orange picture"},
-  {src: {pic5}, alt: "violet", title: "Fifth violet picture"},
-  {src: {pic9}, alt: "pink", title: "Sixth pink picture"},
-  {src: {pic10}, alt: "lime", title: "Seventh lime picture"},
-  {src: {pic11}, alt: "lime", title: "Seventh lime picture"},
-  {src: {pic12}, alt: "lime", title: "Seventh lime picture"},
-  {src: {pic13}, alt: "lime", title: "Seventh lime picture"}
+  {src: {pic2}, alt: "green", title: "Second photo"},
+  {src: {pic3}, alt: "red", title: "Third photo",},
+  {src: {pic4}, alt: "orange", title: "Fourth photo"},
+  {src: {pic5}, alt: "violet", title: "Fifth photo"},
+  {src: {pic9}, alt: "pink", title: "Sixth photo"},
+  {src: {pic10}, alt: "lime", title: "Seventh photo"},
+  {src: {pic11}, alt: "lime", title: "Eighth photo"},
+  {src: {pic12}, alt: "lime", title: "Ninth photo"},
+  {src: {pic13}, alt: "lime", title: "Tenth photo"},
+  {src: {pic14}, alt: "lime", title: "Eleventh photo"}
 ];
 const menuDisplayChanger = (isMenuOpened) => {
   const body = document.querySelector("body");
@@ -249,15 +251,15 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
+            <Picture data={10} />
+          </div>
+
+          <div className="main__grid__item">
             <Picture data={0} />
           </div>
 
           <div className="main__grid__item">
             <Picture data={1} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={2} />
           </div>
 
           <div className="main__grid__item">
@@ -265,15 +267,11 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
+            <Picture data={2} />
+          </div>
+
+          <div className="main__grid__item">
             <Picture data={3} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={5} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture data={6} />
           </div>
 
           <div className="main__grid__item">
@@ -289,7 +287,11 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={0} />
+            <Picture data={7} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={8} />
           </div>
 
           <div className="main__grid__item">
@@ -297,15 +299,19 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={2} />
+            <Picture data={9} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={3} />
+            <Picture data={10} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
+            <Picture data={0} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={1} />
           </div>
 
           <div className="main__grid__item">
@@ -329,15 +335,11 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={0} />
-          </div>
-
-          <div className="main__grid__item">
             <h2 className="main__grid__item__title" id="acts">ACTS</h2>
           </div>
 
           <div className="main__grid__item">
-            <Picture data={1} />
+            <Picture data={7} />
           </div>
 
         </section>
