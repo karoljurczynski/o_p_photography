@@ -5,7 +5,7 @@ import { photosArray } from './main.js';
 
 const srcEditor = (source) => {
   let newString = "";
-  for (let i = 1; i < source.length; i++) {
+  for (let i = 17; i < source.length; i++) {
     newString += source[i];
   }
   return newString;

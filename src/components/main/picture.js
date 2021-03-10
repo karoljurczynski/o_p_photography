@@ -29,7 +29,7 @@ const bodyFreezer = (isReviewOpened = false) => {
 
 const srcEditor = (source) => {
   let newString = "";
-  for (let i = 1; i < source.length; i++) {
+  for (let i = 17; i < source.length; i++) {
     newString += source[i];
   }
   return newString;
@@ -76,7 +76,9 @@ class Picture extends React.Component {
     }
   }
   render() {
+    console.log(this.pictureStyle.background);
     return (
+      
       <>
         <picture 
           id={this.props.data} 
