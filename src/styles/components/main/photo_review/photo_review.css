@@ -112,8 +112,7 @@
   z-index: 5;
   position: absolute;
   width: 40%;
-  height: 50%;
-  max-height: calc(94% - 1.4rem);
+  height: 100%;
   outline: none;
   background: none;
   cursor: pointer;
@@ -121,12 +120,12 @@
 .photo-review__previous__top-bar, .photo-review__previous__bottom-bar, .photo-review__next__top-bar, .photo-review__next__bottom-bar {
   display: block;
   position: absolute;
-  height: 35px;
+  height: 20px;
   background: #828282;
   width: 3px;
 }
 .photo-review__previous {
-  margin-right: 40%;
+  left: 10%;
 }
 .photo-review__previous__top-bar {
   top: 50%;
@@ -142,7 +141,7 @@
 }
 .photo-review__picture {
   display: block;
-  max-height: calc(94% - 1.4rem);
+  max-height: calc(100% - 3.8rem);
   margin-bottom: 1rem;
   max-width: 70%;
   opacity: 0;
@@ -155,7 +154,8 @@
   z-index: 5;
   color: #FFFFFF;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   opacity: 0;
 }
 .photo-review__title--animated {
@@ -165,7 +165,7 @@
           animation-delay: 0.2s;
 }
 .photo-review__next {
-  margin-left: 40%;
+  right: 10%;
 }
 .photo-review__next__top-bar {
   top: 50%;
@@ -181,9 +181,39 @@
 }
 .photo-review__exit {
   position: absolute;
-  z-index: 4;
-  width: 100vw;
-  height: 100vh;
+  background: transparent;
+  z-index: 3;
+  right: 30px;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+  outline: none;
+}
+.photo-review__exit:hover > * {
+  background-color: #FFFFFF;
+}
+.photo-review__exit__top-bar, .photo-review__exit__bottom-bar {
+  display: block;
+  position: absolute;
+  right: 0;
+  height: 1px;
+  margin-bottom: 8px;
+  background-color: #828282;
+}
+.photo-review__exit__top-bar {
+  width: 100%;
+  top: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.photo-review__exit__bottom-bar {
+  width: 100%;
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 @media (max-width: 1024px) {
@@ -224,12 +254,6 @@
   }
   .photo-review__next__bottom-bar {
     right: 15%;
-  }
-  .photo-review__back {
-    bottom: 2%;
-    width: 100%;
-    right: 0;
-    text-align: center;
   }
 }
 @media (max-width: 480px) {

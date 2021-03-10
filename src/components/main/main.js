@@ -66,10 +66,6 @@ export const menuIconTransformer = (isMenuOpened) => {
   const menuIconBars = menuIcon.children;
 
   if (isMenuOpened) {
-    menuIcon.style.cssText = `
-      height: 37px
-      top: 45%;`;
-
     menuIconBars[0].style.cssText = `
       width: 100%;
       top: 50%;
@@ -86,10 +82,6 @@ export const menuIconTransformer = (isMenuOpened) => {
       background: #828282`;
   }
   else {
-    menuIcon.style.cssText = `
-      height: 23px
-      top: 50%;`;
-
     menuIconBars[0].style.cssText = `
       width: 100%;
       top: 0;

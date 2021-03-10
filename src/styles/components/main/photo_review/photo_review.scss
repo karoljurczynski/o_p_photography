@@ -53,8 +53,7 @@
     z-index: 5;
     position: absolute;
     width: 40%;
-    height: 50%;
-    max-height: calc(94% - 1.4rem);
+    height: 100%;
     outline: none;
     background: none;
     cursor: pointer;
@@ -66,13 +65,13 @@
   &__next__bottom-bar {
     display: block;
     position: absolute;
-    height: 35px;
+    height: 20px;
     background: $gray-color;
     width: 3px;
   }
 
   &__previous {
-    margin-right: 40%;
+    left: 10%;
 
     &__top-bar {
       top: 50%;
@@ -89,7 +88,7 @@
 
   &__picture {
     display: block;
-    max-height: calc(94% - 1.4rem);
+    max-height: calc(100% - 3.8rem);
     margin-bottom: 1rem;
     max-width: 70%;
     opacity: 0;
@@ -103,7 +102,8 @@
     z-index: 5;
     color: $white-color;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     opacity: 0;
 
     &--animated {
@@ -113,7 +113,7 @@
   }
 
   &__next {
-    margin-left: 40%;
+    right: 10%;
 
     &__top-bar {
       top: 50%;
@@ -130,9 +130,42 @@
 
   &__exit {
     position: absolute;
-    z-index: 4;
-    width: 100vw;
-    height: 100vh;
+    background: transparent;
+    z-index: 3;
+    right: 30px;
+    top: 50%;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      & > * {
+        background-color: $white-color;
+      }
+    }
+
+    &__top-bar, &__bottom-bar {
+      display: block;
+      position: absolute;
+      right: 0;
+      height: 1px;
+      margin-bottom: 8px;
+      background-color: $gray-color;
+    }
+
+    &__top-bar {
+      width: 100%;
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    &__bottom-bar {
+      width: 100%;
+      top: 50%;
+      transform: rotate(45deg);
+    }
   }
 }
 
@@ -190,13 +223,6 @@
       &__bottom-bar {
         right: 15%;
       }
-    }
-
-    &__back {
-      bottom: 2%;
-      width: 100%;
-      right: 0;
-      text-align: center;
     }
   }
 }
