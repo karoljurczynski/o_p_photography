@@ -43,19 +43,18 @@
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(20px);
   animation: blurAnimation 2s forwards;
-  @include flexSetup();
+  @include flexSetup(column, center, center);
   &--animate-exit {
-    animation: unBlurAnimation 0.8s forwards;
+    animation: unBlurAnimation 0.5s forwards;
   }
 
   &__previous, &__next {
     display: block;
     z-index: 5;
     position: absolute;
-    top: 120px;
-    width: 50%;
-    height: 100%;
-    max-height: calc(94% - 1.4rem - 120px);
+    width: 40%;
+    height: 50%;
+    max-height: calc(94% - 1.4rem);
     outline: none;
     background: none;
     cursor: pointer;
@@ -73,37 +72,34 @@
   }
 
   &__previous {
-    left: 0;
+    margin-right: 40%;
 
     &__top-bar {
       top: 50%;
-      left: 10%;
+      left: 0%;
       transform: rotate(135deg) translateY(24%);
     }
 
     &__bottom-bar {
       bottom: 50%;
-      left: 10%;
+      left: 0%;
       transform: rotate(45deg) translateY(24%);
     }
   }
 
   &__picture {
     display: block;
-    margin-bottom: calc(3% + 1.4rem);
     max-height: calc(94% - 1.4rem);
+    margin-bottom: 1rem;
     max-width: 70%;
     opacity: 0;
 
     &--animated {
-      animation: opacityAnimation 1.5s forwards;
+      animation: opacityAnimation 0.7s forwards;
     }
   }
 
   &__title {
-    position: absolute;
-    bottom: 3%;
-    width: 100%;
     z-index: 5;
     color: $white-color;
     text-align: center;
@@ -111,38 +107,32 @@
     opacity: 0;
 
     &--animated {
-      animation: opacityAnimation 1.5s forwards;
+      animation: opacityAnimation 1s forwards;
+      animation-delay: 0.2s;
     }
   }
 
   &__next {
-   right: 0;
+    margin-left: 40%;
 
     &__top-bar {
       top: 50%;
-      right: 10%;
+      right: 0%;
       transform: rotate(45deg) translateY(-24%);
     }
     
     &__bottom-bar {
       bottom: 50%;
-      right: 10%;
+      right: 0%;
       transform: rotate(135deg) translateY(-24%);
     }
   }
 
-  &__back {
+  &__exit {
     position: absolute;
-    font-size: 1.4rem;
-    z-index: 5;
-    color: $gray-color;
-    bottom: 3%;
-    right: calc(5% - 35px / 2);
-    cursor: pointer;
-
-    &:hover {
-      color: $white-color;
-    }
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
   }
 }
 

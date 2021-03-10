@@ -61,7 +61,7 @@ const menuDisplayChanger = (isMenuOpened) => {
   }
 }
 
-const menuIconTransformer = (isMenuOpened) => {
+export const menuIconTransformer = (isMenuOpened) => {
   const menuIcon = document.querySelector('.main__menu-icon');
   const menuIconBars = menuIcon.children;
 
@@ -199,7 +199,7 @@ class Main extends React.Component {
       <main className="main">
       <Menu exit={this.handleMenu} linkTo={this.linkToId}/>
 
-        <button className="main__menu-icon" onClick={this.handleMenu} href="#featured">
+        <button className="main__menu-icon" onClick={this.handleMenu} href="">
           <span className="main__menu-icon__top-bar"></span>
           <span className="main__menu-icon__middle-bar"></span>
           <span className="main__menu-icon__bottom-bar"></span>

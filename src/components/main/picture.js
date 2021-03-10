@@ -57,13 +57,17 @@ class Picture extends React.Component {
   handleReviewMounting(e) {
     if(this.state.isReviewMounted) {
       const container = document.querySelector(".photo-review");
-      container.classList.contains("photo-review--animate-exit")
-      ? container.classList.remove("photo-review--animate-exit")
-      : container.classList.add("photo-review--animate-exit");
-
+      if (container.classList.contains("photo-review--animate-exit")) {
+        container.classList.remove("photo-review--animate-exit");
+      }
+      else {
+        container.classList.add("photo-review--animate-exit");
+      }
       setTimeout(() => {
         this.setState({isReviewMounted: !this.state.isReviewMounted});
-      }, 800);
+      }, 100);
+
+      
 
       bodyFreezer();
     }
@@ -76,9 +80,7 @@ class Picture extends React.Component {
     }
   }
   render() {
-    console.log(this.pictureStyle.background);
     return (
-      
       <>
         <picture 
           id={this.props.data} 

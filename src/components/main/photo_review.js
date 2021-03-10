@@ -164,9 +164,10 @@ class PhotoReview extends React.Component {
           <span className="photo-review__next__bottom-bar"></span>
         </button>
 
-        <a 
-          className="photo-review__back"
-          onClick={this.props.onClosed}>BACK
+        <a className="photo-review__exit" onClick={this.props.onClosed}>
+          <span className="photo-review__exit__top-bar"></span>
+          <span className="photo-review__exit__middle-bar"></span>
+          <span className="photo-review__exit__bottom-bar"></span>
         </a>
 
       </div>
