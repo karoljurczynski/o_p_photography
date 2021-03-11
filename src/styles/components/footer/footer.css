@@ -59,6 +59,8 @@
   border-radius: 50%;
   background: white;
   margin-right: 1rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .footer__social-media__link:last-of-type {
   margin-right: 0;

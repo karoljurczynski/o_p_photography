@@ -82,16 +82,17 @@ class Picture extends React.Component {
       <>
         <picture 
           id={this.props.data} 
-          className="picture" 
-          title={photosArray[this.props.data].title}
-          alt={photosArray[this.props.data].alt}
+          className="picture"
           style={this.pictureStyle}
           onClick={this.handleReviewMounting}>
-          <img src={srcEditor(Object.values(photosArray[this.props.data].src)[0])} className="picture__img"/>
+
+          <img src={srcEditor(Object.values(photosArray[this.props.data].src)[0])} alt={photosArray[this.props.data].alt} className="picture__img"/>
+        
         </picture>
         {this.state.isReviewMounted
           ? <PhotoReview
               id={this.props.data}
+              alt={photosArray[this.props.data].alt}
               title={photosArray[this.props.data].title}
               style={this.pictureStyle}
               onClosed={this.handleReviewUnmounting} />

@@ -1,32 +1,4 @@
 // MEDIA QUERIES
 
-@media (max-width: 1200px) {
-  .menu__list {
-    width: 80%;
 
-    &__item__content {
-      font-size: 1.7rem;
-    }
-  }
-}
 
-@media (max-width: 1024px) {
-  .menu__list {
-    width: 80%;
-
-    &__item__content {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .menu__list {
-    flex-direction: column;
-    height: 50%;
-
-    &__item__content {
-      font-size: 2rem;
-    }
-  }
-}

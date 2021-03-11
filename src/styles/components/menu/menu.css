@@ -37,6 +37,82 @@
             backdrop-filter: blur(10px);
   }
 }
+@-webkit-keyframes unblurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+}
+@keyframes unblurAnimation {
+  from {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+  to {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+}
+@-webkit-keyframes menuOpening {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes menuOpening {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menuClosing {
+  from {
+    right: 0%;
+    opacity: 1;
+  }
+  to {
+    right: -100%;
+    opacity: 1;
+  }
+}
+@keyframes menuClosing {
+  from {
+    right: 0%;
+    opacity: 1;
+  }
+  to {
+    right: -100%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menuListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes menuListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,11 +132,36 @@
   height: 100vh;
   position: fixed;
   left: 0;
-  background: rgba(0, 0, 0, 0.85);
   display: none;
   z-index: 2;
   -webkit-animation: blurAnimation 1s forwards;
           animation: blurAnimation 1s forwards;
+}
+.menu--animate {
+  -webkit-animation: unBlurAnimation 0.5s forwards;
+          animation: unBlurAnimation 0.5s forwards;
+}
+.menu--animateOpening::before {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  right: -100%;
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation: menuOpening 0.7s forwards ease;
+          animation: menuOpening 0.7s forwards ease;
+}
+.menu--animateClosing::after {
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
+  right: 100%;
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation: menuClosing 0.7s forwards ease;
+          animation: menuClosing 0.7s forwards ease;
 }
 .menu__exit {
   position: absolute;
@@ -87,16 +188,13 @@
   list-style-type: none;
 }
 .menu__list__item__content {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #FFFFFF;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   position: relative;
   z-index: 3;
   cursor: pointer;
-}
-.menu__list__item:last-of-type {
-  margin-right: 0;
 }
 
 @-webkit-keyframes openingAnimation {
@@ -121,7 +219,7 @@
     width: 80%;
   }
   .menu__list__item__content {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 1024px) {
@@ -129,7 +227,7 @@
     width: 80%;
   }
   .menu__list__item__content {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 768px) {
@@ -141,7 +239,7 @@
     height: 50%;
   }
   .menu__list__item__content {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=menu.css.map */

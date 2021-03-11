@@ -16,15 +16,16 @@ const menuItemTransition = () => {
       menuItems.forEach((el) => {el.style.color = "white"})
     });
   });
-};
+}
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+  
   componentDidMount() {
-    menuItemTransition();
+    setTimeout(() => {menuItemTransition()}, 1000);
   }
 
   render() {

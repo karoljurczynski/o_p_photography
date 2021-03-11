@@ -130,42 +130,48 @@ const menuIconTransition = (isMenuOpened) => {
   }
 }
 
-const menuOpeningTransition = () => {
-  const menuContainer = document.querySelector(".menu");
-
-  menuContainer.style.cssText =
-   `animation-name: openingAnimation;
-    animation-duration: 1s
-    animation-timing-function: ease`;
-}
-
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.handleMenu = this.handleMenu.bind(this);
+    this.menuClose = this.menuClose.bind(this);
+    this.menuOpen = this.menuOpen.bind(this);
     this.linkToId = this.linkToId.bind(this);
     this.state = {
       isMenuOpened: false
     };
   }
-  
-  menuOpen() {
-    menuDisplayChanger(true);
-    menuIconTransformer(true);
-  }
 
   menuClose() {
-    menuDisplayChanger(false);
     menuIconTransformer(false);
+    menuDisplayChanger(false);
+  }
+  
+  menuOpen() {
+    menuIconTransformer(true);
+    menuDisplayChanger(true);
   }
 
   handleMenu() {
-    this.setState({isMenuOpened: !this.state.isMenuOpened});
     if (this.state.isMenuOpened === true) {
-      this.menuClose();
+      document.querySelector(".menu").classList.add("menu--animate");
+      document.querySelector(".menu").classList.remove("menu--animateOpening");
+      document.querySelector(".menu").classList.add("menu--animateClosing");
+      menuIconTransformer(false);
+  
+      setTimeout(() => { 
+        menuDisplayChanger(false);
+        this.setState({isMenuOpened: false});
+      }, 500)
     }
+
     else {
-      this.menuOpen();
+      this.setState({isMenuOpened: true});
+      document.querySelector(".menu").classList.remove("menu--animate");
+      document.querySelector(".menu").classList.remove("menu--animateClosing");
+      document.querySelector(".menu").classList.add("menu--animateOpening");
+      menuIconTransformer(true);
+      menuDisplayChanger(true);
     }
   }
 
@@ -333,6 +339,16 @@ class Main extends React.Component {
           <div className="main__grid__item">
             <Picture data={7} />
           </div>
+
+          <div className="main__grid__item">
+            <Picture data={8} />
+          </div>
+
+          <div className="main__grid__item">
+            <Picture data={9} />
+          </div>
+          
+z
 
         </section>
       </main>

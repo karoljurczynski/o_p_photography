@@ -11,6 +11,46 @@
   }
 }
 
+@keyframes unblurAnimation {
+  from {
+    backdrop-filter: blur(20px);
+  }
+  to {
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes menuOpening {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes menuClosing {
+  from {
+    right: 0%;
+    opacity: 1;
+  }
+  to {
+    right: -100%;
+    opacity: 1;
+  }
+}
+
+@keyframes menuListAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .menu {
   @include flexSetup();
   width: 100vw;
@@ -18,10 +58,38 @@
   height: 100vh;
   position: fixed;
   left: 0;
-  background: rgba(0, 0, 0, 0.85);
   display: none;
   z-index: 2;
   animation: blurAnimation 1s forwards;
+  &--animate {
+    animation: unBlurAnimation 0.5s forwards;
+  }
+
+  &--animateOpening {
+    &::before {
+      content: '';
+      display: block;
+      background-color: rgba(0, 0, 0, 0.85);
+      position: absolute;
+      right: -100%;
+      width: 100vw;
+      height: 100vh;
+      animation: menuOpening 0.7s forwards ease;
+    }
+  }
+
+  &--animateClosing {
+    &::after {
+      content: '';
+      display: block;
+      background-color: rgba(0, 0, 0, 0.85);
+      position: absolute;
+      right: 100%;
+      width: 100vw;
+      height: 100vh;
+      animation: menuClosing 0.7s forwards ease;
+    }
+  }
 
   &__exit {
     position: absolute;
@@ -38,16 +106,12 @@
       list-style-type: none;
 
       &__content {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: $white-color;
         transition: 0.3s ease-in-out;
         position: relative;
         z-index: 3;
         cursor: pointer;
-      }
-
-      &:last-of-type {
-        margin-right: 0;
       }
     }
   }
@@ -63,3 +127,34 @@
 }
 
 @import './media_queries/media';
+
+@media (max-width: 1200px) {
+  .menu__list {
+    width: 80%;
+
+    &__item__content {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu__list {
+    width: 80%;
+
+    &__item__content {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu__list {
+    flex-direction: column;
+    height: 50%;
+
+    &__item__content {
+      font-size: 1.5rem;
+    }
+  }
+}

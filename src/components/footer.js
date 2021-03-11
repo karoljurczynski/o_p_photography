@@ -14,13 +14,13 @@ class Footer extends React.Component {
       <footer className="footer" id="contact">
 
         <section className="footer__social-media">
-          <a className="footer__social-media__link" href="https://facebook.com" target="blank">
+          <a className="footer__social-media__link" href="https://www.facebook.com/OliwierPakulaPhotography" target="blank">
             <span className="footer__social-media__link__icon">
               <FaFacebookF />
             </span>
           </a>
 
-          <a className="footer__social-media__link" href="https://instagram.com" target="blank">
+          <a className="footer__social-media__link" href="https://www.instagram.com/oliwier.pakula.photography" target="blank">
             <span className="footer__social-media__link__icon">
               <FaInstagram />
             </span>
@@ -38,8 +38,6 @@ class Footer extends React.Component {
             </span>
           </a>
         </section>
-
-       
 
         <span className="footer__copyright">
           <a className="footer__copyright__text" href="https://github.com/karoljurczynski" target="blank">© 2021 Karol Jurczyński</a>

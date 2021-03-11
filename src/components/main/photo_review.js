@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/components/main/photo_review/photo_review.css';
-import Picture from './picture';
 import { photosArray } from './main.js';
 
 const srcEditor = (source) => {
@@ -35,6 +34,7 @@ class PhotoReview extends React.Component {
     this.state = {
       id: this.props.id,
       src: this.props.style.background,
+      alt: this.props.alt,
       title: this.props.title,
       width: this.props.style.width,
       height: this.props.style.height
@@ -90,8 +90,7 @@ class PhotoReview extends React.Component {
 
   firstPhotoChecker() {
     const previousButton = document.querySelector(".photo-review__previous");
-
-    if (this.state.id == 0)
+    if (Number(this.state.id) === 0)
       previousButton.style.display = "none";
     else
       previousButton.style.display = "block";
@@ -100,7 +99,7 @@ class PhotoReview extends React.Component {
   lastPhotoChecker() {
     const nextButton = document.querySelector(".photo-review__next");
 
-    if (this.state.id == photosArray.length-1)
+    if (Number(this.state.id) === photosArray.length-1)
       nextButton.style.display = "none";
     else
       nextButton.style.display = "block";
@@ -133,7 +132,6 @@ class PhotoReview extends React.Component {
     this.firstPhotoChecker();
     this.lastPhotoChecker();
     this.animatePhotoChange();
-    
   }
 
   render() {
@@ -147,6 +145,7 @@ class PhotoReview extends React.Component {
         <img 
           className="photo-review__picture" 
           src={this.getPhotoSource(this.state.id)}
+          alt={this.state.alt}
           id={this.state.id}>
         </img>
 
@@ -160,11 +159,11 @@ class PhotoReview extends React.Component {
           <span className="photo-review__next__bottom-bar"></span>
         </button>
 
-        <a className="photo-review__exit" onClick={this.props.onClosed}>
+        <button className="photo-review__exit" onClick={this.props.onClosed}>
           <span className="photo-review__exit__top-bar"></span>
           <span className="photo-review__exit__middle-bar"></span>
           <span className="photo-review__exit__bottom-bar"></span>
-        </a>
+        </button>
 
       </div>
     );

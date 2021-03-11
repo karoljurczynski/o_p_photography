@@ -43,7 +43,7 @@
   backdrop-filter: blur(20px);
   animation: blurAnimation 1s forwards;
   @include flexSetup(column, center, center);
-  
+
   &--animate-exit {
     animation: unBlurAnimation 0.4s forwards;
   }
@@ -169,4 +169,4 @@
   }
 }
 
-@import './media_queries/media.css';
+@import './media_queries/media';

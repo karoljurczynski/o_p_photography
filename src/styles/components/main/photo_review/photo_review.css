@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-@import './media_queries/media.css';
 * {
   margin: 0;
   padding: 0;
@@ -215,5 +214,44 @@
   top: 50%;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .photo-review__previous, .photo-review__next {
+    margin: 10% 0;
+    height: 80%;
+  }
+  .photo-review__previous {
+    left: 5%;
+  }
+  .photo-review__picture {
+    max-width: 85%;
+  }
+  .photo-review__next {
+    right: 5%;
+  }
+  .photo-review__exit {
+    right: 0;
+    top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .photo-review__previous, .photo-review__next {
+    margin: 10% 0;
+    height: 80%;
+  }
+  .photo-review__previous {
+    left: 15px;
+  }
+  .photo-review__picture {
+    max-width: 100%;
+  }
+  .photo-review__next {
+    right: 15px;
+  }
+  .photo-review__exit {
+    top: 25px;
+    right: 0;
+  }
 }
 /*# sourceMappingURL=photo_review.css.map */
