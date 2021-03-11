@@ -1,14 +1,12 @@
 import React from 'react';
-import '../styles/components/footer/footer.css';
 
+import '../styles/components/footer/footer.css';
 import { FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
-
   render() {
     return (
       <footer className="footer" id="contact">
@@ -47,4 +45,5 @@ class Footer extends React.Component {
     );
   }
 }
+
 export default Footer;

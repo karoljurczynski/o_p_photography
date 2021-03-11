@@ -1,12 +1,11 @@
 import React from 'react';
+
 import '../styles/components/header/header.css';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
-
   render() {
     return (
       <header className="header" id="top">
@@ -15,4 +14,5 @@ class Header extends React.Component {
     );
   }
 }
+
 export default Header;

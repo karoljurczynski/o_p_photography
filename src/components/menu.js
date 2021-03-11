@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/components/menu/menu.css';
 
+import '../styles/components/menu/menu.css';
 
 const menuItemTransition = () => {
   const menuItems = document.querySelectorAll(".menu__list__item__content");

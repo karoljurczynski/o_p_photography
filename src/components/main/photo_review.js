@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../../styles/components/main/photo_review/photo_review.css';
 import { photosArray } from './main.js';
 
