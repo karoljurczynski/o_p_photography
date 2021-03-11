@@ -11,12 +11,15 @@
   }
 }
 
-@keyframes unblurAnimation {
+@keyframes unBlurAnimation {
   from {
     backdrop-filter: blur(20px);
+    opacity: 1;
   }
+
   to {
     backdrop-filter: blur(0px);
+    opacity: 0;
   }
 }
 
@@ -38,16 +41,16 @@
   }
   to {
     right: -100%;
-    opacity: 1;
+    opacity: 0;
   }
 }
 
 @keyframes menuListAnimation {
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
@@ -114,15 +117,6 @@
         cursor: pointer;
       }
     }
-  }
-}
-
-@keyframes openingAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

@@ -25,7 +25,7 @@ class Menu extends React.Component {
   }
   
   componentDidMount() {
-    setTimeout(() => {menuItemTransition()}, 1000);
+    setTimeout(() => {menuItemTransition()}, 500);
   }
 
   render() {

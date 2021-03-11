@@ -16,7 +16,7 @@
           user-select: none;
 }
 
-@-webkit-keyframes blurAnimation {
+@-webkit-keyframes blurAnimationOn {
   from {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
@@ -27,7 +27,7 @@
   }
 }
 
-@keyframes blurAnimation {
+@keyframes blurAnimationOn {
   from {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
@@ -37,31 +37,27 @@
             backdrop-filter: blur(20px);
   }
 }
-@-webkit-keyframes unBlurAnimation {
+@-webkit-keyframes blurAnimationOff {
   from {
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-    opacity: 1;
   }
   to {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
-    opacity: 0;
   }
 }
-@keyframes unBlurAnimation {
+@keyframes blurAnimationOff {
   from {
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-    opacity: 1;
   }
   to {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
-    opacity: 0;
   }
 }
-@-webkit-keyframes opacityAnimation {
+@-webkit-keyframes opacityAnimationOn {
   0% {
     opacity: 0;
   }
@@ -69,12 +65,28 @@
     opacity: 1;
   }
 }
-@keyframes opacityAnimation {
+@keyframes opacityAnimationOn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes opacityAnimationOff {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacityAnimationOff {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .photo-review {
@@ -87,8 +99,8 @@
   background: rgba(0, 0, 0, 0.75);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  -webkit-animation: blurAnimation 1s forwards;
-          animation: blurAnimation 1s forwards;
+  -webkit-animation: blurAnimationOn 1s forwards;
+          animation: blurAnimationOn 1s forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,8 +116,8 @@
           justify-content: center;
 }
 .photo-review--animate-exit {
-  -webkit-animation: unBlurAnimation 0.4s forwards;
-          animation: unBlurAnimation 0.4s forwards;
+  -webkit-animation: blurAnimationOff 0.4s forwards;
+          animation: blurAnimationOff 0.4s forwards;
 }
 .photo-review__previous, .photo-review__next {
   display: block;
@@ -116,6 +128,10 @@
   outline: none;
   background: none;
   cursor: pointer;
+}
+.photo-review__previous--animate-exit, .photo-review__next--animate-exit {
+  -webkit-animation: opacityAnimationOff 0.3s forwards;
+          animation: opacityAnimationOff 0.3s forwards;
 }
 .photo-review__previous__top-bar, .photo-review__previous__bottom-bar, .photo-review__next__top-bar, .photo-review__next__bottom-bar {
   display: block;
@@ -146,9 +162,13 @@
   max-width: 75%;
   opacity: 0;
 }
-.photo-review__picture--animated {
-  -webkit-animation: opacityAnimation 0.7s forwards;
-          animation: opacityAnimation 0.7s forwards;
+.photo-review__picture--animate {
+  -webkit-animation: opacityAnimationOn 0.7s forwards;
+          animation: opacityAnimationOn 0.7s forwards;
+}
+.photo-review__picture--animate-exit {
+  -webkit-animation: opacityAnimationOff 0.3s forwards;
+          animation: opacityAnimationOff 0.3s forwards;
 }
 .photo-review__title {
   z-index: 5;
@@ -158,11 +178,15 @@
   margin-bottom: 1rem;
   opacity: 0;
 }
-.photo-review__title--animated {
-  -webkit-animation: opacityAnimation 1s forwards;
-          animation: opacityAnimation 1s forwards;
+.photo-review__title--animate {
+  -webkit-animation: opacityAnimationOn 1s forwards;
+          animation: opacityAnimationOn 1s forwards;
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
+}
+.photo-review__title--animate-exit {
+  -webkit-animation: opacityAnimationOff 0.3s forwards;
+          animation: opacityAnimationOff 0.3s forwards;
 }
 .photo-review__next {
   right: 10%;
@@ -180,40 +204,42 @@
           transform: rotate(135deg) translateY(-24%);
 }
 .photo-review__exit {
-  position: absolute;
+  position: fixed;
   background: transparent;
   z-index: 3;
-  right: 25px;
+  right: 50px;
   top: 50%;
-  width: 28px;
-  height: 28px;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  opacity: 1;
+  -webkit-transform: translate(4%, -50%);
+          transform: translate(4%, -50%);
+  width: 37px;
+  height: 23px;
   cursor: pointer;
   outline: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
-.photo-review__exit:hover > * {
-  background-color: #FFFFFF;
-}
-.photo-review__exit__top-bar, .photo-review__exit__bottom-bar {
+.photo-review__exit__top-bar, .photo-review__exit__middle-bar, .photo-review__exit__bottom-bar {
   display: block;
   position: absolute;
   right: 0;
-  height: 1px;
+  height: 2px;
   margin-bottom: 8px;
-  background-color: #828282;
+  background-color: white;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 .photo-review__exit__top-bar {
   width: 100%;
-  top: 50%;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  top: 0;
+}
+.photo-review__exit__middle-bar {
+  width: 60%;
+  top: 10px;
 }
 .photo-review__exit__bottom-bar {
-  width: 100%;
-  top: 50%;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  width: 25%;
+  top: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -231,8 +257,8 @@
     right: 5%;
   }
   .photo-review__exit {
-    right: 0;
     top: 50px;
+    right: 25px;
   }
 }
 @media (max-width: 768px) {
@@ -251,7 +277,7 @@
   }
   .photo-review__exit {
     top: 25px;
-    right: 0;
+    right: 25px;
   }
 }
 /*# sourceMappingURL=photo_review.css.map */

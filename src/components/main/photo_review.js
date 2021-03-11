@@ -2,14 +2,6 @@ import React from 'react';
 import '../../styles/components/main/photo_review/photo_review.css';
 import { photosArray } from './main.js';
 
-const srcEditor = (source) => {
-  let newString = "";
-  for (let i = 1; i < source.length; i++) {
-    newString += source[i];
-  }
-  return newString;
-}
-
 const reviewButtonsTransition = () => {
   const buttons = [document.querySelector('.photo-review__previous'), document.querySelector('.photo-review__next')];
   
@@ -33,7 +25,7 @@ class PhotoReview extends React.Component {
     super(props);
     this.state = {
       id: this.props.id,
-      src: this.props.style.background,
+      src: this.props.src,
       alt: this.props.alt,
       title: this.props.title,
       width: this.props.style.width,
@@ -43,6 +35,44 @@ class PhotoReview extends React.Component {
     this.handleNextPhoto = this.handleNextPhoto.bind(this);
     this.handlePreviousPhoto = this.handlePreviousPhoto.bind(this);
     this.calcPhotosSizes = this.calcPhotosSizes.bind(this);
+  }
+
+  exitIconTransformer(isReviewOpened) {
+    const exitIcon = document.querySelector('.photo-review__exit');
+    const exitIconBars = exitIcon.children;
+  
+    if (isReviewOpened) {
+      exitIconBars[0].style.cssText = `
+        width: 100%;
+        top: 50%;
+        transform: rotate(-45deg);
+        background: #828282`;
+  
+      exitIconBars[1].style.cssText = `
+        opacity: 0`;
+  
+      exitIconBars[2].style.cssText = `
+        width: 100%;
+        top: 50%;
+        transform: rotate(45deg);
+        background: #828282`;
+    }
+    else {
+      exitIconBars[0].style.cssText = `
+        width: 100%;
+        top: 0;
+        transform: rotate(0deg);
+        background: #FFFFFF`;
+  
+      exitIconBars[1].style.cssText = `
+        opacity: 1`;
+  
+      exitIconBars[2].style.cssText = `
+        width: 25%;
+        top: 20px;
+        transform: rotate(0deg);
+        background: #FFFFFF`;
+    }
   }
   
   calcPhotosSizes() {
@@ -64,7 +94,7 @@ class PhotoReview extends React.Component {
   handleNextPhoto() {
     this.setState({
       id: this.state.id + 1,
-      src: this.getPhotoSource(this.state.id + 1),
+      src: photosArray[this.state.id + 1].src,
       title: photosArray[this.state.id + 1].title,
       alt: photosArray[this.state.id + 1].alt,
       width: photosArray[this.state.id + 1].width,
@@ -72,14 +102,10 @@ class PhotoReview extends React.Component {
     });
   }
 
-  getPhotoSource(id) {
-    return srcEditor(Object.values(photosArray[id].src)[0])
-  }
-  
   handlePreviousPhoto() {
     this.setState({
       id: this.state.id - 1,
-      src: this.getPhotoSource(this.state.id - 1),
+      src: photosArray[this.state.id - 1].src,
       title: photosArray[this.state.id - 1].title,
       alt: photosArray[this.state.id - 1].alt,
       width: photosArray[this.state.id - 1].width,
@@ -98,26 +124,33 @@ class PhotoReview extends React.Component {
 
   lastPhotoChecker() {
     const nextButton = document.querySelector(".photo-review__next");
-
-    if (Number(this.state.id) === photosArray.length-1)
+    if (Number(this.state.id) === photosArray.length - 1)
       nextButton.style.display = "none";
     else
       nextButton.style.display = "block";
   }
   
   animatePhotoChange() {
-    const photo = document.querySelector(".photo-review__picture");
-    const title = document.querySelector(".photo-review__title");
+    const photoReviewChildren = document.querySelector(".photo-review").children;
     
-    if (photo.classList.contains("photo-review__picture--animated")) {
-      photo.style.opacity = "0";
-      title.style.opacity = "0";
-      photo.classList.remove("photo-review__picture--animated");
-      title.classList.remove("photo-review__title--animated");
+    /*  
+      0 - previous
+      1 - photo
+      2 - title
+      3 - next
+      4 - exit 
+    */
+
+    if (photoReviewChildren[1].classList.contains("photo-review__picture--animate")) {
+      photoReviewChildren[1].style.opacity = "0";
+      photoReviewChildren[2].style.opacity = "0";
+      photoReviewChildren[1].classList.remove("photo-review__picture--animate");
+      photoReviewChildren[2].classList.remove("photo-review__title--animate");
     }
+
     setTimeout(() => { 
-      photo.classList.add("photo-review__picture--animated");
-      title.classList.add("photo-review__title--animated");
+      photoReviewChildren[1].classList.add("photo-review__picture--animate");
+      photoReviewChildren[2].classList.add("photo-review__title--animate");
     }, 100);
   }
 
@@ -126,6 +159,7 @@ class PhotoReview extends React.Component {
     this.firstPhotoChecker();
     this.lastPhotoChecker();
     this.animatePhotoChange();
+    setTimeout(() => {this.exitIconTransformer(true)}, 10);
   }
 
   componentDidUpdate() {
@@ -144,7 +178,7 @@ class PhotoReview extends React.Component {
 
         <img 
           className="photo-review__picture" 
-          src={this.getPhotoSource(this.state.id)}
+          src={this.state.src}
           alt={this.state.alt}
           id={this.state.id}>
         </img>

@@ -13,8 +13,8 @@
     right: 5%;
   }
   .photo-review__exit {
-    right: 0;
     top: 50px;
+    right: 25px;
   }
 }
 @media (max-width: 768px) {
@@ -33,7 +33,7 @@
   }
   .photo-review__exit {
     top: 25px;
-    right: 0;
+    right: 25px;
   }
 }
 /*# sourceMappingURL=media.css.map */

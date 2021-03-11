@@ -1,35 +1,44 @@
 import React from 'react';
 import '../../styles/components/main/main/main.css';
-
 import Picture from './picture';
 import Menu from '../menu';
 
-import pic1 from '../../img/1.jpg';
-import pic2 from '../../img/2.jpg';
-import pic3 from '../../img/3.jpg';
-import pic4 from '../../img/4.jpg';
-import pic5 from '../../img/5.jpg';
-import pic9 from '../../img/9.jpg';
-import pic10 from '../../img/10.jpg';
-import pic11 from '../../img/11.jpg';
-import pic12 from '../../img/12.jpg';
-import pic13 from '../../img/13.jpg';
-import pic14 from '../../img/14.jpg';
-
 let scrollY = 0;
+
 const photosArray = [
-  {src: {pic1}, alt: "First photo", title: "First photo"},
-  {src: {pic2}, alt: "green", title: "Second photo"},
-  {src: {pic3}, alt: "red", title: "Third photo",},
-  {src: {pic4}, alt: "orange", title: "Fourth photo"},
-  {src: {pic5}, alt: "violet", title: "Fifth photo"},
-  {src: {pic9}, alt: "pink", title: "Sixth photo"},
-  {src: {pic10}, alt: "lime", title: "Seventh photo"},
-  {src: {pic11}, alt: "lime", title: "Eighth photo"},
-  {src: {pic12}, alt: "lime", title: "Ninth photo"},
-  {src: {pic13}, alt: "lime", title: "Tenth photo"},
-  {src: {pic14}, alt: "lime", title: "Eleventh photo"}
+  {src: "https://i.ibb.co/gvBgY9X/1.jpg", alt: "First photo", title: "First photo"},
+  {src: "https://i.ibb.co/99gnxjk/2.jpg", alt: "Second photo", title: "Second photo"},
+  {src: "https://i.ibb.co/yBH6PHC/3.jpg", alt: "Third photo", title: "Third photo",},
+  {src: "https://i.ibb.co/93SHWBz/4.jpg", alt: "Fourth photo", title: "Fourth photo"},
+  {src: "https://i.ibb.co/BtMGmhH/5.jpg", alt: "Fifth photo", title: "Fifth photo"},
+  {src: "https://i.ibb.co/Fg1PjYj/9.jpg", alt: "Sixth photo", title: "Sixth photo"},
+  {src: "https://i.ibb.co/hYc8px8/10.jpg", alt: "Seventh photo", title: "Seventh photo"},
+  {src: "https://i.ibb.co/KXgHmQV/11.jpg", alt: "Eighth photo", title: "Eighth photo"},
+  {src: "https://i.ibb.co/YfxT2PY/12.jpg", alt: "Ninth photo", title: "Ninth photo"},
+  {src: "https://i.ibb.co/zHh3z64/13.jpg", alt: "Tenth photo", title: "Tenth photo"},
+  {src: "https://i.ibb.co/JpQdSQx/14.jpg", alt: "Eleventh photo", title: "Eleventh photo"}
 ];
+
+const bodyFreezer = (isMenuOpened = false) => {
+  const body = document.querySelector("body");
+
+  if (isMenuOpened) {
+    scrollY = document.documentElement.scrollTop;
+
+    // BODY FREEZING
+    body.style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: fixed`;
+  }
+  else {
+    // BODY POSITION CORRECTING
+    body.style.cssText = `
+      top: ${-(document.documentElement.scrollTop)}px;
+      position: static`;
+
+    window.scroll(0, scrollY);
+  }
+}
 const menuDisplayChanger = (isMenuOpened) => {
   const body = document.querySelector("body");
   const menuContainer = document.querySelector(".menu");
@@ -61,7 +70,7 @@ const menuDisplayChanger = (isMenuOpened) => {
   }
 }
 
-export const menuIconTransformer = (isMenuOpened) => {
+const menuIconTransformer = (isMenuOpened) => {
   const menuIcon = document.querySelector('.main__menu-icon');
   const menuIconBars = menuIcon.children;
 
@@ -157,8 +166,9 @@ class Main extends React.Component {
       document.querySelector(".menu").classList.add("menu--animate");
       document.querySelector(".menu").classList.remove("menu--animateOpening");
       document.querySelector(".menu").classList.add("menu--animateClosing");
+
       menuIconTransformer(false);
-  
+      
       setTimeout(() => { 
         menuDisplayChanger(false);
         this.setState({isMenuOpened: false});
@@ -357,14 +367,3 @@ z
 }
 export default Main;
 export {photosArray};
-
-
-/*const photosArray = [
-  {src: "blue", alt: "blue", title: "First blue picture", width: "100%", height: "100%"},
-  {src: "green", alt: "green", title: "Second green picture", width: "100%", height: "100%"},
-  {src: "red", alt: "red", title: "Third red picture", width: "100%", height: "100%"},
-  {src: "orange", alt: "orange", title: "Fourth orange picture", width: "100%", height: "100%"},
-  {src: "violet", alt: "violet", title: "Fifth violet picture", width: "100%", height: "100%"},
-  {src: "pink", alt: "pink", title: "Sixth pink picture", width: "100%", height: "100%"},
-  {src: "lime", alt: "lime", title: "Seventh lime picture", width: "100%", height: "100%"}
-];*/

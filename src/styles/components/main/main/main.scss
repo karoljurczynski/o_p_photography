@@ -8,7 +8,7 @@
     position: fixed;
     background: transparent;
     z-index: 3;
-    right: 25px;
+    right: 50px;
     top: 50%;
     transform: translate(50%, -50%);
     width: 37px;
@@ -238,7 +238,7 @@
     }
   }
   .main__menu-icon {
-    right: 0;
+    right: 25px;
     top: 50px;
   }
 }
@@ -254,15 +254,13 @@
 
   .main__menu-icon {
     top: 25px;
-    right: 0;
+    right: 25px;
   }
 }
 
 @media (max-width: 480px) {
   .main__grid {
     gap: 2px;
-
-
 
     &__item:nth-child(n) {
       grid-column: 1 / 13;
