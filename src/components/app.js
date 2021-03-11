@@ -11,18 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {};
   }
-  pageLoading() {
-    const x = setInterval(() => {
-      console.log("loading...");
-    }, 1000);
-
-    document.querySelector("body").addEventListener("load", () => {
-      clearInterval(x);
-    });
-  }
-
   render() {
-    this.pageLoading();
     return (
       <div className="wrapper">
         <Header />

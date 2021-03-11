@@ -35,10 +35,10 @@
   position: fixed;
   background: transparent;
   z-index: 3;
-  right: 15px;
+  right: 25px;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
   width: 37px;
   height: 23px;
   cursor: pointer;
@@ -218,7 +218,7 @@
   }
 
   .main__menu-icon {
-    right: 3.4%;
+    right: 0;
     top: 50px;
   }
 }
@@ -228,8 +228,8 @@
   }
 
   .main__menu-icon {
-    right: 0px;
-    top: 40px;
+    top: 25px;
+    right: 0;
   }
 }
 @media (max-width: 480px) {
@@ -238,11 +238,6 @@
   }
   .main__grid__item:nth-child(n) {
     grid-column: 1/13;
-  }
-
-  .main__menu-icon {
-    top: 3.5%;
-    right: -1.5%;
   }
 }
 /*# sourceMappingURL=main.css.map */

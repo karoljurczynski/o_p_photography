@@ -70,7 +70,6 @@ class PhotoReview extends React.Component {
       width: photosArray[this.state.id + 1].width,
       height: photosArray[this.state.id + 1].height
     });
-    this.calcPhotosSizes();
   }
 
   getPhotoSource(id) {
@@ -86,7 +85,6 @@ class PhotoReview extends React.Component {
       width: photosArray[this.state.id - 1].width,
       height: photosArray[this.state.id - 1].height
     });
-    this.calcPhotosSizes();
     
   }
 
@@ -118,7 +116,6 @@ class PhotoReview extends React.Component {
       photo.classList.remove("photo-review__picture--animated");
       title.classList.remove("photo-review__title--animated");
     }
-
     setTimeout(() => { 
       photo.classList.add("photo-review__picture--animated");
       title.classList.add("photo-review__title--animated");
@@ -129,7 +126,6 @@ class PhotoReview extends React.Component {
     reviewButtonsTransition();
     this.firstPhotoChecker();
     this.lastPhotoChecker();
-    this.calcPhotosSizes();
     this.animatePhotoChange();
   }
 

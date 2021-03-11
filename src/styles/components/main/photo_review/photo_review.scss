@@ -5,7 +5,6 @@
   from {
     backdrop-filter: blur(0px);
   }
-  
   to {
     backdrop-filter: blur(20px);
   }
@@ -40,12 +39,13 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(20px);
-  animation: blurAnimation 2s forwards;
+  animation: blurAnimation 1s forwards;
   @include flexSetup(column, center, center);
+  
   &--animate-exit {
-    animation: unBlurAnimation 0.5s forwards;
+    animation: unBlurAnimation 0.4s forwards;
   }
 
   &__previous, &__next {
@@ -90,7 +90,7 @@
     display: block;
     max-height: calc(100% - 3.8rem);
     margin-bottom: 1rem;
-    max-width: 70%;
+    max-width: 75%;
     opacity: 0;
 
     &--animated {
@@ -132,11 +132,11 @@
     position: absolute;
     background: transparent;
     z-index: 3;
-    right: 30px;
+    right: 25px;
     top: 50%;
     width: 28px;
     height: 28px;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     cursor: pointer;
     outline: none;
 
@@ -169,78 +169,4 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .photo-review {
-
-    &__previous {
-      top: 100px;
-    }
-
-    &__picture {
-      max-width: 80%;
-    }
-
-    &__next {
-      top: 100px;
-    } 
-
-    &__back {
-      right: calc(5% - 35px / 2)
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .photo-review {
-
-    &__previous {
-      top: 80px;
-
-      &__top-bar {
-        left: 15%;
-      }
-
-      &__bottom-bar {
-        left: 15%;
-      }
-    }
-
-    &__title {
-      bottom: calc(5% + 1.4rem);
-    }
-
-    &__picture {
-      max-width: 90%;
-    }
-
-    &__next {
-      top: 80px;
-
-      &__top-bar {
-        right: 15%;
-      }
-
-      &__bottom-bar {
-        right: 15%;
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .photo-review {
-
-    &__previous {
-      top: 80px;
-    }
-
-    &__picture {
-      max-height: calc(94% - 1.4rem);
-      max-width: 100%;
-    }
-
-    &__next {
-      top: 80px;
-    }
-  }
-}
+@import './media_queries/media.css';

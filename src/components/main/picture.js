@@ -43,6 +43,8 @@ class Picture extends React.Component {
     };
 
     this.handleReviewMounting = this.handleReviewMounting.bind(this);
+    this.handleReviewUnmounting = this.handleReviewUnmounting.bind(this);
+    
     this.pictureStyle = {
       width: photosArray[this.props.data].width,
       height: photosArray[this.props.data].height,
@@ -54,31 +56,27 @@ class Picture extends React.Component {
       margin: this.props.margin
     }
   }
-  handleReviewMounting(e) {
-    if(this.state.isReviewMounted) {
-      const container = document.querySelector(".photo-review");
-      if (container.classList.contains("photo-review--animate-exit")) {
-        container.classList.remove("photo-review--animate-exit");
-      }
-      else {
-        container.classList.add("photo-review--animate-exit");
-      }
-      setTimeout(() => {
-        this.setState({isReviewMounted: !this.state.isReviewMounted});
-      }, 100);
 
-      
-
-      bodyFreezer();
-    }
-    else {
-      this.setState({isReviewMounted: !this.state.isReviewMounted});
-        if(this.state.isReviewMounted)
-          bodyFreezer();
-        else
-          bodyFreezer(true);
-    }
+  handleReviewMounting() {
+    this.setState({isReviewMounted: true});
+    document.querySelector("picture").style.pointerEvents = "none";
+    bodyFreezer(true);
   }
+
+  handleReviewUnmounting() {
+    const container = document.querySelector(".photo-review");
+    container.classList.contains("photo-review--animate-exit")
+      ? container.classList.remove("photo-review--animate-exit")
+      : container.classList.add("photo-review--animate-exit");
+
+    setTimeout(() => {
+      this.setState({isReviewMounted: false});
+      document.querySelector("picture").style.pointerEvents = "auto";
+    }, 400);
+
+    bodyFreezer(false);
+  }
+  
   render() {
     return (
       <>
@@ -96,7 +94,7 @@ class Picture extends React.Component {
               id={this.props.data}
               title={photosArray[this.props.data].title}
               style={this.pictureStyle}
-              onClosed={this.handleReviewMounting} />
+              onClosed={this.handleReviewUnmounting} />
           : null}
       </>
     );

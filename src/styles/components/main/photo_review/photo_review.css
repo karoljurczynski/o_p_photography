@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import './media_queries/media.css';
 * {
   margin: 0;
   padding: 0;
@@ -84,11 +85,11 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.75);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  -webkit-animation: blurAnimation 2s forwards;
-          animation: blurAnimation 2s forwards;
+  -webkit-animation: blurAnimation 1s forwards;
+          animation: blurAnimation 1s forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,8 +105,8 @@
           justify-content: center;
 }
 .photo-review--animate-exit {
-  -webkit-animation: unBlurAnimation 0.5s forwards;
-          animation: unBlurAnimation 0.5s forwards;
+  -webkit-animation: unBlurAnimation 0.4s forwards;
+          animation: unBlurAnimation 0.4s forwards;
 }
 .photo-review__previous, .photo-review__next {
   display: block;
@@ -143,7 +144,7 @@
   display: block;
   max-height: calc(100% - 3.8rem);
   margin-bottom: 1rem;
-  max-width: 70%;
+  max-width: 75%;
   opacity: 0;
 }
 .photo-review__picture--animated {
@@ -183,12 +184,12 @@
   position: absolute;
   background: transparent;
   z-index: 3;
-  right: 30px;
+  right: 25px;
   top: 50%;
   width: 28px;
   height: 28px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   cursor: pointer;
   outline: none;
 }
@@ -214,58 +215,5 @@
   top: 50%;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-}
-
-@media (max-width: 1024px) {
-  .photo-review__previous {
-    top: 100px;
-  }
-  .photo-review__picture {
-    max-width: 80%;
-  }
-  .photo-review__next {
-    top: 100px;
-  }
-  .photo-review__back {
-    right: calc(5% - 35px / 2);
-  }
-}
-@media (max-width: 768px) {
-  .photo-review__previous {
-    top: 80px;
-  }
-  .photo-review__previous__top-bar {
-    left: 15%;
-  }
-  .photo-review__previous__bottom-bar {
-    left: 15%;
-  }
-  .photo-review__title {
-    bottom: calc(5% + 1.4rem);
-  }
-  .photo-review__picture {
-    max-width: 90%;
-  }
-  .photo-review__next {
-    top: 80px;
-  }
-  .photo-review__next__top-bar {
-    right: 15%;
-  }
-  .photo-review__next__bottom-bar {
-    right: 15%;
-  }
-}
-@media (max-width: 480px) {
-  .photo-review__previous {
-    top: 80px;
-  }
-  .photo-review__picture {
-    max-height: calc(94% - 1.4rem);
-    max-width: 100%;
-  }
-  .photo-review__next {
-    top: 80px;
-  }
 }
 /*# sourceMappingURL=photo_review.css.map */
