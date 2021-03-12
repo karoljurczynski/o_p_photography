@@ -152,7 +152,7 @@ class Main extends React.Component {
 
   menuClose() {
     this.menuIconTransformer(false);
-    this.menuDisplayChanger(false);  
+    this.menuDisplayChanger(false);
   }
   
   menuOpen() {
@@ -361,7 +361,7 @@ class Main extends React.Component {
           <div className="main__grid__item">
             <Picture data={9} />
           </div>
-          
+
         </section>
       
       </main>

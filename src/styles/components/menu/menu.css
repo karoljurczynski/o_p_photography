@@ -16,28 +16,28 @@
           user-select: none;
 }
 
-@-webkit-keyframes blurAnimationOn {
+@-webkit-keyframes blurAnimation {
   from {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
   }
   to {
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
 }
 
-@keyframes blurAnimationOn {
+@keyframes blurAnimation {
   from {
     -webkit-backdrop-filter: blur(0px);
             backdrop-filter: blur(0px);
   }
   to {
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
   }
 }
-@-webkit-keyframes blurAnimationOff {
+@-webkit-keyframes unBlurAnimation {
   from {
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
@@ -49,7 +49,7 @@
     opacity: 0;
   }
 }
-@keyframes blurAnimationOff {
+@keyframes unBlurAnimation {
   from {
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
@@ -101,22 +101,6 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes menuListAnimation {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes menuListAnimation {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,12 +122,12 @@
   left: 0;
   display: none;
   z-index: 2;
-  -webkit-animation: blurAnimationOn 1s forwards;
-          animation: blurAnimationOn 1s forwards;
+  -webkit-animation: blurAnimation 1s forwards;
+          animation: blurAnimation 1s forwards;
 }
 .menu--animate {
-  -webkit-animation: blurAnimationOff 0.5s forwards;
-          animation: blurAnimationOff 0.5s forwards;
+  -webkit-animation: unBlurAnimation 0.5s forwards;
+          animation: unBlurAnimation 0.5s forwards;
 }
 .menu--animateOpening::before {
   content: "";
@@ -199,5 +183,34 @@
   position: relative;
   z-index: 3;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .menu__list {
+    width: 80%;
+  }
+  .menu__list__item__content {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 1024px) {
+  .menu__list {
+    width: 80%;
+  }
+  .menu__list__item__content {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 50%;
+  }
+  .menu__list__item__content {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=menu.css.map */

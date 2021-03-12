@@ -6,17 +6,17 @@
 
 // ANIMATIONS
 
-@keyframes blurAnimationOn {
+@keyframes blurAnimation {
   from {
     backdrop-filter: blur(0px);
   }
 
   to {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
   }
 }
 
-@keyframes blurAnimationOff {
+@keyframes unBlurAnimation {
   from {
     backdrop-filter: blur(20px);
     opacity: 1;
@@ -50,15 +50,6 @@
   }
 }
 
-@keyframes menuListAnimation {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 
 // STYLES
 
@@ -71,10 +62,10 @@
   left: 0;
   display: none;
   z-index: 2;
-  animation: blurAnimationOn 1s forwards;
-  
+  animation: blurAnimation 1s forwards;
+
   &--animate {
-    animation: blurAnimationOff 0.5s forwards;
+    animation: unBlurAnimation 0.5s forwards;
   }
 
   &--animateOpening {
