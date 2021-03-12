@@ -79,7 +79,6 @@ class PhotoReview extends React.Component {
   }
   
   handleNextPhoto() {
-    console.log(this.state.id);
     if (this.state.id + 1 === photosArray.length) {
       this.setState({
         id: 0,
@@ -152,10 +151,10 @@ class PhotoReview extends React.Component {
   }
 
   handleArrows(e) {
-    if (e.nativeEvent.key === "ArrowRight") {
+    if (e.key === "ArrowRight") {
       this.handleNextPhoto();
     }
-    if (e.nativeEvent.key === "ArrowLeft") {
+    if (e.key === "ArrowLeft") {
       this.handlePreviousPhoto();
     }
   }
@@ -163,8 +162,8 @@ class PhotoReview extends React.Component {
   componentDidMount() {
     this.reviewButtonsTransition();
     this.animatePhotoChange();
+    
     setTimeout(() => {this.exitIconTransformer(true)}, 50);
-
   }
 
   componentDidUpdate() {
@@ -172,13 +171,13 @@ class PhotoReview extends React.Component {
   }
 
   render() {
+    document.addEventListener("keydown", e => this.handleArrows(e));
     return (
-      <div className="photo-review" onKeyUp={this.handleArrows} >
+      <div className="photo-review">
         <button className="photo-review__previous" onClick={this.handlePreviousPhoto}>
           <span className="photo-review__previous__top-bar"></span>
           <span className="photo-review__previous__bottom-bar"></span>
         </button>
-
 
         <img 
           className="photo-review__picture" 
