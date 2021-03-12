@@ -22,6 +22,7 @@ class PhotoReview extends React.Component {
 
     this.handleNextPhoto = this.handleNextPhoto.bind(this);
     this.handlePreviousPhoto = this.handlePreviousPhoto.bind(this);
+    this.handleArrows = this.handleArrows.bind(this);
   }
 
   reviewButtonsTransition() {
@@ -78,43 +79,54 @@ class PhotoReview extends React.Component {
   }
   
   handleNextPhoto() {
-    this.setState({
-      id: this.state.id + 1,
-      src: photosArray[this.state.id + 1].src,
-      title: photosArray[this.state.id + 1].title,
-      alt: photosArray[this.state.id + 1].alt,
-      width: photosArray[this.state.id + 1].width,
-      height: photosArray[this.state.id + 1].height
-    });
+    console.log(this.state.id);
+    if (this.state.id + 1 === photosArray.length) {
+      this.setState({
+        id: 0,
+        src: photosArray[0].src,
+        title: photosArray[0].title,
+        alt: photosArray[0].alt,
+        width: photosArray[0].width,
+        height: photosArray[0].height
+      });
+    }
+
+    else {
+      this.setState({
+        id: this.state.id + 1,
+        src: photosArray[this.state.id + 1].src,
+        title: photosArray[this.state.id + 1].title,
+        alt: photosArray[this.state.id + 1].alt,
+        width: photosArray[this.state.id + 1].width,
+        height: photosArray[this.state.id + 1].height
+      });
+    }
   }
 
   handlePreviousPhoto() {
-    this.setState({
-      id: this.state.id - 1,
-      src: photosArray[this.state.id - 1].src,
-      title: photosArray[this.state.id - 1].title,
-      alt: photosArray[this.state.id - 1].alt,
-      width: photosArray[this.state.id - 1].width,
-      height: photosArray[this.state.id - 1].height
-    });
+    if ((this.state.id) === 0) {
+      this.setState({
+        id: photosArray.length - 1,
+        src: photosArray[photosArray.length - 1].src,
+        title: photosArray[photosArray.length - 1].title,
+        alt: photosArray[photosArray.length - 1].alt,
+        width: photosArray[photosArray.length - 1].width,
+        height: photosArray[photosArray.length - 1].height
+      });
+    }
+
+    else {
+      this.setState({
+        id: this.state.id - 1,
+        src: photosArray[this.state.id - 1].src,
+        title: photosArray[this.state.id - 1].title,
+        alt: photosArray[this.state.id - 1].alt,
+        width: photosArray[this.state.id - 1].width,
+        height: photosArray[this.state.id - 1].height
+      });
+    }
   }
 
-  firstPhotoChecker() {
-    const previousButton = document.querySelector(".photo-review__previous");
-    if (Number(this.state.id) === 0)
-      previousButton.style.display = "none";
-    else
-      previousButton.style.display = "block";
-  }
-
-  lastPhotoChecker() {
-    const nextButton = document.querySelector(".photo-review__next");
-    if (Number(this.state.id) === photosArray.length - 1)
-      nextButton.style.display = "none";
-    else
-      nextButton.style.display = "block";
-  }
-  
   animatePhotoChange() {
     const photoReviewChildren = document.querySelector(".photo-review").children;
     
@@ -139,28 +151,34 @@ class PhotoReview extends React.Component {
     }, 100);
   }
 
+  handleArrows(e) {
+    if (e.nativeEvent.key === "ArrowRight") {
+      this.handleNextPhoto();
+    }
+    if (e.nativeEvent.key === "ArrowLeft") {
+      this.handlePreviousPhoto();
+    }
+  }
+
   componentDidMount() {
     this.reviewButtonsTransition();
-    this.firstPhotoChecker();
-    this.lastPhotoChecker();
     this.animatePhotoChange();
-    setTimeout(() => {this.exitIconTransformer(true)}, 10);
+    setTimeout(() => {this.exitIconTransformer(true)}, 50);
+
   }
 
   componentDidUpdate() {
-    this.firstPhotoChecker();
-    this.lastPhotoChecker();
     this.animatePhotoChange();
   }
 
   render() {
     return (
-      <div className="photo-review">
-
+      <div className="photo-review" onKeyUp={this.handleArrows} >
         <button className="photo-review__previous" onClick={this.handlePreviousPhoto}>
           <span className="photo-review__previous__top-bar"></span>
           <span className="photo-review__previous__bottom-bar"></span>
         </button>
+
 
         <img 
           className="photo-review__picture" 
@@ -186,6 +204,7 @@ class PhotoReview extends React.Component {
         </button>
 
       </div>
+      
     );
   }
 }

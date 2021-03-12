@@ -50,33 +50,18 @@ class Main extends React.Component {
   }
 
   menuDisplayChanger(isMenuOpened) {
-    const body = document.querySelector("body");
     const menuContainer = document.querySelector(".menu");
-
+    
     if (isMenuOpened) {
-      scrollY = document.documentElement.scrollTop;
-  
-      // BODY FREEZING
-      body.style.cssText = `
-        top: ${-(document.documentElement.scrollTop)}px;
-        position: fixed`;
-  
       menuContainer.style.cssText = `
         top: ${-(document.documentElement.scrollTop)}px;
         display: flex`;
     }
+
     else {
-  
-      // BODY POSITION CORRECTING
-      body.style.cssText = `
-        top: ${-(document.documentElement.scrollTop)}px;
-        position: static`;
-  
       menuContainer.style.cssText = `
         top: ${-(document.documentElement.scrollTop)}px;
         display: none`;
-  
-      window.scroll(0, scrollY);
     }
   }
   
@@ -161,27 +146,41 @@ class Main extends React.Component {
   }
 
   handleMenu() {
+    const menu = document.querySelector(".menu");
+    const menuIcon = document.querySelector('.main__menu-icon');
+
     if (this.state.isMenuOpened === true) {
-      document.querySelector(".menu").classList.add("menu--animate");
-      document.querySelector(".menu").classList.remove("menu--animateOpening");
-      document.querySelector(".menu").classList.add("menu--animateClosing");
+      menu.classList.add("menu--animate");
+      menu.classList.remove("menu--animateOpening");
+      menu.classList.add("menu--animateClosing");
+
+      // COOLDOWN BEFORE NEXT CLICK
+      menuIcon.style.pointerEvents = "none";
+      menu.children[0].style.pointerEvents = "none";
+      menu.children[1].style.pointerEvents = "none";
 
       this.menuIconTransformer(false);
+      this.bodyFreezer(false);
       
       setTimeout(() => { 
         this.menuDisplayChanger(false);
         this.setState({isMenuOpened: false});
-      }, 500);
+
+        menuIcon.style.pointerEvents = "auto";
+        menu.children[0].style.pointerEvents = "auto";
+        menu.children[1].style.pointerEvents = "auto";
+      }, 400);
     }
 
     else {
       this.setState({isMenuOpened: true});
 
-      document.querySelector(".menu").classList.remove("menu--animate");
-      document.querySelector(".menu").classList.remove("menu--animateClosing");
-      document.querySelector(".menu").classList.add("menu--animateOpening");
+      menu.classList.remove("menu--animate");
+      menu.classList.remove("menu--animateClosing");
+      menu.classList.add("menu--animateOpening");
 
       this.menuIconTransformer(true);
+      this.bodyFreezer(true);
       this.menuDisplayChanger(true);
     }
   }

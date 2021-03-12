@@ -106,7 +106,6 @@ class Picture extends React.Component {
   handleReviewUnmounting() {
     const container = document.querySelector(".photo-review");
     const photoReviewChildren = document.querySelector(".photo-review").children;
-
     /*  
       0 - previous
       1 - photo
@@ -136,7 +135,7 @@ class Picture extends React.Component {
       this.setState({isReviewMounted: false});
       document.querySelector("picture").style.pointerEvents = "auto";
       this.menuIconDisplayChanger(true);
-    }, 300);
+    }, 400);
 
     this.bodyFreezer(false);
   }
