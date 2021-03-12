@@ -1,17 +1,23 @@
-import React from 'react';
+// IMPORTS
 
+import React from 'react';
 import '../styles/components/footer/footer.css';
 import { FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from 'react-icons/fa';
+
+
+// COMPONENT
 
 class Footer extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <footer className="footer" id="contact">
 
         <section className="footer__social-media">
+
           <a className="footer__social-media__link" href="https://www.facebook.com/OliwierPakulaPhotography" target="blank">
             <span className="footer__social-media__link__icon">
               <FaFacebookF />
@@ -35,6 +41,7 @@ class Footer extends React.Component {
               <FaPhone />
             </span>
           </a>
+
         </section>
 
         <span className="footer__copyright">
@@ -45,5 +52,8 @@ class Footer extends React.Component {
     );
   }
 }
+
+
+// EXPORTING COMPONENT
 
 export default Footer;

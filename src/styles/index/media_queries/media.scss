@@ -1,0 +1,20 @@
+// MEDIA QUERIES
+
+
+@media (max-width: 1024px) {
+  #root {
+    width: calc(100% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    width: calc(100% - 6px);
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    width: calc(100% - 2px);
+  }
+}

@@ -8,22 +8,8 @@
 .wrapper {
   width: 100%;
   @include flexSetup(column, center, flex-start);
+  
   & > * {
     width: 100%;
-  }
-}
-
-.spinner {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  @include flexSetup();
-
-  &__item {
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border-top: 5px solid red;
   }
 }

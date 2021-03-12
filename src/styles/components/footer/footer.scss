@@ -1,13 +1,13 @@
+// IMPORTS
+
 @forward '../../config/config';
 @use '../../config/config' as *;
 
+
+// STYLES
+
 .footer {
   @include flexSetup(column, center, space-between);
-
-  &__title {
-    color: white;
-    font-size: 1.3rem;
-  }
 
   &__social-media {
     @include flexSetup(row, center, space-around);
@@ -23,6 +23,7 @@
       background: white;
       margin-right: 0.7rem;
       transition: all 0.3s linear;
+
       &:last-of-type {
         margin-right: 0;
       }
@@ -30,6 +31,7 @@
       &:hover {
         box-shadow: 2px 2px 0 $white-color, 2px -2px 0 $white-color, -2px 2px 0 $white-color, -2px -2px 0 $white-color;
         background-color: black;
+
         & > * {
           color: white;
         }
@@ -54,4 +56,3 @@
     }
   }
 }
-

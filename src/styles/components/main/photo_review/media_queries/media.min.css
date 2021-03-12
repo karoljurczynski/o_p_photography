@@ -1,2 +1,2 @@
-
+@media(max-width: 1200px){.photo-review__exit{right:30px}}@media(max-width: 1024px){.photo-review__previous,.photo-review__next{margin:10% 0;height:80%;width:45%}.photo-review__previous{left:5%}.photo-review__picture{max-width:85%}.photo-review__next{right:5%}.photo-review__exit{top:0;right:0;margin:10px 10px 0 0;-webkit-transform:translate(0, 0);transform:translate(0, 0)}}@media(max-width: 768px){.photo-review__previous,.photo-review__next{height:80%}.photo-review__previous{left:20px}.photo-review__picture{max-width:100%}.photo-review__next{right:20px}}@media(max-width: 480px){.photo-review__previous,.photo-review__next{width:50%}}
 /*# sourceMappingURL=media.min.css.map */

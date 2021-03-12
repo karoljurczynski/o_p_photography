@@ -1,29 +1,16 @@
+// IMPORTS
+
 import React from 'react';
-
 import '../../styles/components/main/photo_review/photo_review.css';
-import { photosArray } from './main.js';
+import { photosArray } from './../../index';
 
-const reviewButtonsTransition = () => {
-  const buttons = [document.querySelector('.photo-review__previous'), document.querySelector('.photo-review__next')];
-  
-  buttons.forEach(element => {
 
-    element.addEventListener("mouseover", () => {
-      element.children[0].style.backgroundColor = "#FFFFFF";
-      element.children[1].style.backgroundColor = "#FFFFFF";
-    });
-
-    element.addEventListener("mouseout", () => {
-      element.children[0].style.backgroundColor = "#828282";
-      element.children[1].style.backgroundColor = "#828282";
-    });
-
-  });
-}
+// COMPONENT
 
 class PhotoReview extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       id: this.props.id,
       src: this.props.src,
@@ -35,7 +22,22 @@ class PhotoReview extends React.Component {
 
     this.handleNextPhoto = this.handleNextPhoto.bind(this);
     this.handlePreviousPhoto = this.handlePreviousPhoto.bind(this);
-    this.calcPhotosSizes = this.calcPhotosSizes.bind(this);
+  }
+
+  reviewButtonsTransition() {
+    const buttons = [document.querySelector('.photo-review__previous'), document.querySelector('.photo-review__next')];
+    buttons.forEach(element => {
+  
+      element.addEventListener("mouseover", () => {
+        element.children[0].style.backgroundColor = "#FFFFFF";
+        element.children[1].style.backgroundColor = "#FFFFFF";
+      });
+  
+      element.addEventListener("mouseout", () => {
+        element.children[0].style.backgroundColor = "#828282";
+        element.children[1].style.backgroundColor = "#828282";
+      });
+    });
   }
 
   exitIconTransformer(isReviewOpened) {
@@ -58,10 +60,10 @@ class PhotoReview extends React.Component {
         transform: rotate(45deg);
         background: #828282`;
     }
+
     else {
       exitIconBars[0].style.cssText = `
         width: 100%;
-        top: 0;
         transform: rotate(0deg);
         background: #FFFFFF`;
   
@@ -70,28 +72,11 @@ class PhotoReview extends React.Component {
   
       exitIconBars[2].style.cssText = `
         width: 25%;
-        top: 20px;
         transform: rotate(0deg);
         background: #FFFFFF`;
     }
   }
   
-  calcPhotosSizes() {
-    if (window.innerWidth < 480) {
-      if (this.state.width > this.state.height) {
-        this.setState({width: "100%", height: "50%"});
-      }
-      if (this.state.width === this.state.height) {
-        this.setState({width: "100%", height: "100vw"});
-        document.querySelector('.photo-review').style.alignItems = "flex-start"; 
-      }
-      else {
-        this.setState({width: "100%", height: "100%"});
-        document.querySelector('.photo-review').style.alignItems = "flex-start";
-      }
-    }
-  }
-
   handleNextPhoto() {
     this.setState({
       id: this.state.id + 1,
@@ -112,7 +97,6 @@ class PhotoReview extends React.Component {
       width: photosArray[this.state.id - 1].width,
       height: photosArray[this.state.id - 1].height
     });
-    
   }
 
   firstPhotoChecker() {
@@ -156,7 +140,7 @@ class PhotoReview extends React.Component {
   }
 
   componentDidMount() {
-    reviewButtonsTransition();
+    this.reviewButtonsTransition();
     this.firstPhotoChecker();
     this.lastPhotoChecker();
     this.animatePhotoChange();
@@ -172,6 +156,7 @@ class PhotoReview extends React.Component {
   render() {
     return (
       <div className="photo-review">
+
         <button className="photo-review__previous" onClick={this.handlePreviousPhoto}>
           <span className="photo-review__previous__top-bar"></span>
           <span className="photo-review__previous__bottom-bar"></span>
@@ -204,4 +189,8 @@ class PhotoReview extends React.Component {
     );
   }
 }
+
+
+// EXPORTING COMPONENT
+
 export default PhotoReview;

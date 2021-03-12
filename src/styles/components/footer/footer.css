@@ -31,10 +31,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.footer__title {
-  color: white;
-  font-size: 1.3rem;
-}
 .footer__social-media {
   display: -webkit-box;
   display: -ms-flexbox;

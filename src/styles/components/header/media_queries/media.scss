@@ -3,6 +3,7 @@
 @media (max-width: 1024px) {
   .header {
     height: 100px;
+    
     &__logo {
       height: calc(100% - 30px);
       width: 100%;
@@ -13,6 +14,7 @@
 @media (max-width: 768px) {
   .header {
     height: 80px;
+
     &__logo {
       height: calc(100% - 20px);
       width: 100%;

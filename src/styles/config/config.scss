@@ -17,6 +17,9 @@
   user-select: none;
 }
 
+
+// MIXINS
+
 @mixin flexSetup($direction: row, $align: center, $justify: center) {
   display: flex;
   flex-direction: $direction;

@@ -9,6 +9,11 @@
           box-shadow: none;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .header {
