@@ -151,19 +151,18 @@ class PhotoReview extends React.Component {
   }
 
   handleKeyboard(e) {
-    console.log(e);
-    if (e.code === "Escape") {
+    if (e.code === "Escape")
       this.props.onClosed();
-    }
-    if (e.code === "ArrowRight") {
+
+    if (e.code === "ArrowRight")
       this.handleNextPhoto();
-    }
-    if (e.code === "ArrowLeft") {
+      
+    if (e.code === "ArrowLeft")
       this.handlePreviousPhoto();
-    }
   }
 
   componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyboard);
     this.reviewButtonsTransition();
     this.animatePhotoChange();
     setTimeout(() => {this.exitIconTransformer(true)}, 50);
@@ -173,9 +172,13 @@ class PhotoReview extends React.Component {
     this.animatePhotoChange();
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyboard);
+  }
+
   render() {
     return (
-      <div className="photo-review" onKeyDown={ this.handleKeyboard }>
+      <div className="photo-review" >
         <button className="photo-review__previous" onClick={this.handlePreviousPhoto}>
           <span className="photo-review__previous__top-bar"></span>
           <span className="photo-review__previous__bottom-bar"></span>
