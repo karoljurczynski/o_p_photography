@@ -4,6 +4,7 @@ import React from 'react';
 import '../../styles/components/main/main/main.css';
 import Menu from '../menu';
 import Picture from './picture';
+import Spinner from './spinner';
 
 
 // GLOBALS
@@ -18,13 +19,15 @@ class Main extends React.Component {
     super(props);
 
     this.state = {
-      isMenuOpened: false
+      isMenuOpened: false,
+      isLoaded: false
     };
 
     this.handleMenu = this.handleMenu.bind(this);
     this.menuClose = this.menuClose.bind(this);
     this.menuOpen = this.menuOpen.bind(this);
     this.linkToId = this.linkToId.bind(this);
+    this.spinnerFunction = this.spinnerFunction.bind(this);
   }
 
   bodyFreezer(isMenuOpened) {
@@ -135,6 +138,10 @@ class Main extends React.Component {
     }
   }
 
+  spinnerFunction() {
+    setTimeout(() => { this.setState({ isLoaded: !this.state.isLoaded }) }, 600);
+  }
+
   menuClose() {
     this.menuIconTransformer(false);
     this.menuDisplayChanger(false);
@@ -208,6 +215,8 @@ class Main extends React.Component {
       <main className="main">
 
         <Menu exit={this.handleMenu} linkTo={this.linkToId} />
+
+        { this.state.isLoaded ? null : <Spinner loaded={ this.spinnerFunction } /> }
 
         <button className="main__menu-icon" onClick={this.handleMenu} href="">
           <span className="main__menu-icon__top-bar"></span>
