@@ -10,25 +10,20 @@ class Spinner extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoaded: false };
-    this.loadingFunction = this.loadingFunction.bind(this);
+    this.loading = this.loading.bind(this);
   }
 
-  loadingFunction() {
-    // FOR DEBUGGING ONLY
-    /*
-    setTimeout(() => {
-      this.setState({ isLoaded: !this.state.isLoaded });
-      this.props.loaded();
-    }, 2000);
-    */
-    window.addEventListener("load", () => {
-      this.setState({ isLoaded: !this.state.isLoaded });
-      this.props.loaded();
-    });
+  loading() {
+    this.setState({ isLoaded: !this.state.isLoaded });
+    this.props.loaded();
   }
 
   componentDidMount() {
-    this.loadingFunction();
+    window.addEventListener("load", this.loading);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("load", this.loading);
   }
 
   render() {

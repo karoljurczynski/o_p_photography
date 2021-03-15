@@ -1,6 +1,6 @@
 @media (max-width: 1200px) {
   .photo-review__exit {
-    right: 30px;
+    left: calc(100vw - 80px);
   }
 }
 @media (max-width: 1024px) {
@@ -19,9 +19,8 @@
     right: 5%;
   }
   .photo-review__exit {
-    top: 0;
-    right: 0;
-    margin: 10px 10px 0 0;
+    top: 10px;
+    left: calc(100vw - 50px);
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }

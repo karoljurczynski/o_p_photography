@@ -7,10 +7,6 @@ import '../styles/components/menu/menu.css';
 // COMPONENT
 
 class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   menuItemTransition() {
     const menuItems = document.querySelectorAll(".menu__list__item__content");
   

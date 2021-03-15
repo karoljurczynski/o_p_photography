@@ -8,10 +8,6 @@ import { FaPhone, FaEnvelope, FaFacebookF, FaInstagram } from 'react-icons/fa';
 // COMPONENT
 
 class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <footer className="footer" id="contact">

@@ -6,6 +6,7 @@ import PhotoReview from './photo_review';
 import { photosArray } from './../../index';
 
 
+
 // GLOBALS
 
 let scrollY = 0;
@@ -148,7 +149,10 @@ class Picture extends React.Component {
           className="picture"
           style={this.pictureStyle}
           onClick={this.handleReviewMounting}>
-          <img src={photosArray[this.props.data].src} className="picture__img"/>
+          <img 
+            src={photosArray[this.props.data].src} 
+            alt={photosArray[this.props.data].alt} 
+            className="picture__img" />
         </picture>
 
         {this.state.isReviewMounted

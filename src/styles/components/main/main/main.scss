@@ -13,7 +13,7 @@
     position: fixed;
     background: transparent;
     z-index: 3;
-    right: 50px;
+    left: calc(100vw - 100px);
     transform: translateY(-50%);
     top: 50%;
     width: 37px;

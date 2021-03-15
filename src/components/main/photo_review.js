@@ -17,7 +17,8 @@ class PhotoReview extends React.Component {
       alt: this.props.alt,
       title: this.props.title,
       width: this.props.style.width,
-      height: this.props.style.height
+      height: this.props.style.height,
+      isLoaded: false
     };
 
     this.handleNextPhoto = this.handleNextPhoto.bind(this);
@@ -178,7 +179,8 @@ class PhotoReview extends React.Component {
 
   render() {
     return (
-      <div className="photo-review" >
+      <div className="photo-review">
+        
         <button className="photo-review__previous" onClick={this.handlePreviousPhoto}>
           <span className="photo-review__previous__top-bar"></span>
           <span className="photo-review__previous__bottom-bar"></span>

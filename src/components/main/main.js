@@ -140,16 +140,19 @@ class Main extends React.Component {
 
   spinnerFunction() {
     setTimeout(() => { this.setState({ isLoaded: !this.state.isLoaded }) }, 600);
+    document.querySelector("#top").scrollIntoView();
   }
 
   menuClose() {
     this.menuIconTransformer(false);
     this.menuDisplayChanger(false);
+    this.bodyFreezer(false);
   }
   
   menuOpen() {
     this.menuIconTransformer(true);
     this.menuDisplayChanger(true);
+    this.bodyFreezer(true);
   }
 
   handleMenu() {
@@ -216,7 +219,7 @@ class Main extends React.Component {
 
         <Menu exit={this.handleMenu} linkTo={this.linkToId} />
 
-        { this.state.isLoaded ? null : <Spinner loaded={ this.spinnerFunction } /> }
+        { this.state.isLoaded ? null : <Spinner window={true} loaded={ this.spinnerFunction } /> }
 
         <button className="main__menu-icon" onClick={this.handleMenu} href="">
           <span className="main__menu-icon__top-bar"></span>

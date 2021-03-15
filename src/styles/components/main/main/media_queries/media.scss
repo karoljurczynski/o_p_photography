@@ -2,7 +2,7 @@
 
 @media (max-width: 1200px) {
   .main__menu-icon {
-    right: 30px;
+    left: calc(100vw - 80px);
   }
 }
 
@@ -24,9 +24,8 @@
   }
   
   .main__menu-icon {
-    top: 0;
-    right: 0;
-    margin: 10px 10px 0 0;
+    top: 10px;
+    left: calc(100vw - 50px);
     transform: translate(0, 0);
   }
 }

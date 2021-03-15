@@ -110,8 +110,8 @@
           backdrop-filter: blur(10px);
 }
 .spinner--animate-exit {
-  -webkit-animation: spinnerBackgroundClosing 1s forwards;
-          animation: spinnerBackgroundClosing 1s forwards;
+  -webkit-animation: spinnerBackgroundClosing 0.7s forwards;
+          animation: spinnerBackgroundClosing 0.7s forwards;
 }
 .spinner__item {
   width: 30px;

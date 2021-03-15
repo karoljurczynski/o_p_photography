@@ -52,7 +52,7 @@
   backdrop-filter: blur(10px);
   
   &--animate-exit {
-    animation: spinnerBackgroundClosing 1s forwards;
+    animation: spinnerBackgroundClosing 0.7s forwards;
   }
 
   &__item {
