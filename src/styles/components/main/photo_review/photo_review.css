@@ -116,8 +116,8 @@
           justify-content: center;
 }
 .photo-review--animate-exit {
-  -webkit-animation: blurAnimationOff 0.4s forwards;
-          animation: blurAnimationOff 0.4s forwards;
+  -webkit-animation: blurAnimationOff 0.5s forwards;
+          animation: blurAnimationOff 0.5s forwards;
 }
 .photo-review__previous, .photo-review__next {
   display: block;

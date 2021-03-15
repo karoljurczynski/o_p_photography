@@ -6,7 +6,6 @@ import PhotoReview from './photo_review';
 import { photosArray } from './../../index';
 
 
-
 // GLOBALS
 
 let scrollY = 0;
@@ -21,11 +20,6 @@ class Picture extends React.Component {
     this.state = {
       isReviewMounted: false
     };
-
-    this.pictureStyle = {
-      width: photosArray[this.props.data].width,
-      height: photosArray[this.props.data].height,
-    }
 
     this.handleReviewMounting = this.handleReviewMounting.bind(this);
     this.handleReviewUnmounting = this.handleReviewUnmounting.bind(this);
@@ -147,7 +141,6 @@ class Picture extends React.Component {
         <picture 
           id={this.props.data} 
           className="picture"
-          style={this.pictureStyle}
           onClick={this.handleReviewMounting}>
           <img 
             src={photosArray[this.props.data].src} 

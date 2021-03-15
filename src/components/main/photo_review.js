@@ -16,8 +16,6 @@ class PhotoReview extends React.Component {
       src: this.props.src,
       alt: this.props.alt,
       title: this.props.title,
-      width: this.props.style.width,
-      height: this.props.style.height,
       isLoaded: false
     };
 
@@ -85,9 +83,7 @@ class PhotoReview extends React.Component {
         id: 0,
         src: photosArray[0].src,
         title: photosArray[0].title,
-        alt: photosArray[0].alt,
-        width: photosArray[0].width,
-        height: photosArray[0].height
+        alt: photosArray[0].alt
       });
     }
 
@@ -96,9 +92,7 @@ class PhotoReview extends React.Component {
         id: this.state.id + 1,
         src: photosArray[this.state.id + 1].src,
         title: photosArray[this.state.id + 1].title,
-        alt: photosArray[this.state.id + 1].alt,
-        width: photosArray[this.state.id + 1].width,
-        height: photosArray[this.state.id + 1].height
+        alt: photosArray[this.state.id + 1].alt
       });
     }
   }
@@ -109,9 +103,7 @@ class PhotoReview extends React.Component {
         id: photosArray.length - 1,
         src: photosArray[photosArray.length - 1].src,
         title: photosArray[photosArray.length - 1].title,
-        alt: photosArray[photosArray.length - 1].alt,
-        width: photosArray[photosArray.length - 1].width,
-        height: photosArray[photosArray.length - 1].height
+        alt: photosArray[photosArray.length - 1].alt
       });
     }
 
@@ -120,9 +112,7 @@ class PhotoReview extends React.Component {
         id: this.state.id - 1,
         src: photosArray[this.state.id - 1].src,
         title: photosArray[this.state.id - 1].title,
-        alt: photosArray[this.state.id - 1].alt,
-        width: photosArray[this.state.id - 1].width,
-        height: photosArray[this.state.id - 1].height
+        alt: photosArray[this.state.id - 1].alt
       });
     }
   }

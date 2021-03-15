@@ -61,7 +61,7 @@
   @include flexSetup(column, center, center);
 
   &--animate-exit {
-    animation: blurAnimationOff 0.4s forwards;
+    animation: blurAnimationOff 0.5s forwards;
   }
 
   &__previous, &__next {

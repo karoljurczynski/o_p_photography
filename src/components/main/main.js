@@ -219,7 +219,7 @@ class Main extends React.Component {
 
         <Menu exit={this.handleMenu} linkTo={this.linkToId} />
 
-        { this.state.isLoaded ? null : <Spinner window={true} loaded={ this.spinnerFunction } /> }
+        { this.state.isLoaded ? null : <Spinner loaded={ this.spinnerFunction } /> }
 
         <button className="main__menu-icon" onClick={this.handleMenu} href="">
           <span className="main__menu-icon__top-bar"></span>
