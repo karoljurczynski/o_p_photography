@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/o_p_photography/static/css/main.6992acdd.chunk.css",
-    "main.js": "/o_p_photography/static/js/main.293470c8.chunk.js",
-    "main.js.map": "/o_p_photography/static/js/main.293470c8.chunk.js.map",
+    "main.css": "/o_p_photography/static/css/main.ee30dac8.chunk.css",
+    "main.js": "/o_p_photography/static/js/main.b67cdaa2.chunk.js",
+    "main.js.map": "/o_p_photography/static/js/main.b67cdaa2.chunk.js.map",
     "runtime-main.js": "/o_p_photography/static/js/runtime-main.f3f7f519.js",
     "runtime-main.js.map": "/o_p_photography/static/js/runtime-main.f3f7f519.js.map",
     "static/js/2.514379e4.chunk.js": "/o_p_photography/static/js/2.514379e4.chunk.js",
     "static/js/2.514379e4.chunk.js.map": "/o_p_photography/static/js/2.514379e4.chunk.js.map",
     "index.html": "/o_p_photography/index.html",
-    "static/css/main.6992acdd.chunk.css.map": "/o_p_photography/static/css/main.6992acdd.chunk.css.map",
+    "static/css/main.ee30dac8.chunk.css.map": "/o_p_photography/static/css/main.ee30dac8.chunk.css.map",
     "static/js/2.514379e4.chunk.js.LICENSE.txt": "/o_p_photography/static/js/2.514379e4.chunk.js.LICENSE.txt",
-    "static/media/header.css": "/o_p_photography/static/media/long_logo_white.0f3ca065.png"
+    "static/media/header.css": "/o_p_photography/static/media/Lato-Thin.84b73e57.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.f3f7f519.js",
     "static/js/2.514379e4.chunk.js",
-    "static/css/main.6992acdd.chunk.css",
-    "static/js/main.293470c8.chunk.js"
+    "static/css/main.ee30dac8.chunk.css",
+    "static/js/main.b67cdaa2.chunk.js"
   ]
 }
