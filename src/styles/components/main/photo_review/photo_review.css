@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +17,39 @@
           user-select: none;
 }
 
+@-webkit-keyframes fakedOpacityAnimationOff {
+  from {
+    background: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fakedOpacityAnimationOff {
+  from {
+    background: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes fakedOpacityAnimationOn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+@keyframes fakedOpacityAnimationOn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
 @-webkit-keyframes blurAnimationOn {
   from {
     -webkit-backdrop-filter: blur(0px);
@@ -26,7 +60,6 @@
             backdrop-filter: blur(20px);
   }
 }
-
 @keyframes blurAnimationOn {
   from {
     -webkit-backdrop-filter: blur(0px);
@@ -89,6 +122,22 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes titleAnimationOff {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes titleAnimationOff {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
 .photo-review {
   z-index: 4;
   position: fixed;
@@ -99,8 +148,8 @@
   background: rgba(0, 0, 0, 0.75);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  -webkit-animation: blurAnimationOn 1s forwards;
-          animation: blurAnimationOn 1s forwards;
+  -webkit-animation: blurAnimationOn 0.5s forwards, fakedOpacityAnimationOn 0.5s forwards;
+          animation: blurAnimationOn 0.5s forwards, fakedOpacityAnimationOn 0.5s forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,8 +165,8 @@
           justify-content: center;
 }
 .photo-review--animate-exit {
-  -webkit-animation: blurAnimationOff 0.5s forwards;
-          animation: blurAnimationOff 0.5s forwards;
+  -webkit-animation: blurAnimationOff 0.5s forwards, fakedOpacityAnimationOff 0.5s forwards;
+          animation: blurAnimationOff 0.5s forwards, fakedOpacityAnimationOff 0.5s forwards;
 }
 .photo-review__previous, .photo-review__next {
   display: block;
@@ -130,8 +179,8 @@
   cursor: pointer;
 }
 .photo-review__previous--animate-exit, .photo-review__next--animate-exit {
-  -webkit-animation: opacityAnimationOff 0.3s forwards;
-          animation: opacityAnimationOff 0.3s forwards;
+  -webkit-animation: opacityAnimationOff 0.3s forwards ease;
+          animation: opacityAnimationOff 0.3s forwards ease;
 }
 .photo-review__previous__top-bar, .photo-review__previous__bottom-bar, .photo-review__next__top-bar, .photo-review__next__bottom-bar {
   display: block;
@@ -163,12 +212,12 @@
   opacity: 0;
 }
 .photo-review__picture--animate {
-  -webkit-animation: opacityAnimationOn 0.7s forwards;
-          animation: opacityAnimationOn 0.7s forwards;
+  -webkit-animation: opacityAnimationOn 0.5s forwards ease;
+          animation: opacityAnimationOn 0.5s forwards ease;
 }
 .photo-review__picture--animate-exit {
-  -webkit-animation: opacityAnimationOff 0.3s forwards;
-          animation: opacityAnimationOff 0.3s forwards;
+  -webkit-animation: opacityAnimationOff 0.3s forwards ease;
+          animation: opacityAnimationOff 0.3s forwards ease;
 }
 .photo-review__title {
   z-index: 5;
@@ -179,14 +228,14 @@
   opacity: 0;
 }
 .photo-review__title--animate {
-  -webkit-animation: opacityAnimationOn 1s forwards;
-          animation: opacityAnimationOn 1s forwards;
+  -webkit-animation: opacityAnimationOn 1s forwards ease;
+          animation: opacityAnimationOn 1s forwards ease;
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 .photo-review__title--animate-exit {
-  -webkit-animation: opacityAnimationOff 0.3s forwards;
-          animation: opacityAnimationOff 0.3s forwards;
+  -webkit-animation: titleAnimationOff 0.3s forwards ease;
+          animation: titleAnimationOff 0.3s forwards ease;
 }
 .photo-review__next {
   right: 10%;

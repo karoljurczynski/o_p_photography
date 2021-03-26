@@ -6,6 +6,26 @@
 
 // ANIMATIONS
 
+@keyframes fakedOpacityAnimationOff {
+  from {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fakedOpacityAnimationOn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
 @keyframes blurAnimationOn {
   from {
     backdrop-filter: blur(0px);
@@ -45,6 +65,15 @@
   }
 }
 
+@keyframes titleAnimationOff {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+
 
 // STYLES
 
@@ -57,11 +86,11 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(20px);
-  animation: blurAnimationOn 1s forwards;
+  animation: blurAnimationOn 0.5s forwards, fakedOpacityAnimationOn 0.5s forwards;
   @include flexSetup(column, center, center);
 
   &--animate-exit {
-    animation: blurAnimationOff 0.5s forwards;
+    animation: blurAnimationOff 0.5s forwards, fakedOpacityAnimationOff 0.5s forwards;
   }
 
   &__previous, &__next {
@@ -75,7 +104,7 @@
     cursor: pointer;
     
     &--animate-exit {
-      animation: opacityAnimationOff 0.3s forwards;
+      animation: opacityAnimationOff 0.3s forwards ease;
     }
   }
 
@@ -114,11 +143,11 @@
     opacity: 0;
 
     &--animate {
-      animation: opacityAnimationOn 0.7s forwards;
+      animation: opacityAnimationOn 0.5s forwards ease;
     }
     
     &--animate-exit {
-      animation: opacityAnimationOff 0.3s forwards;
+      animation: opacityAnimationOff 0.3s forwards ease;
     }
   }
 
@@ -131,17 +160,18 @@
     opacity: 0;
 
     &--animate {
-      animation: opacityAnimationOn 1s forwards;
+      animation: opacityAnimationOn 1s forwards ease;
       animation-delay: 0.2s;
     }
 
     &--animate-exit {
-      animation: opacityAnimationOff 0.3s forwards;
+      animation: titleAnimationOff 0.3s forwards ease;
     }
   }
 
   &__next {
     right: 10%;
+
 
     &__top-bar {
       top: 50%;

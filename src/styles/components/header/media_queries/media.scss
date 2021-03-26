@@ -1,23 +1,27 @@
 // MEDIA QUERIES
 
-@media (max-width: 1024px) {
-  .header {
-    height: 100px;
-    
-    &__logo {
-      height: calc(100% - 30px);
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
+@media(max-width: 1200px) {
   .header {
     height: 80px;
 
     &__logo {
-      height: calc(100% - 20px);
-      width: 100%;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: fit-content;
+    flex-direction: column;
+
+    &__logo {
+      font-size: 15px;
+      margin: 15px 0;
+    }
+    &__mode-changer {
+      position: static;
+      margin-bottom: 10px;
     }
   }
 }

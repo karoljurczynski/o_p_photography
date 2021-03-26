@@ -33,7 +33,7 @@
 .header {
   @include flexSetup(row, center, center);
   background: $black-color;
-  height: 90px;
+  height: 100px;
   position: relative;
 
   &__logo {
@@ -77,6 +77,7 @@
       background: $black-color;
       border: 3px solid white;
       cursor: pointer;
+      outline: none;
       
       &__button {
         display: block;
@@ -93,35 +94,7 @@
   }
 }
 
-@media(max-width: 1200px) {
-  .header {
-    height: 80px;
-
-    &__logo {
-      font-size: 16px;
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .header {
-    height: fit-content;
-    flex-direction: column;
-
-    &__logo {
-      font-size: 15px;
-      margin: 15px 0;
-  }
-  &__mode-changer {
-    position: static;
-    margin-bottom: 10px;
-  }
-}
-
-
-}
-
 
 // IMPORTING MEDIA QUERIES
 
-//@import './media_queries/media';
+@import './media_queries/media';
