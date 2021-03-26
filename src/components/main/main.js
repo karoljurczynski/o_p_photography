@@ -20,7 +20,8 @@ class Main extends React.Component {
 
     this.state = {
       isMenuOpened: false,
-      isLoaded: false
+      isLoaded: false,
+      isPhotoModeEnabled: this.props.mode,
     };
 
     this.handleMenu = this.handleMenu.bind(this);
@@ -230,15 +231,15 @@ class Main extends React.Component {
         <section className="main__grid">
 
           <div className="main__grid__item">
-            <Picture data={0} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />            
           </div>
           
           <div className="main__grid__item">
-            <Picture data={1} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={2} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
           </div>
 
           <div className="main__grid__item">
@@ -246,43 +247,43 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={3} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={5} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={6} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={7} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={8} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={9} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={10} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={10} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={0} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={1} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
           </div>
 
           <div className="main__grid__item">
@@ -290,31 +291,31 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={2} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={3} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={5} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={6} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={7} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={8} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
           </div>
 
           <div className="main__grid__item">
@@ -322,39 +323,39 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={9} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={10} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={10} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={0} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={1} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={2} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={3} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={4} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={5} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={6} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
           </div>
 
           <div className="main__grid__item">
@@ -362,15 +363,15 @@ class Main extends React.Component {
           </div>
 
           <div className="main__grid__item">
-            <Picture data={7} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={8} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
           </div>
 
           <div className="main__grid__item">
-            <Picture data={9} />
+            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
           </div>
 
         </section>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import '../../styles/components/main/photo_review/photo_review.css';
-import { photosArray } from './../../index';
+import { contentArray } from './../../index';
 
 
 // COMPONENT
@@ -13,6 +13,7 @@ class PhotoReview extends React.Component {
 
     this.state = {
       id: this.props.id,
+      type: this.props.type,
       src: this.props.src,
       alt: this.props.alt,
       title: this.props.title,
@@ -78,21 +79,21 @@ class PhotoReview extends React.Component {
   }
   
   handleNextPhoto() {
-    if (this.state.id + 1 === photosArray.length) {
+    if (this.state.id + 1 === contentArray[this.state.type].length) {
       this.setState({
         id: 0,
-        src: photosArray[0].src,
-        title: photosArray[0].title,
-        alt: photosArray[0].alt
+        src: contentArray[this.state.type][0].src,
+        title: contentArray[this.state.type][0].title,
+        alt: contentArray[this.state.type][0].alt
       });
     }
 
     else {
       this.setState({
         id: this.state.id + 1,
-        src: photosArray[this.state.id + 1].src,
-        title: photosArray[this.state.id + 1].title,
-        alt: photosArray[this.state.id + 1].alt
+        src: contentArray[this.state.type][this.state.id + 1].src,
+        title: contentArray[this.state.type][this.state.id + 1].title,
+        alt: contentArray[this.state.type][this.state.id + 1].alt
       });
     }
   }
@@ -100,19 +101,19 @@ class PhotoReview extends React.Component {
   handlePreviousPhoto() {
     if ((this.state.id) === 0) {
       this.setState({
-        id: photosArray.length - 1,
-        src: photosArray[photosArray.length - 1].src,
-        title: photosArray[photosArray.length - 1].title,
-        alt: photosArray[photosArray.length - 1].alt
+        id: contentArray[this.state.type].length - 1,
+        src: contentArray[this.state.type][contentArray[this.state.type].length - 1].src,
+        title: contentArray[this.state.type][contentArray[this.state.type].length - 1].title,
+        alt: contentArray[this.state.type][contentArray[this.state.type].length - 1].alt
       });
     }
 
     else {
       this.setState({
         id: this.state.id - 1,
-        src: photosArray[this.state.id - 1].src,
-        title: photosArray[this.state.id - 1].title,
-        alt: photosArray[this.state.id - 1].alt
+        src: contentArray[this.state.type][this.state.id - 1].src,
+        title: contentArray[this.state.type][this.state.id - 1].title,
+        alt: contentArray[this.state.type][this.state.id - 1].alt
       });
     }
   }

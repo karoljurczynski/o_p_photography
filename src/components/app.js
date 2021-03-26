@@ -10,12 +10,24 @@ import Footer from './footer';
 // COMPONENT
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isPhotoModeEnabled: true };
+    this.changeMode = this.changeMode.bind(this);
+  }
+
+  changeMode(newState) {
+    this.setState({isPhotoModeEnabled: newState})
+  }
+
   render() {
     return (
+      
       <div className="wrapper">
+      {console.log(this.state.isPhotoModeEnabled)}
 
-        <Header />
-        <Main />
+        <Header changeMode={ this.changeMode }/>
+        <Main isPhotoModeEnabled={ this.state.isPhotoModeEnabled }/>
         <Footer />
 
       </div>

@@ -3,23 +3,125 @@
 @forward '../../config/config';
 @use '../../config/config' as *;
 
+// HEADER FONTS
+
+@font-face {
+  font-family: 'LatoWebBold';
+  src: url('Lato-Bold.eot'); /* IE9 Compat Modes */
+  src: url('Lato-Bold.woff2') format('woff2'), /* Modern Browsers */
+       url('Lato-Bold.woff') format('woff'), /* Modern Browsers */
+       url('Lato-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoWebThin';
+    src: url('Lato-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Lato-Thin.woff2') format('woff2'), /* Modern Browsers */
+         url('Lato-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Lato-Thin.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
 
 // STYLES
 
 .header {
-  @include flexSetup();
+  @include flexSetup(row, center, center);
   background: $black-color;
-  height: 120px;
+  height: 90px;
+  position: relative;
 
   &__logo {
-    height: calc(100% - 40px);
-    width: 100%;
-    background: url('../../../img/long_logo_white.png') no-repeat center;
-    background-size: contain;
+    font-size: 18px;
+
+    &__top {
+      color: $white-color;
+      font-family: 'LatoWebThin', sans-serif;
+      font-size: calc(1 * 1em);
+      letter-spacing: 0.3em;
+      line-height: 1;
+    }
+
+    &__bottom {
+      color: $white-color;
+      font-family: 'LatoWebBold', sans-serif;
+      font-size: calc(1 * 1em);
+      letter-spacing: 0.413em;
+      line-height: 1.2;
+    }
   }
+
+  &__mode-changer {
+    position: absolute;
+    left: 0;
+    @include flexSetup(row, center, space-between);
+    width: 170px;
+    
+    &__text {
+      color: $white-color;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    &__container {
+      position: relative;
+      @include flexSetup(row, flex-start, flex-start);
+      height: 20px;
+      border-radius: 10px;
+      width: 35px;
+      background: $black-color;
+      border: 3px solid white;
+      cursor: pointer;
+      
+      &__button {
+        display: block;
+        height: 19px;
+        border-radius: 50%;
+        width: 19px;
+        background: $white-color;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        transition: 0.2s ease;
+      }
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .header {
+    height: 80px;
+
+    &__logo {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: fit-content;
+    flex-direction: column;
+
+    &__logo {
+      font-size: 15px;
+      margin: 15px 0;
+  }
+  &__mode-changer {
+    position: static;
+    margin-bottom: 10px;
+  }
+}
+
+
 }
 
 
 // IMPORTING MEDIA QUERIES
 
-@import './media_queries/media';
+//@import './media_queries/media';

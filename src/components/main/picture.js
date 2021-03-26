@@ -3,7 +3,7 @@
 import React from 'react';
 import '../../styles/components/main/picture/picture.css';
 import PhotoReview from './photo_review';
-import { photosArray } from './../../index';
+import { contentArray } from './../../index';
 
 
 // GLOBALS
@@ -143,19 +143,20 @@ class Picture extends React.Component {
           className="picture"
           onClick={this.handleReviewMounting}>
           <img 
-            src={photosArray[this.props.data].src} 
-            alt={photosArray[this.props.data].alt} 
+            src={ contentArray[this.props.type][this.props.data].src } 
+            alt={ contentArray[this.props.type][this.props.data].alt } 
             className="picture__img" />
         </picture>
 
         {this.state.isReviewMounted
           ? <PhotoReview
-              id={this.props.data}
-              src={photosArray[this.props.data].src}
-              alt={photosArray[this.props.data].alt}
-              title={photosArray[this.props.data].title}
-              style={this.pictureStyle}
-              onClosed={this.handleReviewUnmounting} />
+              id={ this.props.data }
+              type={ this.props.type }
+              src={ contentArray[this.props.type][this.props.data].src }
+              alt={ contentArray[this.props.type][this.props.data].alt }
+              title={ contentArray[this.props.type][this.props.data].title }
+              style={ this.pictureStyle }
+              onClosed={ this.handleReviewUnmounting } />
           : null}
       </>
     );
