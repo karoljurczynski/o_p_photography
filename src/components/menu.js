@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '../styles/components/menu/menu.css';
+import { menuOptions } from '../index';
 
 
 // COMPONENT
@@ -35,25 +36,17 @@ class Menu extends React.Component {
 
         <ul className="menu__list">
 
-          <li className="menu__list__item">
-            <a className="menu__list__item__content" onClick={this.props.linkTo}>FEATURED</a>
-          </li>
+          {
+            menuOptions[Number(this.props.isPhotoModeEnabled)].map(option => {
+               return (
 
-          <li className="menu__list__item">
-            <a className="menu__list__item__content" onClick={this.props.linkTo}>PEOPLE</a>
-          </li>
+                <li className="menu__list__item">
+                  <a className="menu__list__item__content" onClick={this.props.linkTo}>{option}</a>
+                </li>
 
-          <li className="menu__list__item">
-            <a className="menu__list__item__content" onClick={this.props.linkTo}>NATURE</a>
-          </li>
-
-          <li className="menu__list__item">
-            <a className="menu__list__item__content" onClick={this.props.linkTo}>ACTS</a>
-          </li>
-
-          <li className="menu__list__item">
-            <a className="menu__list__item__content" onClick={this.props.linkTo}>CONTACT</a>
-          </li>
+               )
+            })
+          }
 
         </ul>
 

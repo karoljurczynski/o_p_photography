@@ -2,9 +2,11 @@
 
 import React from 'react';
 import '../../styles/components/main/main/main.css';
+import '../../styles/components/main/grid/grid.css';
 import Menu from '../menu';
 import Picture from './picture';
 import Spinner from './spinner';
+import { contentArray, menuOptions } from '../../index';
 
 
 // GLOBALS
@@ -218,7 +220,7 @@ class Main extends React.Component {
     return (
       <main className="main">
 
-        <Menu exit={this.handleMenu} linkTo={this.linkToId} />
+        <Menu exit={this.handleMenu} linkTo={this.linkToId} isPhotoModeEnabled={ this.props.isPhotoModeEnabled } />
 
         { this.state.isLoaded ? null : <Spinner loaded={ this.spinnerFunction } /> }
 
@@ -230,149 +232,29 @@ class Main extends React.Component {
 
         <section className="main__grid">
 
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />            
-          </div>
-          
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
-          </div>
+          { // RENDERING WORKS
+            contentArray[ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' ].map((content, index) => {
+              return (
+                
+                <div id={ index + 1 } className={ this.props.isPhotoModeEnabled ? "main__grid__item__photo" : "main__grid__item__artwork" }>
+                  <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={ index } />            
+                </div>
 
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
-          </div>
+              )
+            })
+          }
 
-          <div className="main__grid__item">
-            <h2 className="main__grid__item__title" id="featured">FEATURED</h2>
-          </div>
+          { // RENDERING CATEGORIES
+            menuOptions[ Number(this.props.isPhotoModeEnabled) ].map(content => {
+              return (
+                
+                <div className={ this.props.isPhotoModeEnabled ? "main__grid__item__photo" : "main__grid__item__artwork" }>
+                  <h2 className="main__grid__item__title" id={ content.toLowerCase() }>{ content }</h2>
+                </div>
 
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={10} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
-          </div>
-
-          <div className="main__grid__item">
-            <h2 className="main__grid__item__title" id="people">PEOPLE</h2>
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
-          </div>
-
-          <div className="main__grid__item">
-            <h2 className="main__grid__item__title" id="nature">NATURE</h2>
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={10} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={0} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={1} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={2} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={3} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={4} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={5} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={6} />
-          </div>
-
-          <div className="main__grid__item">
-            <h2 className="main__grid__item__title" id="acts">ACTS</h2>
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={7} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={8} />
-          </div>
-
-          <div className="main__grid__item">
-            <Picture type={ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' } data={9} />
-          </div>
+              )
+            })
+          }
 
         </section>
       

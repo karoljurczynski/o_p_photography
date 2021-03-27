@@ -38,7 +38,10 @@ export const contentArray = {
   ]
 };
 
-
+export const menuOptions = [
+  ["FEATURED", "LOGOS", "CONTACT"],                     // ARTWORK MODE OPTIONS
+  ["FEATURED", "PEOPLE", "NATURE", "ACTS", "CONTACT"]   // PHOTO MODE OPTIONS
+];
 
 
 // RENDERING THE APP

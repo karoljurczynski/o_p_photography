@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,20 @@
   -webkit-box-shadow: none;
           box-shadow: none;
   text-decoration: none;
-  font-family: "Raleway", sans-serif;
-  font-weight: normal;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.header__logo__bottom {
+  font-family: "LatoWebBold", sans-serif;
+}
+
+.header__logo__top {
+  font-family: "LatoWebThin", sans-serif;
 }
 
 @font-face {
@@ -58,14 +66,12 @@
 }
 .header__logo__top {
   color: #FFFFFF;
-  font-family: "LatoWebThin", sans-serif;
   font-size: calc(1 * 1em);
   letter-spacing: 0.3em;
   line-height: 1;
 }
 .header__logo__bottom {
   color: #FFFFFF;
-  font-family: "LatoWebBold", sans-serif;
   font-size: calc(1 * 1em);
   letter-spacing: 0.413em;
   line-height: 1.2;
@@ -92,6 +98,7 @@
   color: #FFFFFF;
   font-size: 0.8rem;
   cursor: pointer;
+  letter-spacing: 0.3px;
 }
 .header__mode-changer__container {
   position: relative;

@@ -5,6 +5,14 @@
 
 // HEADER FONTS
 
+%useLatoBold {
+  font-family: 'LatoWebBold', sans-serif;
+}
+
+%useLatoThin {
+  font-family: 'LatoWebThin', sans-serif;
+}
+
 @font-face {
   font-family: 'LatoWebBold';
   src: url('Lato-Bold.eot'); /* IE9 Compat Modes */
@@ -41,7 +49,7 @@
 
     &__top {
       color: $white-color;
-      font-family: 'LatoWebThin', sans-serif;
+      @extend %useLatoThin;
       font-size: calc(1 * 1em);
       letter-spacing: 0.3em;
       line-height: 1;
@@ -49,7 +57,7 @@
 
     &__bottom {
       color: $white-color;
-      font-family: 'LatoWebBold', sans-serif;
+      @extend %useLatoBold;
       font-size: calc(1 * 1em);
       letter-spacing: 0.413em;
       line-height: 1.2;
@@ -66,6 +74,7 @@
       color: $white-color;
       font-size: 0.8rem;
       cursor: pointer;
+      letter-spacing: 0.3px;
     }
 
     &__container {

@@ -24,7 +24,6 @@ class App extends React.Component {
     return (
       
       <div className="wrapper">
-      {console.log(this.state.isPhotoModeEnabled)}
 
         <Header changeMode={ this.changeMode }/>
         <Main isPhotoModeEnabled={ this.state.isPhotoModeEnabled }/>
