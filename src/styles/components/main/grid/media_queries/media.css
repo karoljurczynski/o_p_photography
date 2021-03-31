@@ -7,9 +7,11 @@
   }
   .main__grid__item__photo:nth-child(odd), .main__grid__item__artwork:nth-child(odd) {
     grid-column: 1/7;
+    margin-top: 0;
   }
   .main__grid__item__photo:nth-child(even), .main__grid__item__artwork:nth-child(even) {
     grid-column: 7/13;
+    margin-top: 0;
   }
 }
 @media (max-width: 768px) {
@@ -28,6 +30,7 @@
     height: 100vh;
   }
   .main__grid__item__photo:nth-child(n), .main__grid__item__artwork:nth-child(n) {
+    margin-top: 0;
     grid-column: 1/13;
   }
 }

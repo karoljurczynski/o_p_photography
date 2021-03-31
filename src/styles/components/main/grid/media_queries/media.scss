@@ -8,10 +8,12 @@
 
     &__item__photo:nth-child(odd), &__item__artwork:nth-child(odd) {
       grid-column: 1 / 7;
+      margin-top: 0;
     }
 
     &__item__photo:nth-child(even), &__item__artwork:nth-child(even) {
       grid-column: 7 / 13;
+      margin-top: 0;
     }
   }
 }
@@ -35,6 +37,7 @@
     }
 
     &__item__photo:nth-child(n), &__item__artwork:nth-child(n) {
+      margin-top: 0;
       grid-column: 1 / 13;
     }
   }
