@@ -42,16 +42,10 @@ class Header extends React.Component {
 
         <section className="header__logo">
           <h1 className="header__logo__top">OLIWIER PAKUŁA</h1>
-          <h2 className="header__logo__bottom">PHOTOGRAPHY</h2>
+          <h2 className="header__logo__bottom">{this.state.isButtonSetAtPhotos ? "PHOTOGRAPHY" : "ART & DESIGN"}</h2>
         </section>
 
         <div className="header__mode-changer">
-          <p
-            className="header__mode-changer__text"
-            style={ !this.state.isButtonSetAtPhotos ? {color: "#828282"} : {color: "#FFFFFF"} }
-            onClick={ this.handleModeChangeToPhotos }>
-            PHOTOS
-          </p>
 
           <button
             className="header__mode-changer__container" 
@@ -62,12 +56,6 @@ class Header extends React.Component {
             </span>
           </button>
 
-          <p 
-            className="header__mode-changer__text"
-            style={ this.state.isButtonSetAtPhotos ? {color: "#828282"} : {color: "#FFFFFF"} }
-            onClick={ this.handleModeChangeToGraphics }>
-            WORKS
-          </p>
         </div>
 
       </header>

@@ -42,7 +42,7 @@
   @include flexSetup(row, center, center);
   background: $black-color;
   height: 100px;
-  position: relative;
+  position: fixed;
 
   &__logo {
     font-size: 18px;
@@ -65,8 +65,9 @@
   }
 
   &__mode-changer {
-    position: absolute;
-    left: 0;
+    position: fixed;
+    left: calc(100vw - 98px);
+    top: 94%;
     @include flexSetup(row, center, space-between);
     width: 170px;
     
