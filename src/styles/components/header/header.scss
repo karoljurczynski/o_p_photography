@@ -42,48 +42,59 @@
   @include flexSetup(row, center, center);
   background: $black-color;
   height: 100px;
+  width: 100vw;
   position: fixed;
+  top: 0;
 
   &__logo {
+    width: 230px;
     font-size: 18px;
+    @include flexSetup(column, center, center);
+    cursor: pointer;
 
-    &__top {
-      color: $white-color;
-      @extend %useLatoThin;
-      font-size: calc(1 * 1em);
-      letter-spacing: 0.3em;
-      line-height: 1;
-    }
+    &__title {
+      width: 100%;
+      @include flexSetup(row, center, center);
 
-    &__bottom {
-      color: $white-color;
-      @extend %useLatoBold;
-      font-size: calc(1 * 1em);
-      letter-spacing: 0.413em;
-      line-height: 1.2;
+      &__name {
+        width: 100%;
+        @include flexSetup(row, flex-start, space-between);
+
+        &__letter {
+          @include flexSetup(row, flex-start, center);
+          color: $white-color;
+          @extend %useLatoThin;
+          line-height: 1;
+          
+        }
+      }
+
+      &__brand {
+        width: 100%;
+        @include flexSetup(row, flex-start, space-between);
+
+        &__letter {
+          @include flexSetup(row, flex-start, center);
+          color: $white-color;
+          @extend %useLatoBold;
+          line-height: 1.2;
+        }
+      }
     }
   }
 
   &__mode-changer {
     position: fixed;
-    left: calc(100vw - 98px);
+    left: calc(100vw - 92px);
     top: 94%;
     @include flexSetup(row, center, space-between);
-    width: 170px;
-    
-    &__text {
-      color: $white-color;
-      font-size: 0.8rem;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-    }
 
     &__container {
       position: relative;
       @include flexSetup(row, flex-start, flex-start);
-      height: 20px;
+      height: 18px;
       border-radius: 10px;
-      width: 35px;
+      width: 30px;
       background: $black-color;
       border: 3px solid white;
       cursor: pointer;
@@ -91,9 +102,9 @@
       
       &__button {
         display: block;
-        height: 19px;
+        height: 16px;
         border-radius: 50%;
-        width: 19px;
+        width: 16px;
         background: $white-color;
         position: absolute;
         top: -2px;

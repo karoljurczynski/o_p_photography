@@ -14,6 +14,7 @@ class Header extends React.Component {
     this.handleModeChangeToPhotos = this.handleModeChangeToPhotos.bind(this);
     this.handleModeChangeToGraphics = this.handleModeChangeToGraphics.bind(this);
     this.setStateAs = this.setStateAs.bind(this);
+    this.handleScrollToTop = this.handleScrollToTop.bind(this);
   }
 
   setStateAs(newState) {
@@ -31,18 +32,89 @@ class Header extends React.Component {
 
   handleModeChangeToGraphics() {
     this.setStateAs(false);
+    this.handleScrollToTop();
+  }
+
+  handleScrollToTop() {
+    window.scroll(0, 0);
+}
+
+  componentDidMount() {
+    this.handleScrollToTop();
+  }
+
+  componentDidUpdate() {
+    this.handleScrollToTop();
   }
 
   render() {
     return (
-      <>
-      
+      <header className="header">
 
-      <header className="header" id="top">
+        <section className="header__logo" onClick={ this.handleScrollToTop }>
 
-        <section className="header__logo">
-          <h1 className="header__logo__top">OLIWIER PAKUŁA</h1>
-          <h2 className="header__logo__bottom">{this.state.isButtonSetAtPhotos ? "PHOTOGRAPHY" : "ART & DESIGN"}</h2>
+          <div className="header__logo__title">
+
+            <div className="header__logo__title__name">
+              <span className="header__logo__title__name__letter">O</span>
+              <span className="header__logo__title__name__letter">L</span>
+              <span className="header__logo__title__name__letter">I</span>
+              <span className="header__logo__title__name__letter">W</span>
+              <span className="header__logo__title__name__letter">I</span>
+              <span className="header__logo__title__name__letter">E</span>
+              <span className="header__logo__title__name__letter" style={{ marginRight: "5px" }}>R</span>
+            </div>
+
+            <div className="header__logo__title__name">
+              <span className="header__logo__title__name__letter" style={{ marginLeft: "15px" }}>P</span>
+              <span className="header__logo__title__name__letter">A</span>
+              <span className="header__logo__title__name__letter">K</span>
+              <span className="header__logo__title__name__letter">U</span>
+              <span className="header__logo__title__name__letter">Ł</span>
+              <span className="header__logo__title__name__letter">A</span>
+            </div>
+
+          </div>
+
+          <div className="header__logo__title">
+
+            { this.state.isButtonSetAtPhotos &&
+
+            <div className="header__logo__title__brand">
+              <span className="header__logo__title__brand__letter">P</span>
+              <span className="header__logo__title__brand__letter">H</span>
+              <span className="header__logo__title__brand__letter">O</span>
+              <span className="header__logo__title__brand__letter">T</span>
+              <span className="header__logo__title__brand__letter">O</span>
+              <span className="header__logo__title__brand__letter">G</span>
+              <span className="header__logo__title__brand__letter">R</span>
+              <span className="header__logo__title__brand__letter">A</span>
+              <span className="header__logo__title__brand__letter">P</span>
+              <span className="header__logo__title__brand__letter">H</span>
+              <span className="header__logo__title__brand__letter">Y</span>
+            </div>
+
+            }
+
+            { !this.state.isButtonSetAtPhotos &&
+
+            <div className="header__logo__title__brand">
+              <span className="header__logo__title__brand__letter">A</span>
+              <span className="header__logo__title__brand__letter">R</span>
+              <span className="header__logo__title__brand__letter">T</span>
+              <span className="header__logo__title__brand__letter" style={{ margin: "0 15px" }}>&</span>
+              <span className="header__logo__title__brand__letter">D</span>
+              <span className="header__logo__title__brand__letter">E</span>
+              <span className="header__logo__title__brand__letter">S</span>
+              <span className="header__logo__title__brand__letter">I</span>
+              <span className="header__logo__title__brand__letter">G</span>
+              <span className="header__logo__title__brand__letter">N</span>
+            </div>
+
+            }
+
+          </div>
+
         </section>
 
         <div className="header__mode-changer">
@@ -52,14 +124,13 @@ class Header extends React.Component {
             onClick={ this.handleModeChange }>
             <span 
               className="header__mode-changer__container__button"
-              style={ this.state.isButtonSetAtPhotos ? {left: "calc(0% - 3px)"} : {left: "calc(100% - 16px)"}} >
+              style={ this.state.isButtonSetAtPhotos ? {left: "calc(0% - 3px)"} : {left: "calc(100% - 13px)"}} >
             </span>
           </button>
 
         </div>
 
       </header>
-      </>
     );
   }
 }

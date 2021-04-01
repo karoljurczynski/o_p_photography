@@ -143,7 +143,7 @@ class Main extends React.Component {
 
   spinnerFunction() {
     setTimeout(() => { this.setState({ isLoaded: !this.state.isLoaded }) }, 600);
-    document.querySelector("#top").scrollIntoView();
+    window.scrollTo({top: 0, left: 0, behavior: "smooth"});
   }
 
   menuClose() {
@@ -204,16 +204,24 @@ class Main extends React.Component {
 
   linkToId(e) {
     let container;
+    console.log(e.target.innerText);
 
-    if (e.target.innerText.toLowerCase() !== "featured")
+    if (e.target.innerText.toLowerCase() !== "featured") {
       container = document.querySelector("#" + e.target.innerText.toLowerCase());
-    else
-      container = document.querySelector("#top");
 
+      setTimeout(() => {
+        container.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+
+    else {
+      setTimeout(() => {
+        window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+      }, 0);
+    }
+      
     this.menuClose();
     this.setState({isMenuOpened: !this.state.isMenuOpened});
-
-    container.scrollIntoView({ behavior: "smooth" });
   }
 
   render() {
@@ -231,6 +239,7 @@ class Main extends React.Component {
         </button>
 
         <section className="main__grid">
+
 
           { // RENDERING WORKS
             contentArray[ this.props.isPhotoModeEnabled ? 'photos' : 'artworks' ].map((content, index) => {

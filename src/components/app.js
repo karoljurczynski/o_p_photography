@@ -25,7 +25,7 @@ class App extends React.Component {
       
       <div className="wrapper">
 
-        <Header changeMode={ this.changeMode }/>
+        <Header changeMode={ this.changeMode } />
         <Main isPhotoModeEnabled={ this.state.isPhotoModeEnabled }/>
         <Footer />
 
